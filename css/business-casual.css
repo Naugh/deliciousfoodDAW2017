@@ -6,7 +6,7 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: teal;
+    background: url('../img/bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -55,11 +55,7 @@ hr {
 
 .img-full {
     min-width: 100%;
-    
 }
-
-
-
 
 .brand-before,
 .brand-name {
@@ -104,10 +100,6 @@ hr {
 .img-left {
     float: none;
     margin: 0 auto 0;
-}
-
-.row {
-    margin: 20px;
 }
 
 footer {
