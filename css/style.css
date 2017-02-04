@@ -1,7 +1,20 @@
+#header,
+footer {
+    background: teal;
+}
+
+.navbar {
+    background: #44bcb3;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}
+
 body {
-       background: teal; 
+    background: rgb(213, 245, 245);
 }
 
 .row {
-    margin: 20px; 
+    margin: 20px;
 }
