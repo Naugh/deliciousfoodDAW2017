@@ -13,15 +13,12 @@ footer {
 
 .navbar-default .navbar-nav>li>a:hover {
     margin-bottom: -0.5em;
+    padding-bottom: 1.5em;
     border-bottom: 0.5em solid firebrick !important;
 }
 
 body {
     background: white;
-}
-
-.address-bar {
-    //margin-bottom: -2em;
 }
 
 .row {
