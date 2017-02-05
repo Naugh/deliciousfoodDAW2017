@@ -59,37 +59,76 @@
         </nav>
     </div>
     <!-- container del grid -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/pizza.jpg" /> <span class="category-img"> <kbd> PIZZA </kbd> </span> </a>
-            </div>
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/hamburguesa.jpg" /> <span class="category-img"> <kbd> HAMBURGUESA </kbd></span> </a>
-            </div>
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/japonesa.jpg" /> <span class="category-img"> <kbd> JAPONESA</kbd></span> </a>
-            </div>
+    <div class="container">
+        <div class="col-sm-7">
+            <form class="form-horizontal" data-toggle="validator">
+                <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputName" placeholder="Nombre"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputSurname" placeholder="Apellidos"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputTlf" placeholder="Teléfono"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputDir" placeholder="Dirección"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputCP" placeholder="Código Postal"> </div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/espa%C3%B1ola.jpg" /> <span class="category-img"> <kbd> ESPAÑOLA </kbd></span> </a>
+        <div class="col-sm-5">
+            <div id="order">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">Detalles del pedido</div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr>
+                                <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                <td><span class="amount">2</span></td>
+                                <td><span>x</span></td>
+                                <td><span class="product"><strong>Pizza carbonara</strong></span></td>
+                                <td><span class="price">20 €</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                <td><span class="amount">1</span></td>
+                                <td><span>x</span></td>
+                                <td><span class="product"><strong>Calzone</strong></span></td>
+                                <td><span class="price">10 €</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                <td><span class="amount">5</span></td>
+                                <td><span>x</span></td>
+                                <td><span class="product"><strong>Pizza barbacoa</strong></span></td>
+                                <td><span class="price">100 €</span></td>
+                            </tr>
+                            <tr class="active">
+                                <td><span class="h4"> Total </span></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span id="total" class="h4">60 €</span></td>
+                            </tr>
+                        </table>
+                        <input class="btn btn-success btn-lg btn-block" type="submit" value="Finalizar">
+                        <table class="table"> </table>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/vegetariano.jpg" /> <span class="category-img"> <kbd> VEGETARIANA </kbd></span> </a>
-            </div>
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/china.jpg" /> <span class="category-img"> <kbd>CHINA </kbd></span> </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/italiana.jpg" /> <span class="category-img"> <kbd> ITALIANA </kbd></span> </a>
-            </div>
-            <div class="col-md-4">
-                <a href="restaurants.html"> <img src="img/turca.jpg" /> <span class="category-img"> <kbd> TURCA </kbd></span> </a>
-            </div>
-            <div class="col-md-4"> </div>
         </div>
     </div>
     <footer>

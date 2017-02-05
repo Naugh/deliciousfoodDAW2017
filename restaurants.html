@@ -40,62 +40,70 @@
                     <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed --><a class="navbar-brand" href="index.html">Business Casual</a> </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li> <a href="index.html">Home</a> </li>
-                        <li> <a href="#">About</a> </li>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li> <a href="index.html">Inicio</a> </li>
+                        <li> <a href="restaurants.html">Restaurantes</a> </li>
                         <li> <a href="form.html">Registro</a> </li>
-                        <li> <a href="#">Contact</a> </li>
                     </ul>
+                    <form class="navbar-form navbar-right form-inline">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="tucorreo@dominio.com"> </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Tu contraseña"> </div>
+                        <button type="submit" class="btn btn-success">Conectarse</button>
+                    </form>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
         </nav>
-    </div> 
-    
-   
+    </div>
     <div class="container-fluid">
-    
-        
         <div class="row">
             <!-- Filtros de categorias -->
             <div class="col-md-4">
-                <ul class="filtros"> 
+                <ul class="filtros">
                     <p class="category-img"> Tipos de comida</p>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios1" value="option1" checked="true"> PIZZA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios2" value="option2"> HAMBURGUESA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios3" value="option3"> JAPONESA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios4" value="option4"> ESPAÑOLA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios5" value="option5"> VEGETARIANA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios6" value="option6"> CHINA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios7" value="option7"> ITALIANA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios8" value="option8"> TURCA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios1" value="option1" checked="true"> PIZZA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios2" value="option2"> HAMBURGUESA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios3" value="option3"> JAPONESA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios4" value="option4"> ESPAÑOLA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios5" value="option5"> VEGETARIANA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios6" value="option6"> CHINA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios7" value="option7"> ITALIANA</li>
+                    <li class="list-group-item fondoFiltro">
+                        <input type="radio" name="options-radios" id="options-radios8" value="option8"> TURCA</li>
                 </ul>
             </div>
-            
             <!-- Lista de restaurantes relacionados -->
             <div class="col-md-8">
                 <ul class="lista-restaurantes">
                     <p class="category-img"> Lista de restaurantes</p>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/telepizza%20ejemplo.jpg" /> 
-                        <h5 class="nombre-rest"> <a href="items.html"> Telepizza</a></h5>   
-                         <p class="direccion"> Avenida del Rio 85, 28918</p>
+                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/telepizza%20ejemplo.jpg" />
+                        <h5 class="nombre-rest"> <a href="items.html"> Telepizza</a></h5>
+                        <p class="direccion"> Avenida del Rio 85, 28918</p>
                         <p class="horario"> Abierto de 12h a 16:30h y de 20:30h a 1h </p>
                     </li>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/pizzahut%20ejemplo.jpg" /> 
+                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/pizzahut%20ejemplo.jpg" />
                         <h5 class="nombre-rest"> PizzaHut Móstoles</h5>
                         <p class="direccion"> Avenida Tulipan 21, 28919</p>
                         <p class="horario"> Abierto de 12h a 16h y de 20h a 1h </p>
                     </li>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/dominos%20ejemplo.jpg" /> 
+                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/dominos%20ejemplo.jpg" />
                         <h5 class="nombre-rest"> DominosPizza </h5>
                         <p class="direccion"> Avenida del Rio 85, 28917</p>
                         <p class="horario"> Abierto de 13h a 24h </p>
-                        
                     </li>
                 </ul>
             </div>
-        </div>     
+        </div>
     </div>
     <!-- /.container -->
     <footer>

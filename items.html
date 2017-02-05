@@ -40,20 +40,24 @@
                     <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed --><a class="navbar-brand" href="index.html">Business Casual</a> </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li> <a href="index.html">Home</a> </li>
-                        <li> <a href="#">About</a> </li>
+                    <ul class="nav navbar-nav navbar-left">
+                        <li> <a href="index.html">Inicio</a> </li>
+                        <li> <a href="restaurants.html">Restaurantes</a> </li>
                         <li> <a href="form.html">Registro</a> </li>
-                        <li> <a href="#">Contact</a> </li>
                     </ul>
+                    <form class="navbar-form navbar-right form-inline">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="tucorreo@dominio.com"> </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Tu contraseña"> </div>
+                        <button type="submit" class="btn btn-success">Conectarse</button>
+                    </form>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>
             <!-- /.container -->
         </nav>
-    </div> 
-    
-   
+    </div>
     <div class="container-fluid">
         <div class="row">
             <!-- tabla items -->
@@ -65,7 +69,7 @@
                             <th> Nombre del plato </th>
                             <th clase="Precio"> Precio </th>
                             <th clase="Descripcion"> Descripcion </th>
-                        </tr>                   
+                        </tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -87,20 +91,54 @@
                             <td class="txtNombre"> Peperoni</td>
                             <td> 10.00€</td>
                             <td> Doble ración de pepperoni y toppinga base de mozarella </td>
-                           
                         </tr>
                     </tbody>
-                
                 </table>
-                    
             </div>
             <!-- listadelpedido -->
             <div class="col-md-4">
-        
-            </div>  
+                <div id="order">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Detalles del pedido</div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                    <td><span class="amount">2</span></td>
+                                    <td><span>x</span></td>
+                                    <td><span class="product"><strong>Pizza carbonara</strong></span></td>
+                                    <td><span class="price">20 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                    <td><span class="amount">1</span></td>
+                                    <td><span>x</span></td>
+                                    <td><span class="product"><strong>Calzone</strong></span></td>
+                                    <td><span class="price">10 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                    <td><span class="amount">5</span></td>
+                                    <td><span>x</span></td>
+                                    <td><span class="product"><strong>Pizza barbacoa</strong></span></td>
+                                    <td><span class="price">100 €</span></td>
+                                </tr>
+                                <tr class="active">
+                                    <td><span class="h4"> Total </span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="total" class="h4">60 €</span></td>
+                                </tr>
+                            </table> <a class="btn btn-success btn-lg btn-block" href="order.html">Finalizar</a>
+                            <!-- <input class="btn btn-success btn-lg btn-block" type="submit" value="Finalizar">-->
+                            <table class="table"> </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>    
-        
+    </div>
     <!-- /.container -->
     <footer>
         <div class="container">
