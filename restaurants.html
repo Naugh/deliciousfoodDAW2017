@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Business Casual - Start Bootstrap Theme</title>
+    <title>Blog - Business Casual - Start Bootstrap Theme</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -51,71 +51,48 @@
             </div>
             <!-- /.container -->
         </nav>
-    </div>
-    <!-- container del grid -->
+    </div> 
+    
+   
     <div class="container-fluid">
+    
         
-            <div class="row">
-                <div class="col-md-4"> 
-                    <a href="restaurants.html">
-                        <img src="img/pizza.jpg"/>
-                        <span class="category-img"> <kbd> PIZZA </kbd> </span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="restaurants.html">
-                        <img src="img/hamburguesa.jpg" /> 
-                        <span class="category-img"> <kbd> HAMBURGUESA </kbd></span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="restaurants.html">
-                        <img src="img/japonesa.jpg" />
-                        <span class="category-img"> <kbd> JAPONESA </kbd></span>
-                    </a>
-                </div>
+        <div class="row">
+            <!-- Filtros de categorias -->
+            <div class="col-md-4">
+                <ul class="filtros"> 
+                    <p class="category-img"> Tipos de comida</p>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios1" value="option1" checked="true"> PIZZA</li>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios2" value="option2"> HAMBURGUESA</li>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios3" value="option3"> JAPONESA</li>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios4" value="option4"> ESPAÑOLA</li>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios5" value="option5"> VEGETARIANA</li>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios6" value="option6"> CHINA</li>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios7" value="option7"> ITALIANA</li>
+                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios8" value="option8"> TURCA</li>
+                </ul>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="restaurants.html">
-                        <img src="img/espa%C3%B1ola.jpg" />
-                        <span class="category-img"> <kbd> ESPAÑOLA </kbd></span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="restaurants.html">
-                        <img src="img/vegetariano.jpg" /> 
-                        <span class="category-img"> <kbd> VEGETARIANA </kbd></span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="restaurants.html">
-                        <img src="img/china.jpg" />
-                        <span class="category-img"> <kbd>CHINA </kbd></span>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="restaurants.html">
-                        <img src="img/italiana.jpg" />
-                        <span class="category-img"> <kbd> ITALIANA </kbd></span>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="restaurants.html">
-                        <img src="img/turca.jpg" /> 
-                        <span class="category-img"> <kbd> TURCA </kbd></span>
-                        
-                    </a>
-                    
-                </div>
-                <div class="col-md-4">
-
-                </div>
+            
+            <!-- Lista de restaurantes relacionados -->
+            <div class="col-md-8">
+                <ul class="lista-restaurantes">
+                    <p class="category-img"> Lista de restaurantes</p>
+                    <li class="list-group-item fondoListaRest"> <img src="img/telepizza%20ejemplo.jpg" /> 
+                        <span class="nombre-rest"> Telepizza</span>                       
+                    </li>
+                    <li class="list-group-item fondoListaRest"> <img src="img/pizzahut%20ejemplo.jpg" /> 
+                        <span class="nombre-rest"> PizzaHut Móstoles</span>
+                    </li>
+                    <li class="list-group-item fondoListaRest"> <img src="img/dominos%20ejemplo.jpg" /> 
+                        <span class="nombre-rest"> DominosPizza</span>
+                    </li>
+                </ul>
             </div>
         </div>
   
+    </div>     
+    
+    <!-- /.container -->
     <footer>
         <div class="container">
             <div class="row">
@@ -129,12 +106,6 @@
     <script src="js/jquery.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- Script to Activate the Carousel -->
-    <script>
-        $('.carousel').carousel({
-            interval: 5000 //changes the speed
-        })
-    </script>
 </body>
 
 </html>
