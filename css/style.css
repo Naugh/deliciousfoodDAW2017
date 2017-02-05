@@ -52,8 +52,11 @@ body {
     background: firebrick !important;
 }
 
-.row img {
-    margin-left: 10px;
+img {
+    height: auto;
+    width: 100%;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 .category-img {
