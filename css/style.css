@@ -51,20 +51,48 @@ body {
 }
 
 .fondoFiltro {
-    background: #44bcb3;
+    background: firebrick;
 }
 
-.fondoListaRest {
-    background: rgb(213, 245, 245);
+
+.fondoListaRest{
+    height: 170px;
 }
 
-.nombre-rest {
+
+.direccion{
     position: relative;
-    top: -70px;
+    bottom: 100px;
+    left: 170px;
+    font-size: 1em;
+}
+
+.horario{
+    position: relative;
+    bottom: 95px;
+    left: 170px;
+    font-size: 1em;
+}
+
+.nombre-rest{
+    position: relative;
+    bottom: 150px;
+    left: 170px;
     margin: 0;
     padding: 0 0 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 3px;
+}
+
+table < thead < tr < th {
+    font-size: 2em;
+    position: relative;
+    width: 160px;
+    
+}
+
+.txtNombre{
+    font-weight: bold;
 }

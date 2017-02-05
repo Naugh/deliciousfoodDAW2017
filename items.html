@@ -55,48 +55,52 @@
     
    
     <div class="container-fluid">
-    
-        
         <div class="row">
-            <!-- Filtros de categorias -->
-            <div class="col-md-4">
-                <ul class="filtros"> 
-                    <p class="category-img"> Tipos de comida</p>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios1" value="option1" checked="true"> PIZZA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios2" value="option2"> HAMBURGUESA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios3" value="option3"> JAPONESA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios4" value="option4"> ESPAÑOLA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios5" value="option5"> VEGETARIANA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios6" value="option6"> CHINA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios7" value="option7"> ITALIANA</li>
-                    <li class="list-group-item fondoFiltro"> <input type="radio" name="options-radios" id="options-radios8" value="option8"> TURCA</li>
-                </ul>
-            </div>
-            
-            <!-- Lista de restaurantes relacionados -->
+            <!-- tabla items -->
             <div class="col-md-8">
-                <ul class="lista-restaurantes">
-                    <p class="category-img"> Lista de restaurantes</p>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/telepizza%20ejemplo.jpg" /> 
-                        <h5 class="nombre-rest"> <a href="items.html"> Telepizza</a></h5>   
-                         <p class="direccion"> Avenida del Rio 85, 28918</p>
-                        <p class="horario"> Abierto de 12h a 16:30h y de 20:30h a 1h </p>
-                    </li>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/pizzahut%20ejemplo.jpg" /> 
-                        <h5 class="nombre-rest"> PizzaHut Móstoles</h5>
-                        <p class="direccion"> Avenida Tulipan 21, 28919</p>
-                        <p class="horario"> Abierto de 12h a 16h y de 20h a 1h </p>
-                    </li>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/dominos%20ejemplo.jpg" /> 
-                        <h5 class="nombre-rest"> DominosPizza </h5>
-                        <p class="direccion"> Avenida del Rio 85, 28917</p>
-                        <p class="horario"> Abierto de 13h a 24h </p>
-                        
-                    </li>
-                </ul>
+                <p class="category-img">Comida</p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> Nombre del plato </th>
+                            <th clase="Precio"> Precio </th>
+                            <th clase="Descripcion"> Descripcion </th>
+                        </tr>                   
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="txtNombre"> Barbacoa</td>
+                            <td> 10,00€</td>
+                            <td> La mejor salsa barbacoa sobre una base de mozzarella, doble ración de comida, bacon ahumado, tiras de pollo marinado</td>
+                        </tr>
+                        <tr>
+                            <td class="txtNombre"> Carbonara</td>
+                            <td> 9.50€ </td>
+                            <td> Doble ración de bacon, chapiñón, con una mezcla de 5 quesos cubierta con salsa carbonara y cebolla</td>
+                        </tr>
+                        <tr>
+                            <td class="txtNombre"> Cuatro quesos</td>
+                            <td> 9.50€ </td>
+                            <td> Masa gresca, mezcla cuatro quesos y tomate </td>
+                        </tr>
+                        <tr>
+                            <td class="txtNombre"> Peperoni</td>
+                            <td> 10.00€</td>
+                            <td> Doble ración de pepperoni y toppinga base de mozarella </td>
+                           
+                        </tr>
+                    </tbody>
+                
+                </table>
+                    
             </div>
-        </div>     
-    </div>
+            <!-- listadelpedido -->
+            <div class="col-md-4">
+        
+            </div>  
+        </div>
+    </div>    
+        
     <!-- /.container -->
     <footer>
         <div class="container">
