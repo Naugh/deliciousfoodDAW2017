@@ -1,69 +1,72 @@
 #header,
 footer {
-    background: teal;
+    background: firebrick;
 }
 
 .navbar {
-    background: #44bcb3;
+    border-bottom: 0.5em;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: white;
+    color: darkred;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    margin-bottom: -0.5em;
+    border-bottom: 0.5em solid firebrick !important;
 }
 
 body {
-    background: rgb(213, 245, 245);
+    background: white;
+}
+
+.address-bar {
+    //margin-bottom: -2em;
 }
 
 .row {
     margin: 30px;
 }
 
-.row img{
+.row img {
     margin-left: 10px;
 }
 
-.category-img{
-    
+.category-img {
     margin: 0;
     padding: 0 0 10px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 3px;
-        
 }
 
 .filtros {
     width: 340px;
-    
-    
 }
 
-.nombre-rest{
+.nombre-rest {
     vertical-align: text-top;
 }
 
-.lista-restaurantes{
-    width: 840px; 
+.lista-restaurantes {
+    width: 840px;
 }
 
-
-.fondoFiltro{
+.fondoFiltro {
     background: #44bcb3;
 }
 
-.fondoListaRest{
+.fondoListaRest {
     background: rgb(213, 245, 245);
 }
 
-
-.nombre-rest{
+.nombre-rest {
     position: relative;
     top: -70px;
     margin: 0;
     padding: 0 0 10px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 3px;
