@@ -62,42 +62,71 @@
         <div class="row">
             <!-- Filtros de categorias -->
             <div class="col-md-4">
-                <ul class="filtros">
-                    <p class="titulillos"> Tipos de comida</p>
+                <ul class="list-group filtros">
+                    <p class="titulillos"> Tipos de comida</p> 
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios1" value="option1" checked="true"> <span class="category">PIZZA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"true"> <span class="category">PIZZA</span></label>
+                        </div>
+                    </li>
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios2" value="option2"> <span class="category">HAMBURGUESA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">HAMBURGUESA</span></label>
+                        </div>
+                    </li>
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios3" value="option3"> <span class="category">JAPONESA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">JAPONESA</span></label>
+                        </div>
+                    </li>
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios4" value="option4"> <span class="category">ESPAÑOLA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">ESPAÑOLA</span></label>
+                        </div>
+                    </li>
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios5" value="option5"> <span class="category">VEGETARIANA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">VEGETARIANA</span></label>
+                        </div>
+                    </li>
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios6" value="option6"> <span class="category">CHINA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">CHINA</span></label>
+                        </div>
+                    </li>
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios7" value="option7"> <span class="category">ITALIANA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">ITALIANA</span></label>
+                        </div>
+                    </li>
                     <li class="list-group-item fondoFiltro">
-                        <input type="radio" name="options-radios" id="options-radios8" value="option8"> <span class="category">TURCA</span></li>
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">TURCA</span></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item fondoFiltro">
+                        <div class="checkbox">
+                            <label><input type="checkbox" value"false"> <span class="category">INDIA</span></label>
+                        </div>
+                    </li>
                 </ul>
             </div>
             <!-- Lista de restaurantes relacionados -->
             <div class="col-md-8">
-                <ul class="lista-restaurantes">
+                <ul class="list-group lista-restaurantes">
                     <p class="titulillos"> Lista de restaurantes</p>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/telepizza%20ejemplo.jpg" />
+                    <li class="list-group-item itemListaRest"> <a href="items.html"> <img src="img/telepizza%20ejemplo.jpg" /> </a>
                         <h5 class="nombre-rest"> <a href="items.html"> Telepizza</a></h5>
                         <p class="direccion"> Avenida del Rio 85, 28918</p>
                         <p class="horario"> Abierto de 12h a 16:30h y de 20:30h a 1h </p>
                     </li>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/pizzahut%20ejemplo.jpg" />
-                        <h5 class="nombre-rest"> PizzaHut Móstoles</h5>
+                    <li class="list-group-item itemListaRest"> <a href="items.html"> <img src="img/pizzahut%20ejemplo.jpg" /> </a>
+                        <h5 class="nombre-rest"> <a href="items.html">PizzaHut Móstoles</a></h5>
                         <p class="direccion"> Avenida Tulipan 21, 28919</p>
                         <p class="horario"> Abierto de 12h a 16h y de 20h a 1h </p>
                     </li>
-                    <li class="restaurante-en-lista fondoListaRest"> <img src="img/dominos%20ejemplo.jpg" />
-                        <h5 class="nombre-rest"> DominosPizza </h5>
+                    <li class="list-group-item itemListaRest"> <a href="items.html"> <img src="img/dominos%20ejemplo.jpg" /> </a>
+                        <h5 class="nombre-rest"><a href="items.html"> DominosPizza </a></h5>
                         <p class="direccion"> Avenida del Rio 85, 28917</p>
                         <p class="horario"> Abierto de 13h a 24h </p>
                     </li>

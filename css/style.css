@@ -78,15 +78,17 @@ body {
 
 .lista-restaurantes {
     width: 840px;
+    
 }
 
 .fondoFiltro {
     background: firebrick;
 }
 
-.fondoListaRest {
+.itemListaRest {
     height: 170px;
-    
+    background: #DEECFF;
+    border: 1px dotted black;
 }
 
 ul {
