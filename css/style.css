@@ -86,6 +86,11 @@ body {
 
 .fondoListaRest {
     height: 170px;
+    
+}
+
+ul {
+    list-style: none;
 }
 
 .direccion {
@@ -140,4 +145,8 @@ th {
 
 .input-sm{
     width: 34px !important;
+}
+
+#texto-footer{
+    color: white;
 }
