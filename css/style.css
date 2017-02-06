@@ -137,3 +137,7 @@ th {
 .category{
     font-weight: bold;
 }
+
+.input-sm{
+    width: 34px !important;
+}

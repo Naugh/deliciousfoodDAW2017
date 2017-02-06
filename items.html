@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Blog - Business Casual - Start Bootstrap Theme</title>
+    <title>Delicious Food</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -61,12 +61,13 @@
     <div class="container-fluid">
         <div class="row">
             <!-- tabla items -->
-            <div class="col-md-1"></div>
-            <div class="col-md-7">
+            
+            <div class="col-md-8">
                 <p class="titulillos">Elige tus productos</p>
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th> Cantidad </th>
                             <th id="nombre_plato"> Nombre del plato </th>
                             <th> Precio </th>
                             <th> Descripcion </th>
@@ -74,21 +75,77 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td><div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="quant[2]" class="form-control input-number input-sm" value="0" min="0" max="100">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number btn-sm" data-type="plus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                </span>
+                                </div>
+                            </td>
                             <td class="txtNombre"> Barbacoa</td>
                             <td> 10,00€</td>
                             <td> La mejor salsa barbacoa sobre una base de mozzarella, doble ración de comida, bacon ahumado, tiras de pollo marinado</td>
                         </tr>
                         <tr>
+                            <td> <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="quant[2]" class="form-control input-number input-sm" value="0" min="0" max="100">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number btn-sm" data-type="plus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                </span>
+                                </div>
+                            </td>
                             <td class="txtNombre"> Carbonara</td>
                             <td> 9.50€ </td>
                             <td> Doble ración de bacon, chapiñón, con una mezcla de 5 quesos cubierta con salsa carbonara y cebolla</td>
                         </tr>
                         <tr>
+                            <td> <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="quant[2]" class="form-control input-number input-sm" value="0" min="0" max="100">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number btn-sm" data-type="plus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                </span>
+                                </div>
+                            </td>
                             <td class="txtNombre"> Cuatro quesos</td>
                             <td> 9.50€ </td>
                             <td> Masa fresca, mezcla cuatro quesos y tomate </td>
                         </tr>
                         <tr>
+                            <td> <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-minus"></span>
+                                        </button>
+                                    </span>
+                                    <input type="text" name="quant[2]" class="form-control input-number input-sm" value="0" min="0" max="100">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number btn-sm" data-type="plus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                </span>
+                                </div>
+                            </td>
                             <td class="txtNombre"> Peperoni</td>
                             <td> 10.00€</td>
                             <td> Doble ración de pepperoni y toppinga base de mozarella </td>
@@ -97,7 +154,7 @@
                 </table>
             </div>
             <!-- listadelpedido -->
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div id="order">
                     <div class="panel panel-primary">
                         <div class="panel-heading">Detalles del pedido</div>
@@ -138,7 +195,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-1"></div>
         </div>
     </div>
     <!-- /.container -->
