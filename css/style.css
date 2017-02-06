@@ -78,11 +78,11 @@ body {
 
 .lista-restaurantes {
     width: 840px;
-    
 }
 
 .fondoFiltro {
     background: firebrick;
+    color: white;
 }
 
 .itemListaRest {
@@ -122,18 +122,17 @@ ul {
 }
 
 th {
-    
     font-size: 1.10em;
     color: firebrick;
 }
 
-.titulillos{
-    
+.titulillos {
     font-size: 1.75em;
     font-family: "Josefin Slab";
     font-weight: bold;
 }
-#nombre_plato{
+
+#nombre_plato {
     width: 160px;
 }
 
@@ -141,14 +140,14 @@ th {
     font-weight: bold;
 }
 
-.category{
+.category {
     font-weight: bold;
 }
 
-.input-sm{
+.input-sm {
     width: 34px !important;
 }
 
-#texto-footer{
+#texto-footer {
     color: white;
 }
