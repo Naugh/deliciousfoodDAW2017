@@ -74,6 +74,7 @@ body {
 
 .nombre-rest {
     vertical-align: text-top;
+    color: white;
 }
 
 .lista-restaurantes {
@@ -87,7 +88,7 @@ body {
 
 .itemListaRest {
     height: 170px;
-    background: #DEECFF;
+    background: #f7e9e9;
     border: 1px dotted black;
 }
 
@@ -119,6 +120,10 @@ ul {
     font-size: 1.25em;
     font-weight: 400;
     letter-spacing: 3px;
+}
+
+.nombre-rest a {
+    color: firebrick;
 }
 
 th {
