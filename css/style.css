@@ -86,6 +86,10 @@ body {
     color: white;
 }
 
+.intro-text {
+    margin-bottom: ;
+}
+
 .itemListaRest {
     height: 170px;
     background: #f7e9e9;
@@ -123,7 +127,15 @@ ul {
 }
 
 .nombre-rest a {
-    color: firebrick;
+    color: darkred;
+}
+
+hr {
+    border-color: firebrick;
+}
+
+.intro-text {
+    color: darkred;
 }
 
 th {
