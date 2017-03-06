@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Delicious Food - Restaurantes</title>
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/business-casual.css" rel="stylesheet">
+<!-- Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
+	rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- pone en las transparencias de ponerlo para no tener problemas con javascript en el futuro -->
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Nuestro CSS -->
+<link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	{{> header}}
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Filtros de categorias -->
+			<div class="col-md-4">
+				<ul class="list-group filtros">
+					<li>
+						<hr>
+						<h2 class="intro-text text-center">
+							<strong>Categorías</strong>
+						</h2>
+						<hr>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" checked="true"> <span
+								class="category">PIZZA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">HAMBURGUESA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">JAPONESA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">ESPAÑOLA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">VEGETARIANA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">CHINA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">ITALIANA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">TURCA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox"> <span
+								class="category">INDIA</span></label>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- Lista de restaurantes relacionados -->
+			<div class="col-md-8">
+				<ul class="list-group lista-restaurantes">
+					<li>
+						<hr>
+						<h2 class="intro-text text-center">
+							<strong>Lista de Restaurantes</strong>
+						</h2>
+						<hr>
+					</li>
+					<li class="list-group-item itemListaRest"><a href="items.html">
+							<img src="/img/telepizza%20ejemplo.jpg" />
+					</a>
+						<h5 class="nombre-rest">
+							<a href="items.html"> Telepizza</a>
+						</h5>
+						<p class="direccion">Avenida del Rio 85, 28918</p>
+						<p class="horario">Abierto de 12h a 16:30h y de 20:30h a 1h</p></li>
+					<li class="list-group-item itemListaRest"><a href="items.html">
+							<img src="img/pizzahut%20ejemplo.jpg" />
+					</a>
+						<h5 class="nombre-rest">
+							<a href="items.html">PizzaHut Móstoles</a>
+						</h5>
+						<p class="direccion">Avenida Tulipan 21, 28919</p>
+						<p class="horario">Abierto de 12h a 16h y de 20h a 1h</p></li>
+					<li class="list-group-item itemListaRest"><a href="items.html">
+							<img src="img/dominos%20ejemplo.jpg" />
+					</a>
+						<h5 class="nombre-rest">
+							<a href="items.html"> DominosPizza </a>
+						</h5>
+						<p class="direccion">Avenida del Rio 85, 28917</p>
+						<p class="horario">Abierto de 13h a 24h</p></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /.container -->
+	{{> footer}}
+</body>
+</html>

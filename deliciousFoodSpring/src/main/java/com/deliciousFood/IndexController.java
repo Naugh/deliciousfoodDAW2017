@@ -5,13 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class RestaurantController {
+public class IndexController {
 	
-	@RequestMapping("/restaurant")
-	public String restaurantList(Model model){
-		return "restaurants";
+	@RequestMapping("/")
+	public String restaurantList(Model model) {
+		return "index.html";
 	}
-	
-	
-		
 }
