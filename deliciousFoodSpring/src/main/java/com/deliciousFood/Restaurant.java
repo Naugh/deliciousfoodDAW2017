@@ -17,17 +17,21 @@ public class Restaurant {
 	private String email;
 	private String phone;
 	private String postalCode;
+	private String opening;
+	private String closing;
 	
 	public Restaurant() {
 	}
 
-	public Restaurant(long id, String name, String address, String email, String phone, String postalCode) {
-		this.id = id;
+	public Restaurant(String name, String address, String email, String phone, String postalCode,
+			String opening, String closing) {
 		this.name = name;
 		this.address = address;
 		this.email = email;
 		this.phone = phone;
 		this.postalCode = postalCode;
+		this.opening = opening;
+		this.closing = closing;
 	}
 
 	public long getId() {
@@ -76,6 +80,22 @@ public class Restaurant {
 
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
+	}
+
+	public String getOpening() {
+		return opening;
+	}
+
+	public void setOpening(String opening) {
+		this.opening = opening;
+	}
+
+	public String getClosing() {
+		return closing;
+	}
+
+	public void setClosing(String closing) {
+		this.closing = closing;
 	}
 	
 	
