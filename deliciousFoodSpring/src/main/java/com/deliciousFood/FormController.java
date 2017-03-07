@@ -9,6 +9,6 @@ public class FormController {
 
 	@RequestMapping("/form")
 	public String restaurantList(Model model) {
-		return "form.html";
+		return "form";
 	}
 }

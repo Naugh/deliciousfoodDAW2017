@@ -9,7 +9,7 @@ public class ContactController {
 
 	@RequestMapping("/contact")
 	public String restaurantList(Model model){
-		return "contact.html";
+		return "contact";
 	}
 	
 }

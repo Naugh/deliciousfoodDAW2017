@@ -9,6 +9,6 @@ public class OrderController {
 
 	@RequestMapping("/order")
 	public String orderList(Model model){
-		return "order.html";
+		return "order";
 	}
 }

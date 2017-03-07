@@ -9,7 +9,7 @@ public class ProductController {
 
 	@RequestMapping("/product")
 	public String restaurantList(Model model){
-		return "products.html";
+		return "products";
 	}
 	
 }
