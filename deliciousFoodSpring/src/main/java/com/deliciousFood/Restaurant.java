@@ -28,6 +28,10 @@ public class Restaurant {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 	
+	/*
+	@OneToMany
+	private List<Request> requests = new ArrayList<>();
+	*/
 
 	public Restaurant() {
 	}
