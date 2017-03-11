@@ -1,16 +1,19 @@
 package com.deliciousFood;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 
 @Entity
 public class Order {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private Long id;
 	
 	private String name;
 	private String surnames;
@@ -18,6 +21,8 @@ public class Order {
 	private String phone;
 	private String postal;
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	private Restaurant restaurant;
 	
 	
 	public Order(){
@@ -107,6 +112,13 @@ public class Order {
 		this.postal = postal;
 	}
 	
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
 	
 
 }
