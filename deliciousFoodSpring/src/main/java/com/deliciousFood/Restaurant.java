@@ -15,7 +15,7 @@ public class Restaurant {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private long id;
 	
 	private String name;
 	private String address;
@@ -28,10 +28,10 @@ public class Restaurant {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 	
-	/*
+	
 	@OneToMany
 	private List<Request> requests = new ArrayList<>();
-	*/
+	
 
 	public Restaurant() {
 	}
@@ -117,6 +117,14 @@ public class Restaurant {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public List<Request> getRequests() {
+		return requests;
+	}
+
+	public void setRequests(List<Request> requests) {
+		this.requests = requests;
 	}
 	
 	

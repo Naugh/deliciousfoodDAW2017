@@ -19,10 +19,11 @@ public class RequestController {
 	
 	@PostConstruct
 	public void init() {
-		/*Request o1 = new Request("Carlos", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "91162111", "28999", 50.0);
+		Request o1 = new Request("Carlos", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "91162111", "28999", 50.0);
 		Restaurant r1 = new Restaurant("diCarlos", "Leganes", "diCarlos@algo.com", "911123111", "27999", "11:00", "23:00");
+		r1.getRequests().add(o1);
 		requestRepository.save(o1);
-		restaurantRepository.save(r1);*/
+		restaurantRepository.save(r1);
 	
 	}
 	
