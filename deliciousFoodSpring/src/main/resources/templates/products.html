@@ -19,29 +19,13 @@
 				<tbody>
 					{{#products}}
 					<tr>
-						<!--  <td>
-							<div class="amount">
-								<div class="input-group">
-									<span class="input-group-btn">
-										<button type="button" class="btn btn-danger btn-number"
-											data-type="minus" data-field="quant[{{-index}}]">
-											<span class="glyphicon glyphicon-minus"></span>
-										</button>
-									</span> <input type="text" name="quant[{{-index}}]"
-										class="form-control input-number" value="0" min="0" max="99">
-									<span class="input-group-btn">
-										<button type="button" class="btn btn-success btn-number"
-											data-type="plus" data-field="quant[{{-index}}]">
-											<span class="glyphicon glyphicon-plus"></span>
-										</button>
-									</span>
-								</div>
-							</div>
-						</td>-->
-						<td class="txtNombre">{{nombre}}</td>
-						<td>{{precio}}</td>
-						<td>{{descripcion}}</td>
-						<td><button type="button" class="btn btn-success" >Añadir</button></td>
+						<td class="txtNombre product{{-index}}">{{name}}</td>
+						<td class="product{{-index}}">{{price}}</td>
+						<td>{{description}}</td>
+						<td>
+							<input type="hidden" value="{{id}}"/>
+							<button type="button" class="btn btn-success" onclick="addProduct({{-index}});">Añadir</button>
+						</td>
 					</tr>
 					{{/products}}
 				</tbody>
@@ -53,45 +37,17 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Detalles del pedido</div>
 					<div class="panel-body">
+					<form action='/request/{{restaurant}}' method='POST'>
 						<table class="table table-responsive table=striped">
-							<tr>
-								<td><span class="glyphicon glyphicon-remove"
-									aria-hidden="true"></span></td>
-								<td><span class="amount">2</span></td>
-								<td><span>x</span></td>
-								<td><span class="product"><strong>Pizza
-											carbonara</strong></span></td>
-								<td><span class="price">20 �</span></td>
-							</tr>
-							<tr>
-								<td><span class="glyphicon glyphicon-remove"
-									aria-hidden="true"></span></td>
-								<td><span class="amount">1</span></td>
-								<td><span>x</span></td>
-								<td><span class="product"><strong>Calzone</strong></span></td>
-								<td><span class="price">10 �</span></td>
-							</tr>
-							<tr>
-								<td><span class="glyphicon glyphicon-remove"
-									aria-hidden="true"></span></td>
-								<td><span class="amount">5</span></td>
-								<td><span>x</span></td>
-								<td><span class="product"><strong>Pizza
-											barbacoa</strong></span></td>
-								<td><span class="price">100 �</span></td>
-							</tr>
-							<tr class="active">
-								<td><span class="h4"> Total </span></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td><span id="total" class="h4">60 �</span></td>
+							<tr class="active" id="totalRow">
+								<td colspan="4"><span class="h4"> Total </span></td>
+								<td><span id="totalID" class="h4">0</span> 
+								<input type="hidden" name="total" value="0"/>
+								<span class="glyphicon glyphicon-euro"></span></td>
 							</tr>
 						</table>
-						<a class="btn btn-success btn-lg btn-block" href="order.html">Finalizar</a>
-						<!-- <input class="btn btn-success btn-lg btn-block" type="submit" value="Finalizar">-->
-						<table class="table">
-						</table>
+						<button type="submit" class="btn btn-success btn-lg btn-block">Finalizar</button>
+					</form>
 					</div>
 				</div>
 			</div>

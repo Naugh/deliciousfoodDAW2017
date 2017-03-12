@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -20,6 +21,8 @@ public class Request {
 	private String postal;
 	private Double price;
 	
+	@ManyToOne
+	Restaurant restaurant;
 	
 	public Request(){
 		

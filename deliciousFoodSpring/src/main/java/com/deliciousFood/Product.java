@@ -12,65 +12,70 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String nombre;
-	private String descripcion;
-	private Double precio;
-	private Integer cantidad;
+	private String name;
+	private String description;
+	private Double price;
+	private Integer amount;
 	
 	
 	public Product() {
 	}
 
-	public Product(String nombre, String descripcion, Double precio) {
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.precio = precio;
+
+	public Product(String name, String description, Double price) {
+		this.name = name;
+		this.description = description;
+		this.price = price;
 	}
 
-	public Product(String nombre, String descripcion, Double precio, int cantidad) {
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.precio = precio;
-		this.cantidad = cantidad;
-	}
 
 	public long getId() {
 		return id;
 	}
 
+
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
-	public Double getPrecio() {
-		return precio;
+
+	public Double getPrice() {
+		return price;
 	}
 
-	public void setPrecio(Double precio) {
-		this.precio = precio;
+
+	public void setPrice(Double price) {
+		this.price = price;
 	}
 
-	public int getCantidad() {
-		return cantidad;
+
+	public Integer getAmount() {
+		return amount;
 	}
 
-	public void setCantidad(int cantidad) {
-		this.cantidad = cantidad;
+
+	public void setAmount(Integer amount) {
+		this.amount = amount;
 	}
+
 }

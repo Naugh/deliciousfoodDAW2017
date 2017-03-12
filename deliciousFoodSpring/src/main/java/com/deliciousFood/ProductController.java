@@ -20,6 +20,7 @@ public class ProductController {
 		Long idR = Long.parseLong(id);
 		Restaurant r = restaurantRepository.findById(idR);
 		model.addAttribute("products", r.getProducts());
+		model.addAttribute("restaurant", r.getId());
 		return "products";
 	}
 }
