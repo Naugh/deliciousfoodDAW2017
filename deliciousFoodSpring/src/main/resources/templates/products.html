@@ -11,38 +11,37 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Cantidad</th>
 						<th id="nombre_plato">Nombre del plato</th>
 						<th>Precio</th>
 						<th>Descripcion</th>
 					</tr>
 				</thead>
 				<tbody>
-
 					{{#products}}
 					<tr>
-						<td>
+						<!--  <td>
 							<div class="amount">
 								<div class="input-group">
 									<span class="input-group-btn">
 										<button type="button" class="btn btn-danger btn-number"
-											data-type="minus" data-field="quant[2]">
+											data-type="minus" data-field="quant[{{-index}}]">
 											<span class="glyphicon glyphicon-minus"></span>
 										</button>
-									</span> <input type="text" name="quant[2]"
-										class="form-control input-number" value="10" min="1" max="100">
+									</span> <input type="text" name="quant[{{-index}}]"
+										class="form-control input-number" value="0" min="0" max="99">
 									<span class="input-group-btn">
 										<button type="button" class="btn btn-success btn-number"
-											data-type="plus" data-field="quant[2]">
+											data-type="plus" data-field="quant[{{-index}}]">
 											<span class="glyphicon glyphicon-plus"></span>
 										</button>
 									</span>
 								</div>
 							</div>
-						</td>
+						</td>-->
 						<td class="txtNombre">{{nombre}}</td>
 						<td>{{precio}}</td>
 						<td>{{descripcion}}</td>
+						<td><button type="button" class="btn btn-success" >Añadir</button></td>
 					</tr>
 					{{/products}}
 				</tbody>
@@ -55,7 +54,6 @@
 					<div class="panel-heading">Detalles del pedido</div>
 					<div class="panel-body">
 						<table class="table table-responsive table=striped">
-
 							<tr>
 								<td><span class="glyphicon glyphicon-remove"
 									aria-hidden="true"></span></td>
