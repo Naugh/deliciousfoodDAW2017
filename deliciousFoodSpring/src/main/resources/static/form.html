@@ -40,175 +40,159 @@
                     <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed --><a class="navbar-brand" href="index.html">Business Casual</a> </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li> <a href="index.html">Inicio</a> </li>
-                        <li> <a href="restaurants.html">Restaurantes</a> </li>
-                        <li class="hidden"> <a href="form.html">Registro</a> </li>
-                    </ul>
-                    <div class="hidden">
-                        <form class="navbar-form navbar-right form-inline">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" placeholder="tucorreo@dominio.com"> </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Tu contraseña"> </div>
-                            <button type="submit" class="btn btn-success">Conectarse</button>
-                        </form>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <div id="logged"><span>Bienvenido</span> <span><strong>Rafael Ramirez</strong></span> </div>
-                        </li>
-                        <li> <a href="form.html"> Editar perfil</a></li>
+                    <ul class="nav navbar-nav navbar-center">
+                        <li> <a href="index.html">Datos</a> </li>
+                        <li> <a href="form.html"> Productos </a></li>
+                        <li> <a href="form.html"> Pedidos </a></li>
+                        <li> <a href="form.html"> Cerrar sesión</a></li>
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
             </div>
-            <!-- /.container -->
         </nav>
     </div>
     <div class="container">
         <div class="row">
-        <div class="col-sm-8 col-md-offset-2">
-            <hr>
-            <h2 class="intro-text text-center">
+            <div class="col-sm-8 col-md-offset-2">
+                <hr>
+                <h2 class="intro-text text-center">
                 <strong>Registro</strong>
             </h2>
-            <hr>
-            <form class="form-horizontal" data-toggle="validator">
-                <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="Email"> </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña"> </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña" required> </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="tipoUsuario" class="col-sm-2 control-label">Tipo usuario</label>
-                    <div class="col-sm-10">
-                        <label class="radio-inline">
-                            <input type="radio" name="tipoUsuario" id="inlineRadio1" value="option1"> Cliente </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="tipoUsuario" id="inlineRadio2" value="option2"> Restaurante </label>
+                <hr>
+                <form class="form-horizontal" data-toggle="validator">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email"> </div>
                     </div>
-                </div>
-                <br>
-                <div class="form-group">
-                    <label for="inputName" class="col-sm-2 control-label">Nombre</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputName" placeholder="Nombre"> </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputSurname" placeholder="Apellidos"> </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputTlf" placeholder="Teléfono"> </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputDir" placeholder="Dirección"> </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputCP" placeholder="Código Postal"> </div>
-                </div>
-                <div class="form-group categorias">
-                    <label for="inputCat" class="col-sm-2 control-label">Categorías</label>
-                    <div class="col-sm-10">
-                        <table class="table" id="inputCat">
-                            <tr>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Pizza </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Hamburguesa </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Japonesa </label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Española </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Vegetariana </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> China </label>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Italiana </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> Turca </label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox"> India </label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                    <br>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña"> </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
-                    <div class="col-sm-10">
-                        <input type="file" id="inputImg">
-                        <p class="help-block">Suba una imagen de su restaurante</p>
+                    <div class="form-group">
+                        <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña" required> </div>
                     </div>
-                </div>
-                <br>
-                <div class="form-group text-center">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-success">Registrarse</button>
+                    <br>
+                    <div class="form-group">
+                        <label for="tipoUsuario" class="col-sm-2 control-label">Tipo usuario</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="tipoUsuario" id="inlineRadio1" value="option1"> Cliente </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="tipoUsuario" id="inlineRadio2" value="option2"> Restaurante </label>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" placeholder="Nombre"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSurname" placeholder="Apellidos"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputTlf" placeholder="Teléfono"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputDir" placeholder="Dirección"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputCP" placeholder="Código Postal"> </div>
+                    </div>
+                    <div class="form-group categorias">
+                        <label for="inputCat" class="col-sm-2 control-label">Categorías</label>
+                        <div class="col-sm-10">
+                            <table class="table" id="inputCat">
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Pizza </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Hamburguesa </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Japonesa </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Española </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Vegetariana </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> China </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Italiana </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> Turca </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> India </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
+                        <div class="col-sm-10">
+                            <input type="file" id="inputImg">
+                            <p class="help-block">Suba una imagen de su restaurante</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group text-center">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Registrarse</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
     <!-- /.container -->
