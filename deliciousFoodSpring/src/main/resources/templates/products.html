@@ -1,0 +1,90 @@
+	{{> header}}
+	<div class="container-fluid">
+         <hr>
+            <h2 class="intro-text text-center">
+                <strong>Elige tus productos</strong>
+            </h2>
+        <hr>
+        <div class="row">
+            <!-- tabla items -->
+            <div class="col-md-8">
+               <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> Cantidad </th>
+                            <th id="nombre_plato"> Nombre del plato </th>
+                            <th> Precio </th>
+                            <th> Descripcion </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                    	{{#products}}
+                        <tr>
+                            <td>
+                                <div class="input-group"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-minus"></span> </button>
+                                    </span>
+                                    <input type="text" name="quant[2]" class="form-control input-number input-sm" value="0" min="0" max="100"> <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-number btn-sm" data-type="plus" data-field="quant[2]">
+                                            <span class="glyphicon glyphicon-plus"></span> </button>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="txtNombre"> {{nombre}}</td>
+                            <td> {{precio}}</td>
+                            <td> {{descripcion}}</td>
+                        </tr>
+                        {{/products}}
+                    </tbody>
+                </table>
+            </div>
+            <!-- listadelpedido -->
+            <div class="col-md-4">
+                <div id="order">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Detalles del pedido</div>
+                        <div class="panel-body">
+                            <table class="table table-responsive table=striped">
+                            	
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                    <td><span class="amount">2</span></td>
+                                    <td><span>x</span></td>
+                                    <td><span class="product"><strong>Pizza carbonara</strong></span></td>
+                                    <td><span class="price">20 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                    <td><span class="amount">1</span></td>
+                                    <td><span>x</span></td>
+                                    <td><span class="product"><strong>Calzone</strong></span></td>
+                                    <td><span class="price">10 €</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                    <td><span class="amount">5</span></td>
+                                    <td><span>x</span></td>
+                                    <td><span class="product"><strong>Pizza barbacoa</strong></span></td>
+                                    <td><span class="price">100 €</span></td>
+                                </tr>
+                                <tr class="active">
+                                    <td><span class="h4"> Total </span></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span id="total" class="h4">60 €</span></td>
+                                </tr>
+                            </table> <a class="btn btn-success btn-lg btn-block" href="order.html">Finalizar</a>
+                            <!-- <input class="btn btn-success btn-lg btn-block" type="submit" value="Finalizar">-->
+                            <table class="table"> </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+   {{> footer}}
+   
