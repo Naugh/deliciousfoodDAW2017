@@ -20,6 +20,7 @@ public class Request {
 	private String phone;
 	private String postal;
 	private Double price;
+	private boolean delivered=false;
 	
 	@ManyToOne
 	Restaurant restaurant;
@@ -39,6 +40,17 @@ public class Request {
 		this.setPrice(price);
 	}
 
+	
+
+	public Request(String name, String surnames, String adress, String phone, String postal,Double price, boolean delivered) {
+		this.name = name;
+		this.surnames = surnames;
+		this.address = adress;
+		this.phone = phone;
+		this.postal = postal;
+		this.setPrice(price);
+		this.delivered = delivered;
+	}
 
 
 	public long getId() {
@@ -120,6 +132,18 @@ public class Request {
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+
+
+
+	public boolean isDelivered() {
+		return delivered;
+	}
+
+
+
+	public void setDelivered(boolean delivered) {
+		this.delivered = delivered;
 	}
 	
 

@@ -1,6 +1,5 @@
 package com.deliciousFood;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,8 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
-
-import org.hibernate.mapping.Value;
 
 @Entity
 public class Restaurant {

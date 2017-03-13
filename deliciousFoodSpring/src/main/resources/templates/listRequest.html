@@ -1,0 +1,40 @@
+{{> header}}
+    <div class="container-fluid">
+         <hr>
+            <h2 class="intro-text text-center">
+                <strong>Pedidos</strong>
+            </h2>
+        <hr>
+        <div class="row">
+            <!-- tabla pedidos -->
+            <div class="col-sm-8 col-md-offset-2">
+               <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> Dirección </th>
+                            <th> Teléfono </th>
+                            <th> Precio </th>
+                            <th> Estado </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	{{#requests}}
+                        <tr>
+                            <td> {{address}} </td>
+                            <td> {{phone}} </td>
+                            <td> {{price}} <span class="glyphicon glyphicon-euro"> </span> </td> 
+                            <td> {{#delivered}} <span class="text-warning"> <strong> Pendiente </strong> </span> {{/delivered}}
+                            	 {{^delivered}} <span class="text-primary"> <strong> Entregado </strong></span> {{/delivered}}                           	
+                            </td>
+                       
+                            
+                        </tr>
+                        {{/requests}}
+                    </tbody>
+                </table>
+            </div>
+         
+        </div>
+    </div>
+    <!-- /.container -->
+{{> footer}}

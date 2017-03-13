@@ -19,6 +19,9 @@ public class RequestController {
 	@Autowired
 	private ProductRepository productRepository;
 	
+	@Autowired
+	private RequestRepository requestRepository;
+	
 	
 	@PostConstruct
 	public void init() {
@@ -42,4 +45,13 @@ public class RequestController {
 		model.addAttribute("total",total);
 		return "request";
 	}
+	@RequestMapping("/requests")
+	public String orderList(Model model){
+		
+		model.addAttribute("requests", requestRepository.findAll());
+		
+		return "listRequest";
+	}
+	
+	
 }
