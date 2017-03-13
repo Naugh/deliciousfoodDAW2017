@@ -70,6 +70,7 @@ public class Restaurant {
 		this.postalCode = postalCode;
 		this.opening = opening;
 		this.closing = closing;
+		this.image="0";
 	}
 
 	public long getId() {
