@@ -1,8 +1,9 @@
-	{{> header}}
-	<div class="container-fluid">
-		<div class="row">
-			<!-- Filtros de categorias -->
-			<div class="col-md-4">
+ {{> header}}
+<div class="container-fluid">
+	<div class="row">
+		<!-- Filtros de categorias -->
+		<div class="col-md-4">
+			<form method="post" action="/restaurant">
 				<ul class="list-group filtros">
 					<li>
 						<hr>
@@ -13,85 +14,90 @@
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox" checked="true"> <span
-								class="category">PIZZA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="pizza"> <span class="category">PIZZA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">HAMBURGUESA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="hamburguesa"> <span class="category">HAMBURGUESA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">JAPONESA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="japonesa"> <span class="category">JAPONESA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">ESPAÑOLA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="española"> <span class="category">ESPAÑOLA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">VEGETARIANA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="vegetariana"> <span class="category">VEGETARIANA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">CHINA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="china"> <span class="category">CHINA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">ITALIANA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="italiana"> <span class="category">ITALIANA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">TURCA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="turca"> <span class="category">TURCA</span></label>
 						</div>
 					</li>
 					<li class="list-group-item fondoFiltro">
 						<div class="checkbox">
-							<label> <input type="checkbox"> <span
-								class="category">INDIA</span></label>
+							<label> <input type="checkbox" name="categories"
+								value="india"> <span class="category">INDIA</span></label>
 						</div>
 					</li>
 				</ul>
-			</div>
-			<!-- Lista de restaurantes relacionados -->
-			<div class="col-md-8">
-				<ul class="list-group lista-restaurantes">
-					<li>
-						<hr>
-						<h2 class="intro-text text-center">
-							<strong>Lista de Restaurantes</strong>
-						</h2>
-						<hr>
-					</li>
-					{{#restaurants}}
-					<li class="list-group-item itemListaRest">
-						<a href="/item">
-							<!--  <img src="/img/telepizza%20ejemplo.jpg" />-->
-							<img src="data:image/jpg;base64,{{image}}" width="150 px" height="150 px">
-						</a>
-						<h5 class="nombre-rest">
-							<a href="/products/{{id}}">{{name}}</a>
-						</h5>
-						<p class="direccion">{{address}}</p>
-					</li>
-					{{/restaurants}}
-				</ul>
-			</div>
+			</form>
+		</div>
+		<!-- Lista de restaurantes relacionados -->
+		<div class="col-md-8">
+			<ul class="list-group lista-restaurantes">
+				<li>
+					<hr>
+					<h2 class="intro-text text-center">
+						<strong>Lista de Restaurantes</strong>
+					</h2>
+					<hr>
+				</li> 
+				{{#restaurants}}
+				<li class="list-group-item itemListaRest"><a href="/item">
+						<!--  <img src="/img/telepizza%20ejemplo.jpg" />--> <img
+						src="data:image/jpg;base64,{{image}}" width="150 px"
+						height="150 px">
+				</a>
+					<h5 class="nombre-rest">
+						<a href="/products/{{id}}">{{name}}</a>
+					</h5>
+					<p class="direccion">{{address}}</p>
+				</li> 
+				{{/restaurants}}
+			</ul>
 		</div>
 	</div>
-	<!-- /.container -->
-	{{> footer}}
+</div>
+<script>
+$(document).ready(initRestaurants);
+</script>
+
+<!-- /.container -->
+{{> footer}}

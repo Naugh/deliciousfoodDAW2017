@@ -62,3 +62,13 @@ function changeForm(){
         $(".image").show();
     }
 }
+
+//Restaurant.html
+function initRestaurants(){
+	$("input[name='categories']").on("click",updateRestaurants);
+	
+}
+
+function updateRestaurants(){
+	$("form").submit();
+}

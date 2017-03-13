@@ -1,16 +1,21 @@
 package com.deliciousFood;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
+
+import org.hibernate.mapping.Value;
 
 @Entity
 public class Restaurant {
@@ -26,6 +31,9 @@ public class Restaurant {
 	private String postalCode;
 	private String opening;
 	private String closing;
+	
+	@ElementCollection
+	Map<String, String> categories;
 	
 	
 	@Lob
@@ -43,12 +51,13 @@ public class Restaurant {
 	public Restaurant() {
 	}
 
-	public Restaurant(String name, String address, String email, String phone, String postalCode, String image) {
+	public Restaurant(String name, String address, String email, String phone, String postalCode,Map<String, String>  categories, String image) {
 		this.name = name;
 		this.address = address;
 		this.email = email;
 		this.phone = phone;
 		this.postalCode = postalCode;
+		this.categories=categories;
 		this.image=image;
 	}
 	
@@ -149,6 +158,14 @@ public class Restaurant {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public Map<String, String>  getCategories() {
+		return categories;
+	}
+
+	public void setCategories(Map<String, String>  categories) {
+		this.categories = categories;
 	}
 	
 	

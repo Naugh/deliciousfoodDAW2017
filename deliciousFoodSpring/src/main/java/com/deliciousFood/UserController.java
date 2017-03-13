@@ -1,6 +1,8 @@
 package com.deliciousFood;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +35,11 @@ public class UserController {
 			userRepository.save(u);
 		}else{
 			System.out.println("restaurante");
-			Restaurant r = new Restaurant(userName,address,userEmail,phone,postalCode,new String(Base64.encodeBase64(image.getBytes())));
+			Map<String, String> cat = new HashMap<String, String>();
+			for(int i= 0; i<categories.length;i++){
+				cat.put(categories[i].toUpperCase(), categories[i].toLowerCase());
+			}
+			Restaurant r = new Restaurant(userName,address,userEmail,phone,postalCode,cat,new String(Base64.encodeBase64(image.getBytes())));
 			restaurantRepository.save(r);
 		}
 		return "index";
