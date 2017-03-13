@@ -9,6 +9,6 @@ public class IndexController {
 	
 	@RequestMapping("/")
 	public String restaurantList(Model model) {
-		return "index.html";
+		return "index";
 	}
 }
