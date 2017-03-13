@@ -80,13 +80,13 @@
 					{{#restaurants}}
 					<li class="list-group-item itemListaRest">
 						<a href="/item">
-							<img src="/img/telepizza%20ejemplo.jpg" />
+							<!--  <img src="/img/telepizza%20ejemplo.jpg" />-->
+							<img src="data:image/jpg;base64,{{image}}" width="150 px" height="150 px">
 						</a>
 						<h5 class="nombre-rest">
 							<a href="/products/{{id}}">{{name}}</a>
 						</h5>
 						<p class="direccion">{{address}}</p>
-						<p class="horario">Abierto de {{opening}} a {{closing}} </p>
 					</li>
 					{{/restaurants}}
 				</ul>

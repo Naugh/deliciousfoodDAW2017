@@ -18,7 +18,7 @@ public class RestaurantController {
 	
 	@PostConstruct
 	public void init() {
-		
+		/*
 		Restaurant r1 = new Restaurant("Telepizza", "Mostoles", "algo@algo.com", "911111111", "28999", "10:00", "23:00");
 		r1.getProducts().add(new Product("pizza barbacoa", "mozarella con base de tomate, carne picada, bacon y barbacoa", 8.0));
 		r1.getProducts().add(new Product("pizza carbonara", "crema con champiñones, bacon y salsa carbonara", 8.50));
@@ -81,12 +81,11 @@ public class RestaurantController {
 		
 		restaurantRepository.save(r1);
 		restaurantRepository.save(r2);
-		restaurantRepository.save(r3);
+		restaurantRepository.save(r3);*/
 	}
 	
 	@RequestMapping("/restaurant")
 	public String restaurantList(Model model){
-		
 		model.addAttribute("restaurants", restaurantRepository.findAll());
 		
 		return "restaurants";

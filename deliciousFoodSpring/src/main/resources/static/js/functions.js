@@ -48,3 +48,17 @@ function removeProduct(elem){
     }
     calculateTotal();
 }
+
+//Form.html
+function changeForm(){
+    var userType = $("input[name='userType']:checked").val();
+    if(userType==="user"){
+        $(".surname").show();
+        $(".categorias").hide();
+        $(".image").hide();
+    }else{
+        $(".surname").hide();
+        $(".categorias").show();
+        $(".image").show();
+    }
+}

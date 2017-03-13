@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -25,6 +27,11 @@ public class Restaurant {
 	private String opening;
 	private String closing;
 	
+	
+	@Lob
+	@Column(length=20000)
+	private String image;
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 	
@@ -36,6 +43,15 @@ public class Restaurant {
 	public Restaurant() {
 	}
 
+	public Restaurant(String name, String address, String email, String phone, String postalCode, String image) {
+		this.name = name;
+		this.address = address;
+		this.email = email;
+		this.phone = phone;
+		this.postalCode = postalCode;
+		this.image=image;
+	}
+	
 	public Restaurant(String name, String address, String email, String phone, String postalCode,
 			String opening, String closing) {
 		this.name = name;
@@ -125,6 +141,14 @@ public class Restaurant {
 
 	public void setRequests(List<Request> requests) {
 		this.requests = requests;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	
