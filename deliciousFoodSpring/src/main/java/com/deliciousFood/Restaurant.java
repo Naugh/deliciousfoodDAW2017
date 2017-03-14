@@ -30,6 +30,7 @@ public class Restaurant {
 	private String postalCode;
 	private String opening;
 	private String closing;
+	private String password;
 	
 	@ElementCollection
 	Map<String, String> categories;
@@ -53,7 +54,7 @@ public class Restaurant {
 	public Restaurant() {
 	}
 
-	public Restaurant(String name, String address, String email, String phone, String postalCode,Map<String, String>  categories, String image) {
+	public Restaurant(String name, String password, String address, String email, String phone, String postalCode,Map<String, String>  categories, String image) {
 		this.name = name;
 		this.address = address;
 		this.email = email;
@@ -61,6 +62,7 @@ public class Restaurant {
 		this.postalCode = postalCode;
 		this.categories=categories;
 		this.image=image;
+		this.password=password;
 	}
 	
 	public Restaurant(String name, String address, String email, String phone, String postalCode,
@@ -169,6 +171,22 @@ public class Restaurant {
 
 	public void setCategories(Map<String, String>  categories) {
 		this.categories = categories;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 	
 	

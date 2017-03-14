@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-public class UserController {
+public class PersonController {
 	
 	@Autowired
-	UserRepository userRepository;
+	PersonRepository personRepository;
 	
 	@Autowired
 	RestaurantRepository restaurantRepository;
@@ -31,15 +31,15 @@ public class UserController {
 		
 		if(userType.equals("user")){
 			System.out.println("persona");
-			User u= new User(userName, password, userSurname, address, userEmail, phone, postalCode);
-			userRepository.save(u);
+			Person u= new Person(userName, password, userSurname, address, userEmail, phone, postalCode);
+			personRepository.save(u);
 		}else{
 			System.out.println("restaurante");
 			Map<String, String> cat = new HashMap<String, String>();
 			for(int i= 0; i<categories.length;i++){
 				cat.put(categories[i].toUpperCase(), categories[i].toLowerCase());
 			}
-			Restaurant r = new Restaurant(userName,address,userEmail,phone,postalCode,cat,new String(Base64.encodeBase64(image.getBytes())));
+			Restaurant r = new Restaurant(userName,password,address,userEmail,phone,postalCode,cat,new String(Base64.encodeBase64(image.getBytes())));
 			restaurantRepository.save(r);
 		}
 		return "index";
