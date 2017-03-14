@@ -1,10 +1,12 @@
 package com.deliciousFood;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,6 +29,9 @@ public class User {
 	
 	@OneToMany
 	private List<Request> requests = new ArrayList<>();
+	
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles = new ArrayList<>(Arrays.asList("USER"));;
 	
 	public User() {
 	}

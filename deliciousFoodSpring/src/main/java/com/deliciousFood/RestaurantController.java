@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RestaurantController {
@@ -86,17 +85,9 @@ public class RestaurantController {
 	}
 	
 	@RequestMapping("/restaurant")
-	public String restaurantList(Model model, @RequestParam(required=false) String[] categories){
+	public String restaurantList(Model model){
 		
-		if(categories==null){
-			model.addAttribute("restaurants", restaurantRepository.findAll());
-		}else{
-			for(int i= 0; i<categories.length;i++){
-				System.out.println(categories[i]);
-			}
-			model.addAttribute("restaurants", restaurantRepository.findAll());
-		}
-		
+		model.addAttribute("restaurants", restaurantRepository.findAll());
 		
 		return "restaurants";
 	}
