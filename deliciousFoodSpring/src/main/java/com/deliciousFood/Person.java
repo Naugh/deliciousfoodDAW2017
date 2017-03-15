@@ -13,19 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Person {
+public class Person extends User{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	private String name;
-	private String password;
+		
 	private String surnames;
-	private String address;
-	private String email;
-	private String phone;
-	private String postalCode;
+	
 	
 	@OneToMany
 	private List<Request> requests = new ArrayList<>();
@@ -36,15 +31,9 @@ public class Person {
 	public Person() {
 	}
 
-	public Person(String name, String password, String surnames, String address, String email, String phone,
-			String postalCode) {
-		this.name = name;
-		this.password = password;
-		this.surnames = surnames;
-		this.address = address;
-		this.email = email;
-		this.phone = phone;
-		this.postalCode = postalCode;
+	public Person(String name, String surnames, String password, String email, String address, String phone, String postalCode) {
+		super(name, password, email, address, phone, postalCode);
+		this.surnames=surnames;
 	}
 
 	public long getId() {
@@ -55,60 +44,12 @@ public class Person {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getSurnames() {
 		return surnames;
 	}
 
 	public void setSurnames(String surnames) {
 		this.surnames = surnames;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getPostalCode() {
-		return postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
 	}
 
 	public List<Request> getRequests() {
@@ -126,6 +67,8 @@ public class Person {
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
+
+	
 
 }
 

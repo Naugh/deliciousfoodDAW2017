@@ -1,4 +1,4 @@
-package com.deliciousFood;
+/*package com.deliciousFood;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class UserRepositoryAuthProvider implements AuthenticationProvider{
 			if(isUser){
 				userComponent.setLoggedUser(person);
 			}else{
-				userComponent.setLoggedUser(restaurant);
+				//userComponent.setLoggedUser(restaurant);
 			}
 			
 			
@@ -76,3 +76,4 @@ public class UserRepositoryAuthProvider implements AuthenticationProvider{
 		return true;
 	}
 }
+*/

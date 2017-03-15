@@ -17,20 +17,14 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Restaurant {
+public class Restaurant extends User{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String name;
-	private String address;
-	private String email;
-	private String phone;
-	private String postalCode;
 	private String opening;
 	private String closing;
-	private String password;
 	
 	@ElementCollection
 	Map<String, String> categories;
@@ -54,141 +48,102 @@ public class Restaurant {
 	public Restaurant() {
 	}
 
-	public Restaurant(String name, String password, String address, String email, String phone, String postalCode,Map<String, String>  categories, String image) {
-		this.name = name;
-		this.address = address;
-		this.email = email;
-		this.phone = phone;
-		this.postalCode = postalCode;
-		this.categories=categories;
+
+	public Restaurant(String name, String password, String email, String address, String phone, String postalCode,Map<String, String> categories, String image) {
+		super(name, password, email, address, phone, postalCode);
 		this.image=image;
-		this.password=password;
+		this.categories=categories;
 	}
-	
-	public Restaurant(String name, String address, String email, String phone, String postalCode,
-			String opening, String closing) {
-		this.name = name;
-		this.address = address;
-		this.email = email;
-		this.phone = phone;
-		this.postalCode = postalCode;
-		this.opening = opening;
-		this.closing = closing;
-		this.image="0";
+
+
+	public Restaurant(String name, String address, String email, String phone, String postalCode, String opening, String closing) {
+		super(name,address,email,phone,postalCode);
+		this.opening=opening;
+		this.closing=closing;
+		
 	}
+
 
 	public long getId() {
 		return id;
 	}
 
+
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public String getPostalCode() {
-		return postalCode;
-	}
-
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
-	}
 
 	public String getOpening() {
 		return opening;
 	}
 
+
 	public void setOpening(String opening) {
 		this.opening = opening;
 	}
+
 
 	public String getClosing() {
 		return closing;
 	}
 
+
 	public void setClosing(String closing) {
 		this.closing = closing;
 	}
 
-	public List<Product> getProducts() {
-		return products;
+
+	public Map<String, String> getCategories() {
+		return categories;
 	}
 
-	public void setProducts(List<Product> products) {
-		this.products = products;
+
+	public void setCategories(Map<String, String> categories) {
+		this.categories = categories;
 	}
 
-	public List<Request> getRequests() {
-		return requests;
-	}
-
-	public void setRequests(List<Request> requests) {
-		this.requests = requests;
-	}
 
 	public String getImage() {
 		return image;
 	}
 
+
 	public void setImage(String image) {
 		this.image = image;
 	}
 
-	public Map<String, String>  getCategories() {
-		return categories;
+
+	public List<Product> getProducts() {
+		return products;
 	}
 
-	public void setCategories(Map<String, String>  categories) {
-		this.categories = categories;
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
-	public String getPassword() {
-		return password;
+
+	public List<Request> getRequests() {
+		return requests;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+
+	public void setRequests(List<Request> requests) {
+		this.requests = requests;
 	}
+
 
 	public List<String> getRoles() {
 		return roles;
 	}
+
 
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
 	
 	
+
 	
 }

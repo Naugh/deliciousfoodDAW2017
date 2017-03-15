@@ -39,7 +39,7 @@ public class PersonController {
 			for(int i= 0; i<categories.length;i++){
 				cat.put(categories[i].toUpperCase(), categories[i].toLowerCase());
 			}
-			Restaurant r = new Restaurant(userName,password,address,userEmail,phone,postalCode,cat,new String(Base64.encodeBase64(image.getBytes())));
+			Restaurant r = new Restaurant(userName,password, userEmail, address,phone,postalCode,cat,new String(Base64.encodeBase64(image.getBytes())));
 			restaurantRepository.save(r);
 		}
 		return "index";
