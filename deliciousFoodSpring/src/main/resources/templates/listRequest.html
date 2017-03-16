@@ -15,6 +15,7 @@
                             <th> Teléfono </th>
                             <th> Precio </th>
                             <th> Estado </th>
+                            <th> </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,10 +24,13 @@
                             <td> {{address}} </td>
                             <td> {{phone}} </td>
                             <td> {{price}} <span class="glyphicon glyphicon-euro"> </span> </td> 
-                            <td> {{#delivered}} <span class="text-warning"> <strong> Pendiente </strong> </span> {{/delivered}}
-                            	 {{^delivered}} <span class="text-primary"> <strong> Entregado </strong></span> {{/delivered}}                           	
-                            </td>
-                       
+                            <td> {{^delivered}} <span class="text-warning"> <strong> Pendiente </strong> </span> {{/delivered}}
+                            	 {{#delivered}} <span class="text-primary"> <strong> Entregado </strong></span> {{/delivered}} </td>
+                            <td> {{#delivered}} {{/delivered}}
+                            	 {{^delivered}}
+                            	 <input type="hidden" value="{{id}}"/>
+							     <a class="btn btn-primary btn-sm" role='button' onclick="setDelivered(TRUE);" href="/requests/{{id}}">Confirmar</a>
+                       			 {{/delivered}}
                             
                         </tr>
                         {{/requests}}

@@ -52,31 +52,37 @@ public class RestaurantController {
 		r3.getProducts().add(new Product("pizza ibérica", "pizza abundante de tomate y jamón", 10.50));		
 	
 		
-		Request o1 = new Request("Carlos", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "91162111", "28999", 50.0);
-		r1.getRequests().add(o1);
-		requestRepository.save(o1);
+		Request req1 = new Request("Carlos", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "91162111", "28999", 50.0);
+		r1.getRequests().add(req1);
+		requestRepository.save(req1);
 	
 		
-		Request o2 = new Request("Maria", "Hernandez Cabrera", "Calle Malta Nº21 8ºA", "91162451", "28989", 20.0);
-		r1.getRequests().add(o2);
-		requestRepository.save(o2);
+		Request req7 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991", 43.0, true);
+		r2.getRequests().add(req7);
+		requestRepository.save(req7);
+		
+		Request req2 = new Request("Maria", "Hernandez Cabrera", "Calle Malta Nº21 8ºA", "91162451", "28989", 20.0);
+		r1.getRequests().add(req2);
+		requestRepository.save(req2);
+		
+	
 		
 		
-		Request o3 = new Request("Teresa", "Garcia del Hoyo", "Avenida de Belgica Nº 2 Pº IZD", "96892111", "28699", 15.0);
-		r2.getRequests().add(o3);
-		requestRepository.save(o3);
+		Request req3 = new Request("Teresa", "Garcia del Hoyo", "Avenida de Belgica Nº 2 Pº IZD", "96892111", "28699", 15.0);
+		r2.getRequests().add(req3);
+		requestRepository.save(req3);
 		
-		Request o4 = new Request("Pedro", "Gutierrez Pacheco", "Avenida de las cañas", "91758945", "28989", 70.0);
-		r3.getRequests().add(o4);
-		requestRepository.save(o4);
+		Request req4 = new Request("Pedro", "Gutierrez Pacheco", "Avenida de las cañas", "91758945", "28989", 70.0);
+		r3.getRequests().add(req4);
+		requestRepository.save(req4);
 		
-		Request o5 = new Request("Victor", "Blanco Ruiz", "Calle del puerro Nº 9 Pº 9D", "91153411", "28994", 35.0);
-		r3.getRequests().add(o5);
-		requestRepository.save(o5);
+		Request req5 = new Request("Victor", "Blanco Ruiz", "Calle del puerro Nº 9 Pº 9D", "91153411", "28994", 35.0);
+		r3.getRequests().add(req5);
+		requestRepository.save(req5);
 		
-		Request o6 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991", 43.0, true);
-		r3.getRequests().add(o6);
-		requestRepository.save(o6);
+		Request req6 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991", 43.0, true);
+		r3.getRequests().add(req6);
+		requestRepository.save(req6);
 		
 		
 		restaurantRepository.save(r1);

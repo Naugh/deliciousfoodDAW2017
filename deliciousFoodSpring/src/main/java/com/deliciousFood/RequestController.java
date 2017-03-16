@@ -22,15 +22,14 @@ public class RequestController {
 	@Autowired
 	private RequestRepository requestRepository;
 	
+	@Autowired
+	private RestaurantRepository restaurantRepository;
 	
-	@PostConstruct
-	public void init() {
 
-	}
 	
 
 	@RequestMapping("/request/{id}")
-	public String orderList(Model model, @PathVariable String id, 
+	public String requestList(Model model, @PathVariable String id, 
 			@RequestParam String[] amounts, @RequestParam String[] products,
 			@RequestParam String total){
 		System.out.println(products[0]);
@@ -50,6 +49,15 @@ public class RequestController {
 		
 		model.addAttribute("requests", requestRepository.findAll());
 		
+		return "listRequest";
+	}
+	
+	@RequestMapping("/requests/{id}")
+	public String requestList(Model model, @PathVariable String id){
+		Long idR = Long.parseLong(id);
+		Restaurant r = restaurantRepository.findById(idR);
+		model.addAttribute("requests", r.getRequests());
+		model.addAttribute("restaurant", r.getId());
 		return "listRequest";
 	}
 	

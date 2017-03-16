@@ -1,5 +1,7 @@
 package com.deliciousFood;
 
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -146,5 +148,13 @@ public class Request {
 		this.delivered = delivered;
 	}
 	
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
 
 }
