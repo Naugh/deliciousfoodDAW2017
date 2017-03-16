@@ -32,7 +32,7 @@ public class Restaurant extends User{
 	
 	@Lob
 	@Column(length=20000)
-	private String image;
+	private String image="";
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
