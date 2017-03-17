@@ -16,8 +16,8 @@ public class ProductController {
 	RestaurantRepository restaurantRepository;
 
 
-
-@RequestMapping("/products/{id}")
+//  LO QUE VE EL USUARIO
+	@RequestMapping("/products/{id}")
 	public String productList(Model model,@PathVariable String id){
 		Long idR = Long.parseLong(id);
 		Restaurant r = restaurantRepository.findById(idR);
@@ -25,4 +25,16 @@ public class ProductController {
 		model.addAttribute("restaurant", r.getId());
 		return "products";
 	}
+
+	
+/*  LO QUE VE EL RESTAURANTE
+    @RequestMapping("/products/{id}")
+	public String productList(Model model,@PathVariable String id){
+	Long idR = Long.parseLong(id);
+	Restaurant r = restaurantRepository.findById(idR);
+	model.addAttribute("products", r.getProducts());
+	model.addAttribute("restaurant", r.getId());
+	return "editProducts";
+} */
 }
+

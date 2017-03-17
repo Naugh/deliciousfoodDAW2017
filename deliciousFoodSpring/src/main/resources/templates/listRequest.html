@@ -8,6 +8,7 @@
         <div class="row">
             <!-- tabla pedidos -->
             <div class="col-sm-8 col-md-offset-2">
+               
                <table class="table table-striped">
                     <thead>
                         <tr>
@@ -26,12 +27,12 @@
                             <td> {{price}} <span class="glyphicon glyphicon-euro"> </span> </td> 
                             <td> {{^delivered}} <span class="text-warning"> <strong> Pendiente </strong> </span> {{/delivered}}
                             	 {{#delivered}} <span class="text-primary"> <strong> Entregado </strong></span> {{/delivered}} </td>
-                            <td> {{#delivered}} {{/delivered}}
+                            <td> 
                             	 {{^delivered}}
-                            	 <input type="hidden" value="{{id}}"/>
-							     <a class="btn btn-primary btn-sm" role='button' onclick="setDelivered(TRUE);">Confirmar</a>
+                            	 <button type="button" class="btn btn-primary" onclick="setDelivered(TRUE);">Entregado</button>
                        			 {{/delivered}}
                        			 </td>                            
+                       		<td> {{delivered}}</td>
                         </tr>
                         {{/requests}}
                         <tr>
@@ -39,12 +40,17 @@
                         	<td> </td>
                         	<td> </td>
                         	<td> </td>
-                        	<td> <a href="/requests/restaurant+{{restaurant}}" class="btn btn-success"  type="submit" >Finalizar</a></td>
+                        	<td> <form action='/requests/{{restaurant}}' method='POST'>
+                        	
+                        		 <button type="submit" class="btn btn-success">Finalizar</button> 
+                        		 
+                        		 </form></td>
                              	
                         </tr>
 						
                     </tbody>
                 </table>
+               </form>
             </div>
         	
         </div>

@@ -18,64 +18,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                       
+                        {{#products}}
                         <tr>
                             <td>
                                 <div>
-                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
+                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]" onclick="removeProduct({{-index}});">
                                             <span class="glyphicon glyphicon-remove"></span> </button>
-                                        <button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]">
+                                        <button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]" >
                                             <span class="glyphicon glyphicon-pencil"></span> </button>
                                    
                                 </div>
                             </td>
-                            <td class="txtNombre"> Cuatro quesos</td>
-                            <td> 9.50€ </td>
-                            <td> Masa fresca, mezcla cuatro quesos y tomate </td>
+                            <td class="txtNombre"> {{name}} </td>
+                            <td class="product{{-index}}">{{price}} <span class="glyphicon glyphicon-euro"></span></td>
+                            <td> {{description }} </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
-                                            <span class="glyphicon glyphicon-remove"></span> </button>
-                                        <button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]">
-                                            <span class="glyphicon glyphicon-pencil"></span> </button>
-                                   
-                                </div>
-                            </td>
-                            <td class="txtNombre"> Peperoni</td>
-                            <td> 10.00€</td>
-                            <td> Doble ración de pepperoni y toppinga base de mozarella </td>
-                        </tr>
-                        
-                        <tr>
-                            <td>
-                                <div>
-                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
-                                            <span class="glyphicon glyphicon-remove"></span> </button>
-                                        <button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]">
-                                            <span class="glyphicon glyphicon-pencil"></span> </button>
-                                   
-                                </div>
-                            </td>
-                            <td class="txtNombre"> De la casa</td>
-                            <td> 11.50€ </td>
-                            <td> Masa fresca, tomate, anchoas, aceitunas y salsa especial de la casa </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]">
-                                            <span class="glyphicon glyphicon-remove"></span> </button>
-                                        <button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]">
-                                            <span class="glyphicon glyphicon-pencil"></span> </button>
-                                   
-                                </div>
-                            </td>
-                            <td class="txtNombre"> Barbacoa</td>
-                            <td> 10.00€</td>
-                            <td> Mozarella con tomate, carne picada, bacon y nuestra salsa barbacoa </td>
-                        </tr>
+                        {{/products}}
                     </tbody>
                 </table>
             </div>

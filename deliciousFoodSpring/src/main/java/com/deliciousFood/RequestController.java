@@ -25,7 +25,8 @@ public class RequestController {
 	@Autowired
 	private RestaurantRepository restaurantRepository;
 	
-
+	@Autowired
+	PersonRepository personRepository;
 	
 
 	@RequestMapping("/request/{id}")
@@ -46,13 +47,15 @@ public class RequestController {
 	}
 	
 	
-	@RequestMapping("/requests/restaurant+{id}")
+	@RequestMapping("/requests/{id}")
 	public String requestList(Model model, @PathVariable String id){
-		Long idR = Long.parseLong(id);
-		Restaurant r = restaurantRepository.findById(idR);
-		model.addAttribute("requests", r.getRequests());
-		model.addAttribute("restaurant", r.getId());
-		return "listRequest";
+		
+			Long idR = Long.parseLong(id);
+			Restaurant r = restaurantRepository.findById(idR);
+			model.addAttribute("requests", r.getRequests());
+			model.addAttribute("restaurant", r.getId());
+			return "listRequest";
+		
 	}
 	
 
