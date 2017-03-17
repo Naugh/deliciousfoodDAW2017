@@ -29,16 +29,26 @@
                             <td> {{#delivered}} {{/delivered}}
                             	 {{^delivered}}
                             	 <input type="hidden" value="{{id}}"/>
-							     <a class="btn btn-primary btn-sm" role='button' onclick="setDelivered(TRUE);" href="/requests/{{id}}">Confirmar</a>
+							     <a class="btn btn-primary btn-sm" role='button' onclick="setDelivered(TRUE);">Confirmar</a>
                        			 {{/delivered}}
-                            
+                       			 </td>                            
                         </tr>
                         {{/requests}}
+                        <tr>
+                        	<td> </td>
+                        	<td> </td>
+                        	<td> </td>
+                        	<td> </td>
+                        	<td> <a href="/requests/restaurant+{{restaurant}}" class="btn btn-success"  type="submit" >Finalizar</a></td>
+                             	
+                        </tr>
+						
                     </tbody>
                 </table>
             </div>
-         
+        	
         </div>
+       
     </div>
     <!-- /.container -->
 {{> footer}}

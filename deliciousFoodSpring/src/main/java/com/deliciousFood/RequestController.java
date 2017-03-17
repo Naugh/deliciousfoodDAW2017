@@ -4,9 +4,9 @@ package com.deliciousFood;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
+import org.h2.mvstore.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,15 +44,9 @@ public class RequestController {
 		model.addAttribute("total",total);
 		return "request";
 	}
-	@RequestMapping("/requests")
-	public String orderList(Model model){
-		
-		model.addAttribute("requests", requestRepository.findAll());
-		
-		return "listRequest";
-	}
 	
-	@RequestMapping("/requests/{id}")
+	
+	@RequestMapping("/requests/restaurant+{id}")
 	public String requestList(Model model, @PathVariable String id){
 		Long idR = Long.parseLong(id);
 		Restaurant r = restaurantRepository.findById(idR);
@@ -61,5 +55,6 @@ public class RequestController {
 		return "listRequest";
 	}
 	
+
 	
 }

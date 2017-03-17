@@ -15,7 +15,9 @@ public class ProductController {
 	@Autowired
 	RestaurantRepository restaurantRepository;
 
-	@RequestMapping("/products/{id}")
+
+
+@RequestMapping("/products/{id}")
 	public String productList(Model model,@PathVariable String id){
 		Long idR = Long.parseLong(id);
 		Restaurant r = restaurantRepository.findById(idR);
