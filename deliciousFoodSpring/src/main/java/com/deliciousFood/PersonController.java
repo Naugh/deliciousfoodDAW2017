@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,8 @@ public class PersonController {
 	
 	@Autowired
 	RestaurantRepository restaurantRepository;
+	
+	
 	
 	@RequestMapping("/user")
 	public String createUser(Model model, @RequestParam String userEmail,

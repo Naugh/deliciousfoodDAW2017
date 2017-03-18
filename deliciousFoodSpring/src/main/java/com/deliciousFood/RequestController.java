@@ -56,8 +56,24 @@ public class RequestController {
 			model.addAttribute("restaurant", r.getId());
 			return "listRequest";
 		
-	}
+	} 
 	
+/*	@RequestMapping("/requests/{id}")
+	public String requestList(Model model, @PathVariable String id){
+		
+			Long idR = Long.parseLong(id);
+			Person p = personRepository.findById(idR);
+			
+			model.addAttribute("requests", p.getRequests());
+			model.addAttribute("person", p.getId());
+			
+			Request request= requestRepository.findById(idR);
+			request.getRestaurant();
+			
+			
+			return "listRequestU";
+			
+	} */
 
 	
 }

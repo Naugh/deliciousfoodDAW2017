@@ -16,6 +16,9 @@ public class RestaurantController {
 	@Autowired
 	private RequestRepository requestRepository;
 	
+	@Autowired
+	private PersonRepository personRepository;
+	
 	@PostConstruct
 	public void init() {
 		
@@ -84,10 +87,21 @@ public class RestaurantController {
 		r3.getRequests().add(req6);
 		requestRepository.save(req6);
 		
+		Person p1= new Person("Jorge", "Ratón Lázaro", "asd", "jorge_raton@gmail.com","Av Alemania Nº3 P8ºA","685746523", "28915");
+		p1.getRequests().add(req1);
+		p1.getRequests().add(req2);
+		Person p2= new Person("Pablo", "Gutierrez Anton", "asd", "pablito@gmail.com","Av Polonia Nº8 P8º2","615946523", "28815");
+		p2.getRequests().add(req3);
+		p2.getRequests().add(req4);
+		p2.getRequests().add(req5);
+		p2.getRequests().add(req6);
 		
 		restaurantRepository.save(r1);
 		restaurantRepository.save(r2);
 		restaurantRepository.save(r3);
+		
+		personRepository.save(p1);
+		personRepository.save(p2);
 	}
 	
 	@RequestMapping("/restaurant")
