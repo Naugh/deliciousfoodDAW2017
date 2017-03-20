@@ -49,5 +49,5 @@ public class LoginController {
 			return new ResponseEntity<>(true, HttpStatus.OK);
 		}
 	}
-
+	
 }
