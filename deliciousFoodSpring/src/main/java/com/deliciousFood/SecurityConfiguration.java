@@ -31,27 +31,28 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
+		
+		// Public pages
+        http.authorizeRequests().anyRequest().permitAll();
+        
+        /*
+        // Private pages (all other pages)
+        http.authorizeRequests().antMatchers("/home").hasAnyRole("USER");
+        http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
+		*/
+        // Login form
+        http.formLogin().loginPage("/login");
+        http.formLogin().usernameParameter("email");
+        http.formLogin().passwordParameter("password");
+        http.formLogin().defaultSuccessUrl("/");
+        http.formLogin().failureUrl("/restaurant");
 
-		configureUrlAuthorization(http);
-
-		// Disable CSRF protection (it is difficult to implement with ng2)
-		http.csrf().disable();
-
-		// Use Http Basic Authentication
-		http.httpBasic();
-
-		// Do not redirect when logout
-		http.logout().logoutSuccessHandler((rq, rs, a) -> {	});
-	}
-
-	private void configureUrlAuthorization(HttpSecurity http) throws Exception {
-
-		// APP: This rules have to be changed by app developer
-
-		// URLs that need authentication to access to it
-
-		// Other URLs can be accessed without authentication
-		http.authorizeRequests().anyRequest().permitAll();
+        // Logout
+        http.logout().logoutUrl("/logout");
+        http.logout().logoutSuccessUrl("/");
+        
+        http.csrf().disable();
 	}
 
 	@Override

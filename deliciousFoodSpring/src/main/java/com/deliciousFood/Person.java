@@ -26,7 +26,7 @@ public class Person extends User{
 	private List<Request> requests = new ArrayList<>();
 	
 	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> roles = new ArrayList<>(Arrays.asList("PERSON"));;
+	private List<String> roles = new ArrayList<>(Arrays.asList("ROLE_PERSON"));;
 	
 	public Person() {
 	}
