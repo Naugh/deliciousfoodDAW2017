@@ -33,7 +33,7 @@ public class UserController {
 			@RequestParam MultipartFile image) throws IOException{
 		
 		if(userType.equals("user")){
-			Person u= new Person(userName, password, userSurname, address, userEmail, phone, postalCode);
+			Person u= new Person(userName, userSurname, password, userEmail, address, phone, postalCode);
 			personRepository.save(u);
 		}else{
 			Map<String, String> cat = new HashMap<String, String>();
