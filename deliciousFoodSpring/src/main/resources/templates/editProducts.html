@@ -8,7 +8,7 @@
         <div class="row">
             <!-- tabla items -->
             <div class="col-md-8">
-               <table class="table table-striped">
+               <table class="table table-striped" id='edit'>
                     <thead>
                         <tr>
                             <th> Modificar </th>
@@ -22,16 +22,22 @@
                         <tr>
                             <td>
                                 <div>
-                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]" onclick="removeProduct({{-index}});">
+                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]" onclick="deleteProdRest(this);">
                                             <span class="glyphicon glyphicon-remove"></span> </button>
-                                        <button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]" >
+                                        <button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]" onclick="editProdRest(this);">
                                             <span class="glyphicon glyphicon-pencil"></span> </button>
                                    
                                 </div>
                             </td>
-                            <td class="txtNombre"> {{name}} </td>
-                            <td class="product{{-index}}">{{price}} <span class="glyphicon glyphicon-euro"></span></td>
-                            <td> {{description }} </td>
+                            <td><span class="product"><strong> {{name}} </strong></span>
+                          	  <input name="nomProd" type="hidden" value="{{name}}"/>
+                            </td>
+                            <td><span class="product">{{price}}<span class="glyphicon glyphicon-euro"></span></span>
+                            <input name="price" type="hidden" value="{{price}}"/>
+                            </td>
+                            <td><span class="product">{{description}}</span>
+                            <input name="description" type="hidden" value="{{description}}"/>
+                            </td>
                         </tr>
                         {{/products}}
                     </tbody>
@@ -53,7 +59,7 @@
                                 <br>
                             </div>
                             
-                            <a class="btn btn-success btn-lg btn-block">Añadir</a>
+                            <a class="btn btn-success btn-lg btn-block" onclick="addProdRest();">Añadir</a>
                             <!-- <input class="btn btn-success btn-lg btn-block" type="submit" value="Finalizar">-->
                             <table class="table"> </table>
                         </div>

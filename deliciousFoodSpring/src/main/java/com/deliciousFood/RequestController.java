@@ -21,9 +21,6 @@ public class RequestController {
 	private ProductRepository productRepository;
 
 	@Autowired
-	private RequestRepository requestRepository;
-
-	@Autowired
 	private RestaurantRepository restaurantRepository;
 
 	@Autowired
