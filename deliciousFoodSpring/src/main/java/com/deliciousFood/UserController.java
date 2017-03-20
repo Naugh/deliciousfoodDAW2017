@@ -32,7 +32,7 @@ public class UserController {
 			@RequestParam String postalCode, @RequestParam (required = false) String[] categories,
 			@RequestParam MultipartFile image) throws IOException{
 		
-		if(userType.equals("user")){
+		if(userType.equals("person")){
 			Person u= new Person(userName, userSurname, password, userEmail, address, phone, postalCode);
 			personRepository.save(u);
 		}else{

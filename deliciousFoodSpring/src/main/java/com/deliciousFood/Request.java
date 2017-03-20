@@ -33,10 +33,10 @@ public class Request {
 
 
 
-	public Request(String name, String surnames, String adress, String phone, String postal,Double price) {
+	public Request(String name, String surnames, String address, String phone, String postal,Double price) {
 		this.name = name;
 		this.surnames = surnames;
-		this.address = adress;
+		this.address = address;
 		this.phone = phone;
 		this.postal = postal;
 		this.setPrice(price);
@@ -44,10 +44,10 @@ public class Request {
 
 	
 
-	public Request(String name, String surnames, String adress, String phone, String postal,Double price, boolean delivered) {
+	public Request(String name, String surnames, String address, String phone, String postal,Double price, boolean delivered) {
 		this.name = name;
 		this.surnames = surnames;
-		this.address = adress;
+		this.address = address;
 		this.phone = phone;
 		this.postal = postal;
 		this.setPrice(price);
