@@ -1,0 +1,35 @@
+{{> header}}
+<div class="controller">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<hr>
+			<h2 class="intro-text text-center">
+				<strong>Necesita estar logeado para continuar</strong>
+			</h2>
+			<hr>
+			<form class="form-horizontal" method="post" action="/login">
+				<div class="form-group">
+					<label for="inputEmail" class="col-sm-2 control-label">Email</label>
+					<div class="col-sm-10">
+						<input name="email" type="email" class="form-control"
+							id="inputEmail" placeholder="tucorreo@dominio.com">
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+					<label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
+					<div class="col-sm-10">
+						<input name="password" type="password" class="form-control"
+							id="inputPassword" placeholder="Tu contraseña">
+					</div>
+				</div>
+				<div class="form-group text-center">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-success">Conectarse</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{{> footer}}

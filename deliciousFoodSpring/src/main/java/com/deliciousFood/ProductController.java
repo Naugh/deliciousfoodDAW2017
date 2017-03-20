@@ -28,7 +28,7 @@ public class ProductController {
 		} else if (request.isUserInRole("ROLE_RESTAURANT")) {
 			return "editProducts";
 		}
-		return "index";
+		return "login";
 	}
 
 	@RequestMapping("/products")
