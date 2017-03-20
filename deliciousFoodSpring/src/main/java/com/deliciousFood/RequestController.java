@@ -74,6 +74,11 @@ public class RequestController {
 			return "listRequestU";
 			
 	} */
-
 	
+	
+	@RequestMapping("/requestEnd")
+	public String ending (Model model){
+		
+		return "requestEnd";
+	}
 }

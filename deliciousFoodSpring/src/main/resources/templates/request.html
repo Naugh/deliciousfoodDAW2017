@@ -45,6 +45,7 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">Detalles del pedido</div>
 				<div class="panel-body">
+					<form action='/requestEnd' method='POST'>
 					<table class="table">
 						{{#products}}
 						<tr>
@@ -65,8 +66,8 @@
 					</table>
 					<input class="btn btn-success btn-lg btn-block" type="submit"
 						value="Finalizar">
-					<table class="table">
-					</table>
+					</form>
+				
 				</div>
 			</div>
 		</div>
