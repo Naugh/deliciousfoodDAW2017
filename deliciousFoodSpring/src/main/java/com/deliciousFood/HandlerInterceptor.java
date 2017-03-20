@@ -18,8 +18,6 @@ public class HandlerInterceptor extends HandlerInterceptorAdapter{
 		boolean isPerson = request.isUserInRole("ROLE_PERSON");
 		boolean isRestaurant = request.isUserInRole("ROLE_RESTAURANT");
         if (modelAndView != null) {
-        	System.out.println("PERSONA ==>" + isPerson);
-        	System.out.println("RESTAURANTE ==>" + isRestaurant);
         	modelAndView.getModelMap().addAttribute("isPerson", isPerson);
             modelAndView.getModelMap().addAttribute("isRestaurant", isRestaurant);
         }

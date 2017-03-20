@@ -62,3 +62,14 @@ function changeForm(){
         $(".image").show();
     }
 }
+
+//listRequest.html
+function deliver(elem){
+	var index = $(elem).parent().parent().index();
+	$("input[name='delivered']")[index].value=true;
+	var spanDel = $($("span.delivered")[index]);
+	spanDel.html("<strong> Entregado </strong>");
+	spanDel.removeClass("text-warning");
+	spanDel.addClass("text-primary");	
+	elem.remove();
+}

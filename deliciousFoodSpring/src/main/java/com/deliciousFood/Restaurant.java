@@ -23,9 +23,6 @@ public class Restaurant extends User{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	private String opening;
-	private String closing;
-	
 	@ElementCollection
 	Map<String, String> categories;
 	
@@ -56,14 +53,6 @@ public class Restaurant extends User{
 	}
 
 
-	public Restaurant(String name, String address, String email, String phone, String postalCode, String opening, String closing) {
-		super(name,address,email,phone,postalCode);
-		this.opening=opening;
-		this.closing=closing;
-		
-	}
-
-
 	public long getId() {
 		return id;
 	}
@@ -71,26 +60,6 @@ public class Restaurant extends User{
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-
-	public String getOpening() {
-		return opening;
-	}
-
-
-	public void setOpening(String opening) {
-		this.opening = opening;
-	}
-
-
-	public String getClosing() {
-		return closing;
-	}
-
-
-	public void setClosing(String closing) {
-		this.closing = closing;
 	}
 
 

@@ -1,8 +1,9 @@
 package com.deliciousFood;
 
-
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.h2.mvstore.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,65 +16,71 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RequestController {
-	
+
 	@Autowired
 	private ProductRepository productRepository;
-	
+
 	@Autowired
 	private RequestRepository requestRepository;
-	
+
 	@Autowired
 	private RestaurantRepository restaurantRepository;
-	
+
 	@Autowired
 	PersonRepository personRepository;
-	
 
 	@RequestMapping("/request/{id}")
-	public String requestList(Model model, @PathVariable String id, 
-			@RequestParam String[] amounts, @RequestParam String[] products,
-			@RequestParam String total){
-		System.out.println(products[0]);
-		List<Product> productList= new ArrayList<Product>();
-		for(int i = 0; i<products.length;i++){
+	public String requestList(Model model, @PathVariable String id, @RequestParam String[] amounts,
+			@RequestParam String[] products, @RequestParam String total) {
+		List<Product> productList = new ArrayList<Product>();
+		for (int i = 0; i < products.length; i++) {
 			Product p = productRepository.findById(Long.parseLong(products[i]));
 			p.setAmount(Integer.parseInt(amounts[i]));
 			productList.add(p);
 		}
-		model.addAttribute("restaurant",id);
+		model.addAttribute("restaurant", id);
 		model.addAttribute("products", productList);
-		model.addAttribute("total",total);
+		model.addAttribute("total", total);
 		return "request";
 	}
-	
-	
-	@RequestMapping("/requests/{id}")
-	public String requestList(Model model, @PathVariable String id){
-		
-			Long idR = Long.parseLong(id);
-			Restaurant r = restaurantRepository.findById(idR);
+
+	@RequestMapping("/requests")
+	public String requestList(Model model, @RequestParam(required = false) boolean[] delivered,
+			HttpServletRequest request) {
+		if (request.isUserInRole("ROLE_RESTAURANT")) {
+			Restaurant r = restaurantRepository.findByEmail(request.getUserPrincipal().getName());
+			if (delivered != null) {
+				for (int i = 0; i < r.getRequests().size(); i++) {
+					r.getRequests().get(i).setDelivered(delivered[i]);
+					restaurantRepository.save(r);
+				}
+			}
 			model.addAttribute("requests", r.getRequests());
 			model.addAttribute("restaurant", r.getId());
-			return "listRequest";
-		
-	} 
-	
-/*	@RequestMapping("/requests/{id}")
-	public String requestList(Model model, @PathVariable String id){
-		
-			Long idR = Long.parseLong(id);
-			Person p = personRepository.findById(idR);
-			
-			model.addAttribute("requests", p.getRequests());
-			model.addAttribute("person", p.getId());
-			
-			Request request= requestRepository.findById(idR);
-			request.getRestaurant();
-			
-			
-			return "listRequestU";
-			
-	} */
+		} else if (request.isUserInRole("ROLE_PERSON")) {
+			Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
+			model.addAttribute("requests",p.getRequests());
+		}
+		return "listRequest";
 
-	
+	}
+
+	/*
+	 * @RequestMapping("/requests/{id}") public String requestList(Model
+	 * model, @PathVariable String id){
+	 * 
+	 * Long idR = Long.parseLong(id); Person p = personRepository.findById(idR);
+	 * 
+	 * model.addAttribute("requests", p.getRequests());
+	 * model.addAttribute("person", p.getId());
+	 * 
+	 * Request request= requestRepository.findById(idR);
+	 * request.getRestaurant();
+	 * 
+	 * 
+	 * return "listRequestU";
+	 * 
+	 * }
+	 */
+
 }
