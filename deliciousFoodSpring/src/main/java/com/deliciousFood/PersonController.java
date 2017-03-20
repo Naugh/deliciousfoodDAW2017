@@ -28,15 +28,13 @@ public class PersonController {
 			@RequestParam String password, @RequestParam String userType, 
 			@RequestParam String userName, @RequestParam String userSurname,
 			@RequestParam String phone, @RequestParam String address, 
-			@RequestParam String postalCode, @RequestParam String[] categories,
+			@RequestParam String postalCode, @RequestParam (required = false) String[] categories,
 			@RequestParam MultipartFile image) throws IOException{
 		
 		if(userType.equals("user")){
-			System.out.println("persona");
 			Person u= new Person(userName, password, userSurname, address, userEmail, phone, postalCode);
 			personRepository.save(u);
 		}else{
-			System.out.println("restaurante");
 			Map<String, String> cat = new HashMap<String, String>();
 			for(int i= 0; i<categories.length;i++){
 				cat.put(categories[i].toUpperCase(), categories[i].toLowerCase());
