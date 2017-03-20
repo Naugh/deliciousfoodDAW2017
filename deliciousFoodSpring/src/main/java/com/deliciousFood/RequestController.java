@@ -57,6 +57,7 @@ public class RequestController {
 			}
 			model.addAttribute("requests", r.getRequests());
 			model.addAttribute("restaurant", r.getId());
+<<<<<<< HEAD
 		} else if (request.isUserInRole("ROLE_PERSON")) {
 			Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
 			model.addAttribute("requests",p.getRequests());
@@ -83,4 +84,33 @@ public class RequestController {
 	 * }
 	 */
 
+=======
+			return "listRequest";
+		
+	} 
+	
+/*	@RequestMapping("/requests/{id}")
+	public String requestList(Model model, @PathVariable String id){
+		
+			Long idR = Long.parseLong(id);
+			Person p = personRepository.findById(idR);
+			
+			model.addAttribute("requests", p.getRequests());
+			model.addAttribute("person", p.getId());
+			
+			Request request= requestRepository.findById(idR);
+			request.getRestaurant();
+			
+			
+			return "listRequestU";
+			
+	} */
+	
+	
+	@RequestMapping("/requestEnd")
+	public String ending (Model model){
+		
+		return "requestEnd";
+	}
+>>>>>>> branch 'master' of https://github.com/Naugh/deliciousfoodDAW2017.git
 }
