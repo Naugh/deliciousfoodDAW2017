@@ -1,0 +1,46 @@
+{{> header}}
+    <div class="container-fluid">
+         <hr>
+            <h2 class="intro-text text-center">
+                <strong>Pedidos</strong>
+            </h2>
+        <hr>
+        <div class="row">
+            <!-- tabla pedidos -->
+            <div class="col-sm-8 col-md-offset-2">
+               
+               <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> Restaurante </th>
+                            <th> TelÃ©fono </th>
+                            <th> Dirección </th>
+                            <th> Precio </th>
+                            
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	{{#requests}}
+                        <tr>
+                        	{{#restaurant}}
+                            <td> {{name}} </td>
+                            <td> {{phone}} </td>
+                            <td> {{address}} </td>
+                            {{/restaurant}}
+                            <td> {{price}}  <span class="glyphicon glyphicon-euro"> </span> </td> 
+                          
+                        </tr>
+                        {{/requests}}
+                       
+						
+                    </tbody>
+                </table>
+               </form>
+            </div>
+        	
+        </div>
+       
+    </div>
+    <!-- /.container -->
+{{> footer}}
