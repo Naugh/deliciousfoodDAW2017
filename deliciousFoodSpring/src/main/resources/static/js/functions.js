@@ -76,8 +76,8 @@ function deliver(elem){
 
 //editProducts.html
 function deleteProdRest(elem){
-    var index = $(elem).parent().parent().index();
-     $("#edit tr:eq("+index+1+")").remove();
+    var index = $(elem).parent().parent().parent().index();
+     $("#edit tr:eq("+(index+1)+")").remove();
 }
 
 function addProdRest(){
@@ -88,7 +88,7 @@ function addProdRest(){
     
     $('table#edit').append(row);
     row.html('<td><div><button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]" onclick="deleteProdRest(this);"><span class="glyphicon glyphicon-remove"></span></button> '
-             +'<button type="button" class="btn btn-warning btn-number btn-sm" data-type="plus" data-field="quant[2]"  onclick="editProdRest(this);"><span class="glyphicon glyphicon-pencil"></span> </button></div></td>'
+             +'<button type="button" class="btn btn-warning btn-number btn-sm hidden" data-type="plus" data-field="quant[2]"  onclick="editProdRest(this);"><span class="glyphicon glyphicon-pencil"></span> </button></div></td>'
              +'<td><span class="product"><strong>'+nomProd+'</strong></span>'
              +'<input name="nomProd" type="hidden" value="'+nomProd+'"/></td>'
              +'<td><span class="product">'+precio+'<span class="glyphicon glyphicon-euro"></span></span>'
@@ -101,12 +101,6 @@ function addProdRest(){
 }
 
 function editProdRest(elem){
-     var index = $(elem).index();
-    console.log(index);
-   $('.product').hide();
-    $('input[type=hidden]').get(2).type='text';
-    $('input[type=hidden]').get(1).type='text';
-    $('input[type=hidden]').get(0).type='text';
-  
-    
+	var index = $(elem).parent().parent().parent().index();
+	
 }
