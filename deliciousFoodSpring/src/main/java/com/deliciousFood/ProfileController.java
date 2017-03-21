@@ -5,11 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class FormController {
+public class ProfileController {
 
-	@RequestMapping("/form")
-	public String signUp(Model model) {
+	@RequestMapping("/editProfile")
+	public String editProfile(Model model) {
 		
-		return "form";
+		return "editProfile";
 	}
 }
