@@ -14,18 +14,18 @@
                     <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                            <input name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email"> </div>
+                            <input name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{email}}"> </div>
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
                         <div class="col-sm-10">
-                            <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"> </div>
+                            <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"  value="{{password}}"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña" required> </div>
+                            <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña"  value="{{password}}" required> </div>
                     </div>
                     <br>
                    
@@ -33,27 +33,29 @@
                     <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Nombre</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"> </div>
+                            <input type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"  value="{{name}}"> </div>
                     </div>
+                     {{#isPerson}}
                     <div class="form-group surname">
                         <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"> </div>
+                            <input type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"  value="{{surname}}"> </div>
                     </div>
+                    {{/isPerson}}
                     <div class="form-group">
                         <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"> </div>
+                            <input type="number" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"  value="{{phone}}"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"> </div>
+                            <input type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"  value="{{address}}"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"> </div>
+                            <input type="number" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"  value="{{postalCode}}"> </div>
                     </div>
                     {{#isRestaurant}}
                     <div class="form-group categorias">
@@ -64,39 +66,20 @@
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="categories" value="pizza"> Pizza </label>
+                           
+                                                <input type="checkbox" name="categories" value="pizza" {{#categories0}} checked {{/categories0}}> Pizza </label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="categories" value="hamburguesa"> Hamburguesa </label>
+                                                <input type="checkbox" name="categories" value="hamburguesa" {{#categories1}} checked {{/categories1}} > Hamburguesa </label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="categories" value="japonesa"> Japonesa </label>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="categories" value="española"> Española </label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="categories" value="vegetariana"> Vegetariana </label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="categories" value="china"> China </label>
+                                                <input type="checkbox" name="categories" value="japonesa" {{#categories2}} checked {{/categories2}}> Japonesa </label>
                                         </div>
                                     </td>
                                 </tr>
@@ -104,19 +87,39 @@
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="categories" value="italiana"> Italiana </label>
+                                                <input type="checkbox" name="categories" value="española" {{#categories3}} checked {{/categories3}}> Española </label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="categories"  value="turca"> Turca </label>
+                                                <input type="checkbox" name="categories" value="vegetariana" {{#categories4}} checked {{/categories4}}> Vegetariana </label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="categories" value="india"> India </label>
+                                                <input type="checkbox" name="categories" value="china" {{#categories5}} checked {{/categories5}}> China </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="italiana" {{#categories6}} checked {{/categories6}}> Italiana </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories"  value="turca" {{#categories7}} checked {{/categories7}}> Turca </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="india" {{#categories8}} checked {{/categories8}}> India </label>
                                         </div>
                                     </td>
                                 </tr>
@@ -128,7 +131,7 @@
                         <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
                         <div class="col-sm-10">
                             <input type="file" id="inputImg" name="image">
-                            <p class="help-block">Suba una imagen de su restaurante</p>
+                            <p class="help-block">Suba una imagen de su restaurante para cambiarla</p>
                         </div>
                     </div>
                    {{/isRestaurant}} 
@@ -147,8 +150,5 @@
             </div>
         </div>
     </div>
-    <script>
-    $(document).ready(changeForm);
-    </script>
     <!-- /.container -->
 {{> footer}}
