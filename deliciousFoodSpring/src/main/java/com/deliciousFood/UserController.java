@@ -92,6 +92,19 @@ public class UserController {
 		return "index";
 	}
 	
+	@RequestMapping("/editProfile")
+	public String editProfile(Model model, HttpServletRequest request) {
+		if (request.isUserInRole("ROLE_RESTAURANT")) {
+			Restaurant r = restaurantRepository.findByEmail(request.getUserPrincipal().getName());
+			model.addAttribute("restaurant", r);
+			
+		}
+		if (request.isUserInRole("ROLE_PERSON")) {
+			Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
+		}
+		
+		return "editProfile";
+	}
 	
 	@RequestMapping("/loginUser")
 	public String loginPage(HttpSession session) {

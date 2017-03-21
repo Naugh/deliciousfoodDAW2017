@@ -52,7 +52,7 @@ function removeProduct(elem){
 //Form.html
 function changeForm(){
     var userType = $("input[name='userType']:checked").val();
-    if(userType==="user"){
+    if(userType==="person"){
         $(".surname").show();
         $(".categorias").hide();
         $(".image").hide();
