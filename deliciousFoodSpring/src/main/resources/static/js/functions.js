@@ -104,3 +104,34 @@ function editProdRest(elem){
 	var index = $(elem).parent().parent().parent().index();
 	
 }
+
+//restaurant
+/*{{#restaurants}}
+<li class="list-group-item itemListaRest"><a href="/item">
+		<!--  <img src="/img/telepizza%20ejemplo.jpg" />--> <img
+		src="data:image/jpg;base64,{{image}}" width="150 px"
+		height="150 px">
+</a>
+	<h5 class="nombre-rest">
+		<a href="/products/{{id}}">{{name}}</a>
+	</h5>
+	<p class="direccion">{{address}} <br> {{phone}} , {{email}}</p>
+</li> 
+{{/restaurants}}*/
+function getTenRestaurants(){
+	$.ajax({
+		url:"/restaurant/?page="+page+"&size=10",
+		success:addTenRestaurants
+	});
+}
+
+function addTenRestaurants(result){
+	var content = result["content"];
+	for(var i=0;i<content.length;i++){
+		$("#restaurantList").append('<li class="list-group-item itemListaRest"><a href="/item">'
+				+'<img src="data:image/jpg;base64,'+content[i].image+'" width="150 px"	height="150 px"></a>'
+				+'<h5 class="nombre-rest"><a href="/products/{{id}}">'+ content[i].name +'</a></h5>'
+				+'<p class="direccion">'+ content[i].address +' <br>'+ content[i].phone +' ,' + content[i].email
+				+'</p></li>');
+	}
+}
