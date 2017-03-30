@@ -128,9 +128,9 @@ function getTenRestaurants(){
 function addTenRestaurants(result){
 	var content = result["content"];
 	for(var i=0;i<content.length;i++){
-		$("#restaurantList").append('<li class="list-group-item itemListaRest"><a href="/item">'
+		$("#restaurantList").append('<li class="list-group-item itemListaRest"><a href="/products/'+content[i].id+'">'
 				+'<img src="data:image/jpg;base64,'+content[i].image+'" width="150 px"	height="150 px"></a>'
-				+'<h5 class="nombre-rest"><a href="/products/{{id}}">'+ content[i].name +'</a></h5>'
+				+'<h5 class="nombre-rest"><a href="/products/'+content[i].id+'">'+ content[i].name +'</a></h5>'
 				+'<p class="direccion">'+ content[i].address +' <br>'+ content[i].phone +' ,' + content[i].email
 				+'</p></li>');
 	}
