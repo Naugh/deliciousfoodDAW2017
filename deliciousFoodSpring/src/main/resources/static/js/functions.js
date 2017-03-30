@@ -119,6 +119,8 @@ function editProdRest(elem){
 </li> 
 {{/restaurants}}*/
 function getTenRestaurants(){
+	$("#spinner").show();
+	$("#btnLoad").hide();
 	$.ajax({
 		url:"/restaurant/?page="+page+"&size=10",
 		success:addTenRestaurants
@@ -133,5 +135,10 @@ function addTenRestaurants(result){
 				+'<h5 class="nombre-rest"><a href="/products/'+content[i].id+'">'+ content[i].name +'</a></h5>'
 				+'<p class="direccion">'+ content[i].address +' <br>'+ content[i].phone +' ,' + content[i].email
 				+'</p></li>');
+	}
+	$("#spinner").hide();
+	page++;
+	if(!result["last"]){
+		$("#btnLoad").show();
 	}
 }

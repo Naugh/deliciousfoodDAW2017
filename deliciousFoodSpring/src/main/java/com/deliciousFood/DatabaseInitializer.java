@@ -40,17 +40,30 @@ public class DatabaseInitializer {
 		r2.getProducts().add(new Product("pizza pecado carnal", "deliciosa combinacíon de carne", 10.0));
 		r2.getProducts().add(new Product("pizza bourbon", "deliciosa salsa de bourbon acompaña de bacon y pollo", 9.0));
 		r2.getProducts().add(new Product("pizza ibérica", "pizza abundante de tomate y jamón", 8.50));
-
-		Restaurant r3 = new Restaurant("Pizza Hut","asd", "pizzahut@pizzahut.com", "Mostoles", "91257651", "28969", null, imgTest);
-		r3.getProducts().add(new Product("pizza barbacoa", "mozarella con base de tomate, maiz bacon y barbacoa", 10.0));
-		r3.getProducts().add(new Product("pizza carbonara", "crema con champiñones, bacon y salsa carbonara", 9.50));
-		r3.getProducts().add(new Product("pizza tejana", "característica cebolla con jamon y maiz", 10.0));
-		r3.getProducts().add(new Product("pizza cuatro quesos", "deliciosa mezcla de quesos", 9.0));
-		r3.getProducts().add(new Product("pizza campiña", "refrescante combinación de verduras", 9.50));
-		r3.getProducts().add(new Product("pizza pecado carnal", "deliciosa combinacíon de carne", 10.0));
-		r3.getProducts().add(new Product("pizza hamburguer", "el sabor de una hamburguesa en una pizza", 9.0));
-		r3.getProducts().add(new Product("pizza ibérica", "pizza abundante de tomate y jamón", 10.50));
-
+		
+		for(int i = 0; i<45;i++){
+			Restaurant r3 = new Restaurant("Pizza Hut","asd", "pizzahut@pizzahut.com", "Mostoles", "91257651", "28969", null, imgTest);
+			r3.getProducts().add(new Product("pizza barbacoa", "mozarella con base de tomate, maiz bacon y barbacoa", 10.0));
+			r3.getProducts().add(new Product("pizza carbonara", "crema con champiñones, bacon y salsa carbonara", 9.50));
+			r3.getProducts().add(new Product("pizza tejana", "característica cebolla con jamon y maiz", 10.0));
+			r3.getProducts().add(new Product("pizza cuatro quesos", "deliciosa mezcla de quesos", 9.0));
+			r3.getProducts().add(new Product("pizza campiña", "refrescante combinación de verduras", 9.50));
+			r3.getProducts().add(new Product("pizza pecado carnal", "deliciosa combinacíon de carne", 10.0));
+			r3.getProducts().add(new Product("pizza hamburguer", "el sabor de una hamburguesa en una pizza", 9.0));
+			r3.getProducts().add(new Product("pizza ibérica", "pizza abundante de tomate y jamón", 10.50));
+			Request req4 = new Request("Pedro", "Gutierrez Pacheco", "Avenida de las cañas", "91758945", "28989", 70.0);
+			r3.getRequests().add(req4);
+			requestRepository.save(req4);
+	
+			Request req5 = new Request("Victor", "Blanco Ruiz", "Calle del puerro Nº 9 Pº 9D", "91153411", "28994", 35.0);
+			r3.getRequests().add(req5);
+			requestRepository.save(req5);
+	
+			Request req6 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991", 43.0, true);
+			r3.getRequests().add(req6);
+			requestRepository.save(req6);
+			restaurantRepository.save(r3);
+		}
 		Request req1 = new Request("Carlos", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "91162111", "28999", 50.0);
 		r1.getRequests().add(req1);
 		requestRepository.save(req1);
@@ -69,30 +82,16 @@ public class DatabaseInitializer {
 		r2.getRequests().add(req3);
 		requestRepository.save(req3);
 
-		Request req4 = new Request("Pedro", "Gutierrez Pacheco", "Avenida de las cañas", "91758945", "28989", 70.0);
-		r3.getRequests().add(req4);
-		requestRepository.save(req4);
-
-		Request req5 = new Request("Victor", "Blanco Ruiz", "Calle del puerro Nº 9 Pº 9D", "91153411", "28994", 35.0);
-		r3.getRequests().add(req5);
-		requestRepository.save(req5);
-
-		Request req6 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991", 43.0, true);
-		r3.getRequests().add(req6);
-		requestRepository.save(req6);
+		
 
 		Person p1 = new Person("Jorge", "Ratón Lázaro", "asd", "jorge_raton@gmail.com", "Av Alemania Nº3 P8ºA", "685746523", "28915");
 		p1.getRequests().add(req1);
 		p1.getRequests().add(req2);
 		Person p2 = new Person("Pablo", "Gutierrez Anton", "asd", "pablito@gmail.com", "Av Polonia Nº8 P8º2","615946523", "28815");
 		p2.getRequests().add(req3);
-		p2.getRequests().add(req4);
-		p2.getRequests().add(req5);
-		p2.getRequests().add(req6);
 
 		restaurantRepository.save(r1);
 		restaurantRepository.save(r2);
-		restaurantRepository.save(r3);
 
 		personRepository.save(p1);
 		personRepository.save(p2);

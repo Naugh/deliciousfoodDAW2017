@@ -80,8 +80,9 @@
 				
 			</ul>
 			<div class="form-group text-center">
-            	<div class="col-sm-offset-2 col-sm-10">
-                	<button type="button" class="btn btn-success" onclick="getTenRestaurants();">Cargar más</button>
+            	<div class="col-sm-offset-2 col-sm-6">
+            		<img alt="Cargando" src="../img/red_loader48.gif" id="spinner">
+                	<button type="button" class="btn btn-success" onclick="getTenRestaurants();" id="btnLoad">Cargar más</button>
                  </div>
             </div>
 		</div>
@@ -91,6 +92,7 @@
 <<script type="text/javascript">
 $(document).ready(function(){
 	getTenRestaurants();
+	$("#spinner").hide();
 });
 var page = 0;
 </script>
