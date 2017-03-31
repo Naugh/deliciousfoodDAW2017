@@ -14,26 +14,25 @@
                         <tr>
                             <th> Restaurante </th>
                             <th> Teléfono </th>
-                            <th> Direcci�n </th>
+                            <th> Productos </th>
                             <th> Precio </th>
                             
                             
                         </tr>
                     </thead>
                     <tbody>
-                    	{{#requests}}
+            	    	{{#requests}}
                         <tr>
-                        	{{#restaurant}}
                             <td> {{name}} </td>
-                            <td> {{phone}} </td>
-                            <td> {{address}} </td>
-                            {{/restaurant}}
-                            <td> {{price}}  <span class="glyphicon glyphicon-euro"> </span> </td> 
+            <!--            <td> {{phone}} </td>
+                            <td> {{products}} </td> 
+                       
+                            <td> {{price}}  <span class="glyphicon glyphicon-euro"> </span> </td>  -->
                           
                         </tr>
                         {{/requests}}
                        
-						
+						 
                     </tbody>
                 </table>
                 <input type="hidden" name="_csrf" value="{{token}}">

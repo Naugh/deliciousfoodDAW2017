@@ -59,12 +59,27 @@ public class RequestController {
 			}
 			model.addAttribute("requests", r.getRequests());
 			model.addAttribute("restaurant", r.getId());
+	//		return "listRequest";
+			
 		} else if (request.isUserInRole("ROLE_PERSON")) {
-			Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
-			model.addAttribute("requests",p.getRequests());
-		}
-		return "listRequest";
 
+		/*	Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
+			
+			List<Restaurant> restaurantList = new ArrayList<Restaurant>();
+			
+			for (int i=0; i < p.getRequests().size();i++){
+
+				Request req = p.getRequests().get(i);
+				restaurantList.add(req.getRestaurant());
+			}
+							
+			model.addAttribute("requests",p.getRequests());
+			model.addAttribute("restaurants", restaurantList);
+				
+			return "listRequestU"; */
+		}
+		
+		return "listRequest";
 	}
 
 	
