@@ -3,6 +3,7 @@ package com.deliciousFood;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -20,8 +21,8 @@ public class HandlerInterceptor extends HandlerInterceptorAdapter{
         if (modelAndView != null) {
         	modelAndView.getModelMap().addAttribute("isPerson", isPerson);
             modelAndView.getModelMap().addAttribute("isRestaurant", isRestaurant);
+            CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+            modelAndView.addObject("token", token.getToken()); 
         }
     }
-
-
 }
