@@ -41,7 +41,7 @@ public class DatabaseInitializer {
 		r2.getProducts().add(new Product("pizza bourbon", "deliciosa salsa de bourbon acompaña de bacon y pollo", 9.0));
 		r2.getProducts().add(new Product("pizza ibérica", "pizza abundante de tomate y jamón", 8.50));
 		
-		for(int i = 0; i<45;i++){
+		for(int i = 0; i<25;i++){
 			Restaurant r3 = new Restaurant("Pizza Hut","asd", "pizzahut@pizzahut.com", "Mostoles", "91257651", "28969", null, imgTest);
 			r3.getProducts().add(new Product("pizza barbacoa", "mozarella con base de tomate, maiz bacon y barbacoa", 10.0));
 			r3.getProducts().add(new Product("pizza carbonara", "crema con champiñones, bacon y salsa carbonara", 9.50));

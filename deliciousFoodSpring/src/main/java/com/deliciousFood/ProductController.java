@@ -27,33 +27,24 @@ public class ProductController {
 		Restaurant r = restaurantRepository.findById(idR);
 		model.addAttribute("products", r.getProducts());
 		model.addAttribute("restaurant", r.getId());
-		if (request.isUserInRole("ROLE_PERSON")) {
-			return "products";
-		} else if (request.isUserInRole("ROLE_RESTAURANT")) {
-			return "editProducts";
-		}
-		return "login";
+		return "products";
 	}
 
 	@RequestMapping("/products")
 	public String productListRestaurant(Model model, @RequestParam(required=false) String[] nomProd, 
 			@RequestParam(required=false) double[] price,@RequestParam(required=false) String[] description,
 			HttpServletRequest request) {
-		if (request.isUserInRole("ROLE_RESTAURANT")) {
-			Restaurant r = restaurantRepository.findByEmail(request.getUserPrincipal().getName());
-			if(nomProd!=null){
-				List<Product> products = new ArrayList<>();
-				for(int i = 0; i<nomProd.length;i++){
-					products.add(new Product(nomProd[i], description[i], price[i]));
-				}
-				r.setProducts(products);
-				restaurantRepository.save(r);
+		Restaurant r = restaurantRepository.findByEmail(request.getUserPrincipal().getName());
+		if(nomProd!=null){
+			List<Product> products = new ArrayList<>();
+			for(int i = 0; i<nomProd.length;i++){
+				products.add(new Product(nomProd[i], description[i], price[i]));
 			}
-			model.addAttribute("products", r.getProducts());
-			model.addAttribute("restaurant", r.getId());
-			return "editProducts";
-		} else {
-			return "index";
+			r.setProducts(products);
+			restaurantRepository.save(r);
 		}
+		model.addAttribute("products", r.getProducts());
+		model.addAttribute("restaurant", r.getId());
+		return "editProducts";
 	}
 }
