@@ -8,7 +8,7 @@
 	<div class="row">
 		<!-- tabla pedidos -->
 		<div class="col-sm-8 col-md-offset-2">
-			<form action='/requests' method='POST'>
+			<form action='/requests' method='POST' id='requests'>
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -22,6 +22,7 @@
 					<tbody>
 						{{#requests}}
 						<tr>
+							<input type="hidden" name="request" value="{{id}}">
 							<td>{{address}}</td>
 							<td>{{phone}}</td>
 							<td>{{price}} <span class="glyphicon glyphicon-euro">
@@ -49,6 +50,7 @@
 				<button type="submit" class="btn btn-success">Actualizar</button>
 				{{/isRestaurant}}
 				<input type="hidden" name="_csrf" value="{{token}}">
+				<input type="hidden" name="selectedRequest" value="">
 			</form>
 		</div>
 

@@ -106,18 +106,6 @@ function editProdRest(elem){
 }
 
 //restaurant
-/*{{#restaurants}}
-<li class="list-group-item itemListaRest"><a href="/item">
-		<!--  <img src="/img/telepizza%20ejemplo.jpg" />--> <img
-		src="data:image/jpg;base64,{{image}}" width="150 px"
-		height="150 px">
-</a>
-	<h5 class="nombre-rest">
-		<a href="/products/{{id}}">{{name}}</a>
-	</h5>
-	<p class="direccion">{{address}} <br> {{phone}} , {{email}}</p>
-</li> 
-{{/restaurants}}*/
 function getTenRestaurants(){
 	$("#spinner").show();
 	$("#btnLoad").hide();
@@ -141,4 +129,10 @@ function addTenRestaurants(result){
 	if(!result["last"]){
 		$("#btnLoad").show();
 	}
+}
+
+//Request
+function examineProducts(index){
+	$("input[name='selectedRequest']").val($("input[name='request']").get(index).value);
+	$("#requests").submit();
 }
