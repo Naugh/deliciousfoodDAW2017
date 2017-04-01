@@ -132,7 +132,7 @@ function addTenRestaurants(result){
 }
 
 //Request
-function examineProducts(index){
-	$("input[name='selectedRequest']").val($("input[name='request']").get(index).value);
-	$("#requests").submit();
+function examineProducts(id){
+	$("input[name='selectedRequest']").val(id);
+	$("form#products").submit();
 }

@@ -104,9 +104,9 @@ public class RequestController {
 	}
 	
 	@RequestMapping("/requests/products")
-	public String productDetail (Model model, @PathVariable long id){
+	public String productDetail (Model model, @RequestParam long selectedRequest){
 		
-			Request req = requestRepository.findById(id);
+			Request req = requestRepository.findById(selectedRequest);
 		    
 		    model.addAttribute("products", req.getProducts());
 		    model.addAttribute("total", req.getPrice());
