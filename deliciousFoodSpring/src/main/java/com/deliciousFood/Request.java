@@ -21,16 +21,16 @@ public class Request {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	private String name;
+	private String namePerson;
+	private String nameRestaurant;
 	private String surnames;
 	private String address;
-	private String phone;
+	private String phonePerson;
+	private String phoneRestaurant;
 	private String postal;
 	private Double price;
 	private boolean delivered=false;
 	
-	@ManyToOne
-	Restaurant restaurant;
 	
 	@OneToMany
 	private List<Product> products = new ArrayList<>();
@@ -40,28 +40,20 @@ public class Request {
 		
 	}
 
-
-
-	public Request(String name, String surnames, String address, String phone, String postal,Double price) {
-		this.name = name;
+	public Request(String namePerson, String nameRestaurant, String surnames, String address, String phonePerson,
+			String phoneRestaurant, String postal, Double price, List<Product> products) {
+		super();
+		this.namePerson = namePerson;
+		this.nameRestaurant = nameRestaurant;
 		this.surnames = surnames;
 		this.address = address;
-		this.phone = phone;
+		this.phonePerson = phonePerson;
+		this.phoneRestaurant = phoneRestaurant;
 		this.postal = postal;
-		this.setPrice(price);
+		this.price = price;
+		this.products = products;
 	}
 
-	
-
-	public Request(String name, String surnames, String address, String phone, String postal,Double price, boolean delivered) {
-		this.name = name;
-		this.surnames = surnames;
-		this.address = address;
-		this.phone = phone;
-		this.postal = postal;
-		this.setPrice(price);
-		this.delivered = delivered;
-	}
 
 
 	public long getId() {
@@ -77,13 +69,13 @@ public class Request {
 
 
 	public String getName() {
-		return name;
+		return namePerson;
 	}
 
 
 
 	public void setName(String name) {
-		this.name = name;
+		this.namePerson = name;
 	}
 
 
@@ -113,13 +105,13 @@ public class Request {
 
 
 	public String getPhone() {
-		return phone;
+		return phonePerson;
 	}
 
 
 
 	public void setPhone(String phone) {
-		this.phone = phone;
+		this.phonePerson = phone;
 	}
 
 
@@ -157,14 +149,6 @@ public class Request {
 		this.delivered = delivered;
 	}
 	
-	public Restaurant getRestaurant() {
-		return restaurant;
-	}
-
-
-	public void setRestaurant(Restaurant restaurant) {
-		this.restaurant = restaurant;
-	}
 	
 	public List<Product> getProducts() {
 		return products;
@@ -173,6 +157,66 @@ public class Request {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+
+
+	public String getNamePerson() {
+		return namePerson;
+	}
+
+
+
+	public void setNamePerson(String namePerson) {
+		this.namePerson = namePerson;
+	}
+
+
+
+	public String getNameRestaurant() {
+		return nameRestaurant;
+	}
+
+
+
+	public void setNameRestaurant(String nameRestaurant) {
+		this.nameRestaurant = nameRestaurant;
+	}
+
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+
+	public String getPhonePerson() {
+		return phonePerson;
+	}
+
+
+
+	public void setPhonePerson(String phonePerson) {
+		this.phonePerson = phonePerson;
+	}
+
+
+
+	public String getPhoneRestaurant() {
+		return phoneRestaurant;
+	}
+
+
+
+	public void setPhoneRestaurant(String phoneRestaurant) {
+		this.phoneRestaurant = phoneRestaurant;
 	}
 
 }

@@ -86,10 +86,14 @@ public class RequestController {
 	@RequestMapping("/request")
 	public String endRequest (Model model, @RequestParam String name,@RequestParam String surname,
 			@RequestParam String phone,@RequestParam String address, @RequestParam String postal,
-			@RequestParam double total, @RequestParam long restaurant, HttpServletRequest request){
-		Request r = new Request(name, surname, address, phone, postal, total);
+			@RequestParam double total, @RequestParam long restaurant, HttpServletRequest request, @RequestParam long[] products){
 		Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
 		Restaurant re = restaurantRepository.findById(restaurant);
+		List<Product> prod = new ArrayList<Product>();
+		for(int i = 0; i<products.length;i++){
+			prod.add(productRepository.findById(products[i]));
+		}
+		Request r = new Request(name,re.getName(),surname, address, phone, re.getPhone(), postal, total, prod);
 		requestRepository.save(r);
 		p.getRequests().add(r);
 		re.getRequests().add(r);

@@ -51,34 +51,32 @@ public class DatabaseInitializer {
 			r3.getProducts().add(new Product("pizza pecado carnal", "deliciosa combinacíon de carne", 10.0));
 			r3.getProducts().add(new Product("pizza hamburguer", "el sabor de una hamburguesa en una pizza", 9.0));
 			r3.getProducts().add(new Product("pizza ibérica", "pizza abundante de tomate y jamón", 10.50));
-			Request req4 = new Request("Pedro", "Gutierrez Pacheco", "Avenida de las cañas", "91758945", "28989", 70.0);
+			Request req4 = new Request("Pedro", "Gutierrez Pacheco", "Avenida de las cañas", "91758945", "28989", "", "", 70.0, null);
 			r3.getRequests().add(req4);
 			requestRepository.save(req4);
 	
-			Request req5 = new Request("Victor", "Blanco Ruiz", "Calle del puerro Nº 9 Pº 9D", "91153411", "28994", 35.0);
+			Request req5 = new Request("Victor", "Blanco Ruiz", "Calle del puerro Nº 9 Pº 9D", "91153411", "28994", "", "", 35.0, null);
 			r3.getRequests().add(req5);
 			requestRepository.save(req5);
 	
-			Request req6 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991", 43.0, true);
+			Request req6 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991", "", "", 43.0, null);
 			r3.getRequests().add(req6);
 			requestRepository.save(req6);
 			restaurantRepository.save(r3);
 		}
-		Request req1 = new Request("Carlos", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "91162111", "28999", 50.0);
+		Request req1 = new Request("Carlos", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "91162111", "28999", "", "", 50.0, null);
 		r1.getRequests().add(req1);
 		requestRepository.save(req1);
 
-		Request req7 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991",
-				43.0, true);
+		Request req7 = new Request("Susana", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "91162925", "28991","", "", 43.0, null);
 		r2.getRequests().add(req7);
 		requestRepository.save(req7);
 
-		Request req2 = new Request("Maria", "Hernandez Cabrera", "Calle Malta Nº21 8ºA", "91162451", "28989", 20.0);
+		Request req2 = new Request("Maria", "Hernandez Cabrera", "Calle Malta Nº21 8ºA", "91162451", "28989", "", "", 20.0, null);
 		r1.getRequests().add(req2);
 		requestRepository.save(req2);
 
-		Request req3 = new Request("Teresa", "Garcia del Hoyo", "Avenida de Belgica Nº 2 Pº IZD", "96892111", "28699",
-				15.0);
+		Request req3 = new Request("Teresa", "Garcia del Hoyo", "Avenida de Belgica Nº 2 Pº IZD", "96892111", "28699",	"", "", 15.0, null);
 		r2.getRequests().add(req3);
 		requestRepository.save(req3);
 
