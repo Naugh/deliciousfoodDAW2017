@@ -12,6 +12,7 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
+							<th>Detalles del pedido </th>
 							<th>Dirección</th>
 							<th>Teléfono</th>
 							<th>Precio</th>
@@ -23,6 +24,11 @@
 						{{#requests}}
 						<tr>
 							<input type="hidden" name="request" value="{{id}}">
+							
+							<form action='requests/products' method='POST' id='requests/products'>
+								<td> <button type="submit" class="btn btn-primary" onclick="(examineProducts(id));"> Mostrar </button>
+							
+							</form>
 							<td>{{address}}</td>
 							<td>{{phone}}</td>
 							<td>{{price}} <span class="glyphicon glyphicon-euro">
@@ -46,8 +52,11 @@
 						{{/requests}}
 					</tbody>
 				</table>
+				</br>
 				{{#isRestaurant}}
-				<button type="submit" class="btn btn-success">Actualizar</button>
+				<div class="text-center">
+					<button type="submit" class="btn btn-success btn-center">Actualizar</button>
+				</div>
 				{{/isRestaurant}}
 				<input type="hidden" name="_csrf" value="{{token}}">
 				<input type="hidden" name="selectedRequest" value="">

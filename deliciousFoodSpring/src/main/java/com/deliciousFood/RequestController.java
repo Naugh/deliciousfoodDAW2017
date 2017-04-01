@@ -61,7 +61,10 @@ public class RequestController {
 			
 		} else if (request.isUserInRole("ROLE_PERSON")) {
 
-		/*	Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
+/*			Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
+			
+		
+			
 			
 			List<Restaurant> restaurantList = new ArrayList<Restaurant>();
 			
@@ -75,7 +78,7 @@ public class RequestController {
 			model.addAttribute("restaurants", restaurantList);
 				
 			return "listRequestU"; */
-		}
+		} 
 		
 		return "listRequest";
 	}
@@ -98,5 +101,16 @@ public class RequestController {
 		restaurantRepository.save(re);
 		personRepository.save(p);
 		return "requestEnd";
+	}
+	
+	@RequestMapping("/requests/products")
+	public String productDetail (Model model, @PathVariable long id){
+		
+			Request req = requestRepository.findById(id);
+		    
+		    model.addAttribute("products", req.getProducts());
+		    model.addAttribute("total", req.getPrice());
+			
+		    return "productDetail";
 	}
 }
