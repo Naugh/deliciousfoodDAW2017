@@ -163,6 +163,10 @@ th {
     color: white;
 }
 
+#mostrar{
+	padding-left: 20%;
+}
+
 .container-fluid {
     padding-left: 2%;
     padding-right: 2%;
