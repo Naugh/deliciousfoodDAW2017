@@ -12,9 +12,9 @@
                <table class="table table-striped">
                     <thead>
                         <tr>
+                        	<th width= 175 px> Detalles del pedido </span></th>
                             <th> Restaurante </th>
                             <th> Teléfono </th>
-                            <th> Productos </th>
                             <th> Precio </th>
                             
                             
@@ -23,11 +23,12 @@
                     <tbody>
             	    	{{#requests}}
                         <tr>
-                            <td> {{name}} </td>
-            <!--            <td> {{phone}} </td>
-                            <td> {{products}} </td> 
-                       
-                            <td> {{price}}  <span class="glyphicon glyphicon-euro"> </span> </td>  -->
+                        	<form action='requests/products' method='POST' id='requests/products'>
+								<td> <span class="mostrar"><button type="submit" class="btn btn-primary" onclick="(examineProducts(id));"> Mostrar </button></span></td>
+							</form>
+                            <td> <strong> {{nameRestaurant}} </strong></td>
+            	            <td> {{phoneRestaurant}} </td>
+                            <td> {{price}}  <span class="glyphicon glyphicon-euro"> </span> </td>  
                           
                         </tr>
                         {{/requests}}
