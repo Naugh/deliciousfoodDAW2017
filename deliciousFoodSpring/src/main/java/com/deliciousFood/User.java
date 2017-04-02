@@ -2,10 +2,13 @@ package com.deliciousFood;
 
 import javax.persistence.MappedSuperclass;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @MappedSuperclass
 public abstract class User {
 	
 	private String name;
+	@JsonIgnore
 	private String password;
 	private String email;
 	private String address;

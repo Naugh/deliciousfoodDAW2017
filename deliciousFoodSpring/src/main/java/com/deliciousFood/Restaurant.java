@@ -16,6 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Restaurant extends User{
 	
@@ -34,7 +36,7 @@ public class Restaurant extends User{
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 	
-	
+	@JsonIgnore
 	@OneToMany
 	private List<Request> requests = new ArrayList<>();
 	
