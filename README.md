@@ -16,3 +16,6 @@ Los cambios que hemos realizado a la plantilla:
 Link para las capturas de cada pantalla: https://github.com/Naugh/deliciousfoodDAW2017/tree/master/capturasDelicious
 
 Link para el diagrama de clases: https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/diagrama%20clases%20daw%20sts.jpg
+
+Link para el diagrama de Navegación:
+https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/diagrama%20navegacion%20daw.png
