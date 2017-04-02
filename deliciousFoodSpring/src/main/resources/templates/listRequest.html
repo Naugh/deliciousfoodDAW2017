@@ -12,7 +12,7 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Detalles del pedido </th>
+							<th class="text-center">Detalles del pedido </th>
 							<th>Dirección</th>
 							<th>Teléfono</th>
 							<th>Precio</th>
@@ -23,7 +23,7 @@
 					<tbody>
 						{{#requests}}
 						<tr>												
-							<td> <button type="button" class="btn btn-primary" onclick="examineProducts({{id}});"> Mostrar </button></td>
+							<td> <button type="button" class="btn btn-primary center-block btn-warning" onclick="examineProducts({{id}});"> Mostrar </button></td>
 							<td>{{address}}</td>
 							<td>{{phonePerson}}</td>
 							<td>{{price}} <span class="glyphicon glyphicon-euro">

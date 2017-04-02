@@ -8,25 +8,23 @@
         <div class="row">
             <!-- tabla pedidos -->
             <div class="col-sm-8 col-md-offset-2">
-               
+              
                <table class="table table-striped">
                     <thead>
                         <tr>
-                        	<th width= 175 px> Detalles del pedido </span></th>
-                            <th> Restaurante </th>
+                        	<th id="detallesU" class="text-center"> Detalles del pedido </span></th>
+                            <th class="text-center"> Restaurante </th>
                             <th> Teléfono </th>
                             <th> Precio </th>
-                            
-                            
+                                                   
                         </tr>
                     </thead>
                     <tbody>
             	    	{{#requests}}
                         <tr>
-                        	<form action='requests/products' method='POST' id='requests/products'>
-								<td> <span class="mostrar"><button type="submit" class="btn btn-primary" onclick="(examineProducts(id));"> Mostrar </button></span></td>
-							</form>
-                            <td> <strong> {{nameRestaurant}} </strong></td>
+                        	
+							<td> <button type="button" class="btn btn-primary center-block btn-warning" onclick="examineProducts({{id}});"> Mostrar </button></td>
+							 <td class="text-center"> <strong> {{nameRestaurant}} </strong></td>
             	            <td> {{phoneRestaurant}} </td>
                             <td> {{price}}  <span class="glyphicon glyphicon-euro"> </span> </td>  
                           
@@ -37,8 +35,12 @@
                     </tbody>
                 </table>
                 <input type="hidden" name="_csrf" value="{{token}}">
-               </form>
+               
             </div>
+            <form action='requests/products' method='POST' id='products'>	
+				<input type="hidden" name="selectedRequest" value="">
+				<input type="hidden" name="_csrf" value="{{token}}">
+			</form>
         	
         </div>
        

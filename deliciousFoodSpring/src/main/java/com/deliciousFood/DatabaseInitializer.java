@@ -1,5 +1,8 @@
 package com.deliciousFood;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +20,9 @@ public class DatabaseInitializer {
 
 	@Autowired
 	private PersonRepository personRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	@PostConstruct
 	public void init() {
@@ -65,15 +71,18 @@ public class DatabaseInitializer {
 			requestRepository.save(req6);
 			restaurantRepository.save(r3);
 		}
+		
+		
 		Request req1 = new Request("Carlos", "Telepizza", "Perez Gonzalez", "Calle Flores Nº 3 P 4º D", "912122321", "91162111", "28999", 50.0, null);
-		r1.getRequests().add(req1);
+		r2.getRequests().add(req1);
 		requestRepository.save(req1);
+		
 
 		Request req7 = new Request("Susana", "Dominos", "Muñoz Martin", "Avenida Guadarrama Nº 21 P 2º B", "910008762", "91162925", "28991", 43.0, null);
 		r2.getRequests().add(req7);
 		requestRepository.save(req7);
 
-		Request req2 = new Request("Maria", "telepizza", "Hernandez Cabrera", "Calle Malta Nº21 8ºA", "987654787" , "91162451", "28989", 20.0, null);
+		Request req2 = new Request("Maria", "Telepizza", "Hernandez Cabrera", "Calle Malta Nº21 8ºA", "987654787" , "91162451", "28989", 20.0, null);
 		r1.getRequests().add(req2);
 		requestRepository.save(req2);
 
@@ -81,7 +90,7 @@ public class DatabaseInitializer {
 		r2.getRequests().add(req3);
 		requestRepository.save(req3);
 
-		
+	
 
 		Person p1 = new Person("Jorge", "Ratón Lázaro", "asd", "jorge_raton@gmail.com", "Av Alemania Nº3 P8ºA", "685746523", "28915");
 		p1.getRequests().add(req1);

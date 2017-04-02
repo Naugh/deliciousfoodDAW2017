@@ -36,6 +36,7 @@ public class RequestController {
 			p.setAmount(Integer.parseInt(amounts[i]));
 			productList.add(p);
 		}
+		
 		Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
 		model.addAttribute("person",p);
 		model.addAttribute("restaurant", id);
@@ -78,14 +79,20 @@ public class RequestController {
 			@RequestParam double total, @RequestParam long restaurant, HttpServletRequest request, @RequestParam long[] products){
 		Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
 		Restaurant re = restaurantRepository.findById(restaurant);
+		
+		
 		List<Product> prod = new ArrayList<Product>();
 		for(int i = 0; i<products.length;i++){
 			prod.add(productRepository.findById(products[i]));
+		
 		}
+
 		Request r = new Request(name,re.getName(),surname, address, phone, re.getPhone(), postal, total, prod);
-		requestRepository.save(r);
+	
 		p.getRequests().add(r);
 		re.getRequests().add(r);
+		
+		requestRepository.save(r);
 		restaurantRepository.save(re);
 		personRepository.save(p);
 		return "requestEnd";
@@ -96,9 +103,18 @@ public class RequestController {
 		
 			Request req = requestRepository.findById(selectedRequest);
 		    
-		    model.addAttribute("products", req.getProducts());
-		    model.addAttribute("total", req.getPrice());
-			
+			List<Product> productList = new ArrayList<Product>();
+	
+				
+			   
+			for (int i = 0; i < req.getProducts().size(); i++) {
+			//		Product p = productRepository.findById(req.getProducts().get(i));
+		//			productList.add(p);
+				}
+				
+			model.addAttribute("products", productList);
+			model.addAttribute("total", req.getPrice());
+		    
 		    return "productDetail";
 	}
 }
