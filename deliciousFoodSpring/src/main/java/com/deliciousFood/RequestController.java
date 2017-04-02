@@ -76,15 +76,16 @@ public class RequestController {
 	@RequestMapping("/request")
 	public String endRequest (Model model, @RequestParam String name,@RequestParam String surname,
 			@RequestParam String phone,@RequestParam String address, @RequestParam String postal,
-			@RequestParam double total, @RequestParam long restaurant, HttpServletRequest request, @RequestParam long[] products){
+			@RequestParam double total, @RequestParam int[] amounts, @RequestParam long restaurant, HttpServletRequest request, @RequestParam long[] products){
 		Person p = personRepository.findByEmail(request.getUserPrincipal().getName());
 		Restaurant re = restaurantRepository.findById(restaurant);
 		
 		
 		List<Product> prod = new ArrayList<Product>();
 		for(int i = 0; i<products.length;i++){
-			prod.add(productRepository.findById(products[i]));
-		
+			Product product = productRepository.findById(products[i]);
+			product.setAmount(amounts[i]);
+			prod.add(product);
 		}
 
 		Request r = new Request(name,re.getName(),surname, address, phone, re.getPhone(), postal, total, prod);
@@ -102,17 +103,7 @@ public class RequestController {
 	public String productDetail (Model model, @RequestParam long selectedRequest){
 		
 			Request req = requestRepository.findById(selectedRequest);
-		    
-			List<Product> productList = new ArrayList<Product>();
-	
-				
-			   
-			for (int i = 0; i < req.getProducts().size(); i++) {
-			//		Product p = productRepository.findById(req.getProducts().get(i));
-		//			productList.add(p);
-				}
-				
-			model.addAttribute("products", productList);
+			model.addAttribute("products", req.getProducts());
 			model.addAttribute("total", req.getPrice());
 		    
 		    return "productDetail";

@@ -8,7 +8,7 @@
 						<table class="table">
 							{{#products}}
 							<tr>
-								<td>{{amount}} </td>
+								<td>{{amount}}</td>
 								<td><input name=products type="hidden" value="{{id}}" /><span>x</span></td>
 								<td><span class="product"><strong class="orderName">{{name}}</strong></span></td>
 								<td><span class="price">{{price}}</span> <span
@@ -21,11 +21,7 @@
 									type="hidden" name="total" value="{{total}}" /> <span
 									class="glyphicon glyphicon-euro"></span></td>
 							</tr>
-						</table>
-						
-						
-					
-						
+						</table>					
 					</div>
 				</div>
 				
@@ -37,7 +33,5 @@
             	</div>
             	<br>
 			</div>
-		<input type="hidden" name="_csrf" value="{{token}}">
-
 </div>
 {{> footer}}
