@@ -18,7 +18,7 @@ Link para las capturas de cada pantalla: https://github.com/Naugh/deliciousfoodD
 Link para el diagrama de clases: https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/diagrama%20clases%20daw%20sts.jpg
 
 Link para el diagrama de Navegación:
-https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/diagrama%20navegacion%20daw.png
+https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/Diagrama%20de%20navegacion%20v2.png
 
 Lin para el diagrama SQL:
 https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/SQL.png
