@@ -21,8 +21,8 @@ public class HandlerInterceptor extends HandlerInterceptorAdapter{
         if (modelAndView != null) {
         	modelAndView.getModelMap().addAttribute("isPerson", isPerson);
             modelAndView.getModelMap().addAttribute("isRestaurant", isRestaurant);
-            CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
-            modelAndView.addObject("token", token.getToken()); 
+        //    CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+        //    modelAndView.addObject("token", token.getToken()); 
         }
     }
 }

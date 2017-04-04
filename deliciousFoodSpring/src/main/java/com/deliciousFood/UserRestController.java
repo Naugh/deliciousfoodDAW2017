@@ -38,6 +38,7 @@ public class UserRestController {
 	 public Restaurant addRestaurant(@RequestBody Restaurant restaurant) {
 
 		restaurantRepository.save(restaurant);
+		
 		return restaurant;
 	}
 }
