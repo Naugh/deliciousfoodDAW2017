@@ -1,0 +1,23 @@
+
+
+USERS
+
+  ---POST---          
+            URL: /api/person
+              
+              {
+               "name": "Sergio",
+               "surnames": "Gutierrez Perez",
+               "pass": "asd",
+               "email": "sergiolega@hotmail.com",
+               "address": "Av Cantos Nº 8 P 3 DCHA",
+               "phone": "657746523",
+               "postalCode": "28009"
+              }
+            
+            URL: /api/restaurant
+            
+              {
+              
+              }
+              
