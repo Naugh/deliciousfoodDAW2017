@@ -25,8 +25,12 @@ public class Restaurant extends User{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	@JsonIgnore
 	@ElementCollection
 	Map<String, String> categories;
+	
+	@ElementCollection
+	List<String> categoryList;
 	
 	
 	@Lob
