@@ -21,3 +21,36 @@ USERS
               
               }
               
+  ---GET--- 
+  
+  
+  
+  ---DELETE--- 
+              
+              
+REQUEST
+
+  ---POST---    
+  
+         {
+            "namePerson": "Jorge",
+            "nameRestaurant": "Zaranda",
+            "surnames": "Perez Gonzalez",
+            "address": "AV La Ronda Nº 8 P 5º A",
+            "phonePerson": "687925643",
+            "phoneRestaurant": "690785241",
+            "postal": "28876",
+            "price": 15.00,
+            "products": [
+              "Pizza Carbonara",
+              "Piza Campiña"
+              ]
+          }
+ 
+               
+  ---GET--- 
+  
+  
+  
+  ---DELETE--- 
+       
