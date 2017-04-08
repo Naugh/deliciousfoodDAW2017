@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/request")
 public class RequestRestController {
 	
 	@Autowired
 	RequestRepository requestRepository;
 	
-	@RequestMapping(value = "/request", method = RequestMethod.POST)
+	@RequestMapping(value = "", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	 public Request addRequest(@RequestBody Request request) {
 		
@@ -29,7 +29,7 @@ public class RequestRestController {
 		
 	}
 	
-	@RequestMapping(value = "/request/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	 public ResponseEntity<Request> getRequest(@PathVariable long id) {
 			
 		Request req =  requestRepository.findById(id);
@@ -42,7 +42,7 @@ public class RequestRestController {
 	}
 	
 	
-	@RequestMapping(value = "/request/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	 public ResponseEntity<Request> deleteRequest(@PathVariable long id) {
 	
 		Request req= requestRepository.findById(id);

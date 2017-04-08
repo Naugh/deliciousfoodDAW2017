@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
-
 @RestController
 @RequestMapping("/api")
 public class UserRestController {
@@ -27,14 +25,13 @@ public class UserRestController {
 	@Autowired
 	RestaurantRepository restaurantRepository;
 	
+	@Autowired
+	UserService userService;
+	
 	@RequestMapping(value = "/person", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	 public Person addPerson(@RequestBody Person person) {
-		
-		
-		personRepository.save(person);
-
-		
+		personRepository.save(person);		
 		return person;
 	}
 	
@@ -42,44 +39,27 @@ public class UserRestController {
 	@RequestMapping(value = "/restaurant", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	 public Restaurant addRestaurant(@RequestBody Restaurant restaurant) {
-
-		restaurantRepository.save(restaurant);
-		
+		restaurantRepository.save(restaurant);	
 		return restaurant;
 	}
 	
 	
 	
-	@RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
-	 public ResponseEntity<Person> getPerson(@PathVariable long id, HttpServletRequest request) throws IOException {
-
-		if (request.isUserInRole("ROLE_PERSON")) {
-			
-			Person p = personRepository.findById(id);
-			if (p != null){
-				return new ResponseEntity<>(p, HttpStatus.OK);
-			}
-			
+	@RequestMapping(value = "/person", method = RequestMethod.GET)
+	public ResponseEntity<Person> getPerson(@PathVariable long id, HttpServletRequest request) throws IOException {
+		if (userService.isLoggedUser()) {
+			return new ResponseEntity<>(userService.getPerson(), HttpStatus.OK);
 		}
-		
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		
+		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 	}
 	
 
-	@RequestMapping(value = "/restaurant/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/restaurant", method = RequestMethod.GET)
 	 public ResponseEntity<Restaurant> getRestaurant(@PathVariable long id, HttpServletRequest request) throws IOException{
-		
-		if (request.isUserInRole("ROLE_RESTAURANT")) {
-			
-			Restaurant r = restaurantRepository.findById(id);
-			if (r != null){
-				return new ResponseEntity<>(r, HttpStatus.OK);
-			}
-		
+		if (userService.isLoggedUser()) {
+			return new ResponseEntity<>(userService.getRestaurant(), HttpStatus.OK);
 		}
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		
+		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 	}
 	
 	
