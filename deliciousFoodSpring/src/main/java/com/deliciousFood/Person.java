@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Person extends User{
 
@@ -23,9 +25,11 @@ public class Person extends User{
 	
 	
 	@OneToMany
+	@JsonIgnore
 	private List<Request> requests = new ArrayList<>();
 	
 	@ElementCollection(fetch = FetchType.EAGER)
+	@JsonIgnore
 	private List<String> roles = new ArrayList<>(Arrays.asList("ROLE_PERSON"));;
 	
 	public Person() {

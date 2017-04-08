@@ -33,17 +33,22 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
+		http.antMatcher("/api/**");
 		
 		// Public pages
-        http.authorizeRequests().anyRequest().permitAll();
-          
-        // Private pages (all other pages)
-               
-        // Login form
+		http.authorizeRequests().anyRequest().permitAll();
 
-        // Logout
-        
-        http.csrf().disable();
+		// Private pages (all other pages)
+		
+		
+		http.csrf().disable();
+
+		// Use Http Basic Authentication
+		http.httpBasic();
+
+		// Do not redirect when logout
+		http.logout().logoutSuccessHandler((rq, rs, a) -> {});
+		
 	}
 
 	@Override

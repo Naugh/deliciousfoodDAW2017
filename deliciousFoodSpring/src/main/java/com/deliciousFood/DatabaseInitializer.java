@@ -1,8 +1,5 @@
 package com.deliciousFood;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +18,6 @@ public class DatabaseInitializer {
 	@Autowired
 	private PersonRepository personRepository;
 	
-	@Autowired
-	private ProductRepository productRepository;
-
 	@PostConstruct
 	public void init() {
 

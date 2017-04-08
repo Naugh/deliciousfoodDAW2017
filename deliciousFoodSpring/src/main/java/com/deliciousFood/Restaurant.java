@@ -37,6 +37,7 @@ public class Restaurant extends User{
 	@Column(length=20000)
 	private String image="";
 	
+	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Product> products = new ArrayList<>();
 	
@@ -45,6 +46,7 @@ public class Restaurant extends User{
 	private List<Request> requests = new ArrayList<>();
 	
 	@ElementCollection(fetch = FetchType.EAGER)
+	@JsonIgnore
 	private List<String> roles = new ArrayList<>(Arrays.asList("ROLE_RESTAURANT"));;
 	
 
