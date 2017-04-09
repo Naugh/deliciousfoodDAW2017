@@ -60,6 +60,9 @@ public class Restaurant extends User{
 		this.categories=categories;
 	}
 
+	
+		
+	
 
 	public long getId() {
 		return id;

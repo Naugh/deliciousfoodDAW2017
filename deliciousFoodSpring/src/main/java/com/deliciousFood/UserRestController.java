@@ -3,6 +3,8 @@ package com.deliciousFood;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,7 +48,7 @@ public class UserRestController {
 	
 	
 	@RequestMapping(value = "/person", method = RequestMethod.GET)
-	public ResponseEntity<Person> getPerson(@PathVariable long id, HttpServletRequest request) throws IOException {
+	public ResponseEntity<Person> getPerson() throws IOException {
 		if (userService.isLoggedUser()) {
 			return new ResponseEntity<>(userService.getPerson(), HttpStatus.OK);
 		}
@@ -55,7 +57,7 @@ public class UserRestController {
 	
 
 	@RequestMapping(value = "/restaurant", method = RequestMethod.GET)
-	 public ResponseEntity<Restaurant> getRestaurant(@PathVariable long id, HttpServletRequest request) throws IOException{
+	 public ResponseEntity<Restaurant> getRestaurant() throws IOException{
 		if (userService.isLoggedUser()) {
 			return new ResponseEntity<>(userService.getRestaurant(), HttpStatus.OK);
 		}
@@ -65,39 +67,27 @@ public class UserRestController {
 	
 	
 	
-	@RequestMapping(value = "/person/{id}", method = RequestMethod.DELETE)
-	 public ResponseEntity<Person> deletePerson(@PathVariable long id, HttpServletRequest request) throws IOException {
-
-		if (request.isUserInRole("ROLE_PERSON")) {
-			
-			Person p = personRepository.findById(id);
-			if (p != null){
-				
-				personRepository.delete(p);
-				return new ResponseEntity<>(p, HttpStatus.OK);
-			}
-			
+	@RequestMapping(value = "/person", method = RequestMethod.DELETE)
+	 public ResponseEntity<Person> deletePerson( HttpSession session) throws IOException {
+		if (userService.isLoggedUser()){
+				personRepository.delete(userService.getPerson());
+				session.invalidate();
+			return new ResponseEntity<>(userService.getPerson(), HttpStatus.OK);
 		}
 		
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		
+		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 	}
 	
-	@RequestMapping(value = "/restaurant/{id}", method = RequestMethod.DELETE)
-	 public ResponseEntity<Restaurant> deleteRestaurant(@PathVariable long id, HttpServletRequest request) throws IOException{
-		
-		if (request.isUserInRole("ROLE_RESTAURANT")) {
-			
-			Restaurant r = restaurantRepository.findById(id);
-			if (r != null){
-				
-				restaurantRepository.delete(r);
-				return new ResponseEntity<>(r, HttpStatus.OK);
-			}
-		
+	
+	@RequestMapping(value = "/restaurant", method = RequestMethod.DELETE)
+	 public ResponseEntity<Restaurant> deleteRestaurant (HttpSession session) throws IOException {
+		if (userService.isLoggedUser()){
+				restaurantRepository.delete(userService.getRestaurant());
+				session.invalidate();
+			return new ResponseEntity<>(userService.getRestaurant(), HttpStatus.OK);
 		}
-		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		
+		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 	}
 	
 	
