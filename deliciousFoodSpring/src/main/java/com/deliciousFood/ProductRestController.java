@@ -41,7 +41,7 @@ public class ProductRestController {
 	@RequestMapping(value = "", method = RequestMethod.PUT)
 	public ResponseEntity<List<Product>> addProducts(@RequestBody List<Product> products) {
 		if (userService.isLoggedUser()) {
-			Restaurant r = userService.getRestaurant();		
+			Restaurant r = restaurantRepository.findById((userService.getRestaurant().getId()));		
 			//Elimina productos existentes
 			for(int i = 0; i < r.getProducts().size();i++){
 				boolean exist = false;
@@ -53,6 +53,7 @@ public class ProductRestController {
 				if(!exist){
 					productRepository.delete(r.getProducts().get(i));
 					r.getProducts().remove(i);
+					i--;
 				}
 			}		
 			for(int i = 0; i<products.size();i++){
