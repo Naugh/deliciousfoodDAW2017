@@ -78,7 +78,7 @@ public class ProductRestController {
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ResponseEntity<List<Product>> getMyProducts(){		
 		if (userService.isLoggedUser()){	
-			Restaurant r = userService.getRestaurant();
+			Restaurant r = restaurantRepository.findById((userService.getRestaurant().getId()));
 			List<Product> products = r.getProducts();	
 			return new ResponseEntity<>(products, HttpStatus.OK);
 		}

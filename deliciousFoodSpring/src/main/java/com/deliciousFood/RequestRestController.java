@@ -17,14 +17,15 @@ public class RequestRestController {
 	@Autowired
 	RequestRepository requestRepository;
 	
+	@Autowired
+	UserService userService;
+	
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	 public Request addRequest(@RequestBody Request request) {
 		
 		
-		requestRepository.save(request);
-
-		
+		requestRepository.save(request);		
 		return request;
 		
 	}
