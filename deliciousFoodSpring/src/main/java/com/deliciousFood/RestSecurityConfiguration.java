@@ -3,6 +3,7 @@ package com.deliciousFood;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -35,12 +36,23 @@ public class RestSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		
 		http.antMatcher("/api/**");
 		
-		// Private pages (all other pages)
-//		http.authorizeRequests().antMatchers("/api/person/**").hasRole("PERSON");
+		// Private pages (all other pages)		 
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/person/**").hasRole("PERSON");
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/restaurant/**").hasRole("RESTAURANT");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/person/**").hasRole("PERSON");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE,"/api/restaurant/**").hasRole("RESTAURANT");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/person/**").hasRole("PERSON");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/restaurant/**").hasRole("RESTAURANT");
+		
+		http.authorizeRequests().antMatchers(HttpMethod.PUT,"/api/product").hasRole("RESTAURANT");
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/product").hasRole("RESTAURANT");
+		
+		http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/request").hasRole("PERSON");
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/request/**").hasRole("PERSON");
+		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/request/**").hasRole("RESTAURANT");
 		
 		// Public pages
 		http.authorizeRequests().anyRequest().permitAll();
-
 		
 		
 		http.csrf().disable();

@@ -16,7 +16,7 @@ import com.deliciousFood.Product.Show;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/product")
 public class ProductRestController {
 
 	
