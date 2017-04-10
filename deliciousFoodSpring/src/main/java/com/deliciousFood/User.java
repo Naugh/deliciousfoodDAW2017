@@ -2,13 +2,14 @@ package com.deliciousFood;
 
 import javax.persistence.MappedSuperclass;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 @MappedSuperclass
 public abstract class User {
 	
 	private String name;
-	@JsonIgnore
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
 	private String email;
 	private String address;
