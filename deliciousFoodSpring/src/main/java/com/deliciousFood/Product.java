@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Product {
 
@@ -12,8 +14,15 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	interface Show{};
+	
+	@JsonView(Show.class)
 	private String name;
+	
+	@JsonView(Show.class)
 	private String description;
+	
+	@JsonView(Show.class)
 	private Double price;
 	private Integer amount;
 	
