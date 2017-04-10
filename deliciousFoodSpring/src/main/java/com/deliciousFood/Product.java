@@ -27,6 +27,12 @@ public class Product {
 		this.description = description;
 		this.price = price;
 	}
+	
+	public boolean equals(Product product){
+		return product.getName().equals(this.getName()) &&
+				product.getDescription().equals(this.getDescription()) &&
+				product.getPrice() == this.getPrice();
+	}
 
 
 	public long getId() {

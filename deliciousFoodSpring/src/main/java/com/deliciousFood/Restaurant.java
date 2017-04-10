@@ -37,12 +37,12 @@ public class Restaurant extends User{
 	@Column(length=20000)
 	private String image="";
 	
-	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL)
+	@JsonIgnore
 	private List<Product> products = new ArrayList<>();
 	
-	@JsonIgnore
 	@OneToMany
+	@JsonIgnore
 	private List<Request> requests = new ArrayList<>();
 	
 	@ElementCollection(fetch = FetchType.EAGER)
@@ -60,7 +60,32 @@ public class Restaurant extends User{
 		this.categories=categories;
 	}
 
+	public Product getProductById(long id){
+		for(int i = 0; i<this.products.size();i++){
+			if(products.get(i).getId()==id){
+				return products.get(i);
+			}
+		}
+		return null;
+	}
 	
+	public boolean hasProductById(long id){
+		for(int i = 0; i < this.products.size(); i++){
+			if(products.get(i).getId()==id){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public void setProductById(long id, Product product){
+		for(int i = 0; i < this.products.size(); i++){
+			if(products.get(i).getId()==id){
+				products.set(i, product);
+				break;
+			}
+		}
+	}
 		
 	
 

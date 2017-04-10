@@ -90,6 +90,26 @@ public class UserRestController {
 		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 	}
 	
+	@RequestMapping(value = "/person", method = RequestMethod.PUT)
+	 public ResponseEntity<Person> setPerson(@RequestBody Person person) {
+		if (userService.isLoggedUser()){
+			personRepository.save(person);		
+			return new ResponseEntity<>(userService.getPerson(), HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+	}
+	
+	
+	@RequestMapping(value = "/restaurant", method = RequestMethod.PUT)
+	public ResponseEntity<Restaurant> setPerson(@RequestBody Restaurant restaurant) {
+		if (userService.isLoggedUser()){
+			restaurantRepository.save(restaurant);		
+			return new ResponseEntity<>(userService.getRestaurant(), HttpStatus.OK);
+		}
+		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+	}
+	
+	
 	
 	
 	
