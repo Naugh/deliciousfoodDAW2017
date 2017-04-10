@@ -23,12 +23,12 @@ public class ProductRestController {
 	RestaurantRepository restaurantRepository;
 	
 	@Autowired
-	RestaurantRepository productRepository;
+	ProductRepository productRepository;
 
 	@Autowired
 	UserService userService;
 	
-	
+	//Devuelve los productos del restaurante con ese id
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Product>> getProducts(@PathVariable long id){
 		
@@ -40,18 +40,33 @@ public class ProductRestController {
 		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 	}
 	
+	//Añade el producto al restaurante logeado
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	 public Product addProduct(@RequestBody Product product) {
 		
 		if (userService.isLoggedUser()){
-			productRepository.save(product);
+			
 			Restaurant r = userService.getRestaurant();
 			r.getProducts().add(product);
+			productRepository.save(product);
 			restaurantRepository.save(r);
 			}
 		
 		return product;
+	}
+	
+	//Devuelve los productos del restaurante logeado
+	@RequestMapping(value = "/products", method = RequestMethod.GET)
+	public ResponseEntity<List<Product>> getMyProducts(){
+		
+		if (userService.isLoggedUser()){	
+			Restaurant r = userService.getRestaurant();
+			List<Product> products = r.getProducts();	
+			return new ResponseEntity<>(products, HttpStatus.OK);
+		
+		}
+		return new ResponseEntity<>(HttpStatus.FORBIDDEN);
 	}
 	
 }
