@@ -40,6 +40,16 @@ public class Person extends User{
 		this.surnames=surnames;
 	}
 
+	public boolean hasRequest(Long id){
+		for(int i = 0; i < requests.size(); i++){
+			if(requests.get(i).getId()==id){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
 	public long getId() {
 		return id;
 	}

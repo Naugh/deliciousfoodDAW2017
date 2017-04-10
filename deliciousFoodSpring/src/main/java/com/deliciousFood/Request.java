@@ -27,6 +27,7 @@ public class Request {
 	private String phoneRestaurant;
 	private String postal;
 	private Double price;
+	private Long idRestaurant;
 	private boolean delivered=false;
 	
 	
@@ -65,19 +66,6 @@ public class Request {
 	}
 
 
-
-	public String getName() {
-		return namePerson;
-	}
-
-
-
-	public void setName(String name) {
-		this.namePerson = name;
-	}
-
-
-
 	public String getSurnames() {
 		return surnames;
 	}
@@ -87,31 +75,6 @@ public class Request {
 	public void setSurnames(String surnames) {
 		this.surnames = surnames;
 	}
-
-
-
-	public String getAdress() {
-		return address;
-	}
-
-
-
-	public void setAdress(String adress) {
-		this.address = adress;
-	}
-
-
-
-	public String getPhone() {
-		return phonePerson;
-	}
-
-
-
-	public void setPhone(String phone) {
-		this.phonePerson = phone;
-	}
-
 
 
 	public String getPostal() {
@@ -215,6 +178,14 @@ public class Request {
 
 	public void setPhoneRestaurant(String phoneRestaurant) {
 		this.phoneRestaurant = phoneRestaurant;
+	}
+
+	public Long getIdRestaurant() {
+		return idRestaurant;
+	}
+
+	public void setIdRestaurant(Long idRestaurant) {
+		this.idRestaurant = idRestaurant;
 	}
 
 }

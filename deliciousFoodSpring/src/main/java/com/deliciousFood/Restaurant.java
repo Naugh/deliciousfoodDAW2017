@@ -69,6 +69,15 @@ public class Restaurant extends User{
 		return null;
 	}
 	
+	public boolean hasRequest(Long id){
+		for(int i = 0; i < requests.size(); i++){
+			if(requests.get(i).getId()==id){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public boolean hasProductById(long id){
 		for(int i = 0; i < this.products.size(); i++){
 			if(products.get(i).getId()==id){
