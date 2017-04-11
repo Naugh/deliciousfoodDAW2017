@@ -42,13 +42,90 @@ USERS
               
 PRODUCT
 
-  ---POST---    
+  ---PUT---    
+            URL: /api/products     
+            
+                [{
+                 "name": "pizza barbacoa",
+                 "description": "mozarella con base de tomate, carne picada, bacon y barbacoa ",
+                 "price": 8.00,
+                 "amount": 0
+                },
 
+                {
+                 "name": "pizza tejana", 
+                 "description": "característica cebolla con jamon",
+                 "price":  9.0,
+                 "amount": 0
+                },
+                {
+                 "name": "pizza peperoni",
+                 "description": "mozarella y tomate junto a una sorpresa picante",
+                 "price": 7.50,
+                 "amount": 0
+                },
+                {
+                 "name": "pizza pecado carnal",
+                 "description": "deliciosa combinacíon de carne",
+                 "price": 9.00,
+                 "amount": 0
+                },
+                {
+                 "name": "pizza extravaganza",
+                 "description": "deliciosa mezcla de pimiento, aceitunas y atún",
+                 "price": 8.00,
+                 "amount": 0
+                },
+
+                {
+                 "name": "pizza de nachos",
+                 "description": "combinación del mejor sabor mejicano con nuestra mejor base de queso y tomate ",
+                 "price": 8.00,
+                 "amount": 0
+                }]
                
   ---GET--- 
-            URL /api/products/1   
+            URL: /api/products/1   (devuelve productos del restaurante con ese id)
+            
+            URL: /api/products    (devuelve los productos del restaurante logeado)
   
   
   
-  ---DELETE--- 
+REQUEST
+
+  ---POST---
+            URL: /api/request
+               {			
+                    "namePerson": "Jorge",
+                    "nameRestaurant": "Telepizza",
+                    "surnames": "Ratón Lázaro",
+                    "address":  "Av Alemania Nº3 P8ºA",
+                    "phonePerson": "685746523",
+                    "phoneRestaurant": "918370511",
+                    "postal":  "28915",
+                    "price": 26.00,
+                    "products": [
+                      {
+                       "name": "pizza barbacoa",
+                       "description": "mozarella con base de tomate, carne picada, bacon y barbacoa ",
+                       "price": 8.00,
+                       "amount": 1
+                      },
+
+                      {
+                       "name": "pizza tejana", 
+                       "description": "característica cebolla con jamon",
+                       "price":  9.0,
+                       "amount": 2
+                      }
+                      ]
+                 }
+  
+  ---GET---
+           URL: /api/request/1            (devuelve el pedido con ese id)
+           
+           URL: /api/request/all          (devuelve pedidos del user logeado)
+
+
+ 
        
