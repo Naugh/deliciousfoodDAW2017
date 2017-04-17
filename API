@@ -95,34 +95,24 @@ REQUEST
 
   ---POST---
             URL: /api/request
-               {			
-                    "namePerson": "Jorge",
-                    "nameRestaurant": "Telepizza",
-                    "surnames": "Ratón Lázaro",
-                    "address":  "Av Alemania Nº3 P8ºA",
-                    "phonePerson": "685746523",
-                    "phoneRestaurant": "918370511",
-                    "postal":  "28915",
-                    "price": 26.00,
-                    "products": [
-                      {
-                       "name": "pizza barbacoa",
-                       "description": "mozarella con base de tomate, carne picada, bacon y barbacoa ",
-                       "price": 8.00,
-                       "amount": 1
-                      },
-
-                      {
-                       "name": "pizza tejana", 
-                       "description": "característica cebolla con jamon",
-                       "price":  9.0,
-                       "amount": 2
-                      }
-                      ]
-                 }
+              {
+                  "namePerson" : "Jorge",
+                  "surnames" : "Ratón Lázaro",
+                  "address" : "Av Alemania Nº3 P8ºA",
+                  "phonePerson" : "685746523",
+                  "postal" : "28915",
+                  "price" : 47,
+                  "idRestaurant" : 27,
+                  "products" : [
+                    {"id" : 210,
+                    "amount" : 2},
+                    {"id" : 211,
+                    "amount" : 4}
+                    ]
+                }
   
   ---GET---
-           URL: /api/request/1            (devuelve el pedido con ese id)
+           URL: /api/request/76           (devuelve el pedido con ese id)
            
            URL: /api/request/all          (devuelve pedidos del user logeado)
 
