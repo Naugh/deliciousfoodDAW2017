@@ -1,21 +1,38 @@
+LOGIN
+ 
+  ---POST--- 
+            URL: /api/login         (login de person, 200 OK)
+                 Basic Auth: Username: jorge_raton@gmail.com
+                             Password: asd
+            
+            URL: /api/login         (login de restaurant, 200 OK)
+                 Basic Auth: Username: telepizza@telepizza.com
+                             Password: asd
+              
+  ---GET--- 
+  
+            URL: /api/logout          (cierra la sesión existente, 200 OK)
 
-
+            URL: /api/who             (devuelve el email del usuario logeado, 200 OK)       
+                             
+                             
+                             
 USERS
 
   ---POST---          
-            URL: /api/person
+            URL: /api/person          (creación de una persona, 201 Created)
               
               {
                "name": "Sergio",
                "surnames": "Gutierrez Perez",
-               "pass": "asd",
+               "pass": "qqq",
                "email": "sergiolega@hotmail.com",
                "address": "Av Cantos Nº 8 P 3 DCHA",
                "phone": "657746523",
                "postalCode": "28009"
               }
             
-            URL: /api/restaurant
+            URL: /api/restaurant      (creación de un restaurante, 201 Created)
             
               {
               "name": "Zaranda",
@@ -29,22 +46,26 @@ USERS
               
   ---GET--- 
   
-            URL: /api/person
+            URL: /api/person               (devuelve los datos de la persona logeada, 200 OK)          
+                  -- Autorizaciones: PERSON
             
-            URL: /api/restaurant
-    
+            
+            URL: /api/restaurant          (devuelve los datos del restaurante logeado, 200 OK)
+                  -- Autorizaciones: RESTAURANT 
+                  
  ---DELETE--- 
   
-            URL: /api/person
+            URL: /api/person              (elimina la persona logeada, 200 OK)
+                 -- Autorizaciones: PERSON
             
-            URL: /api/restaurant
-              
+            URL: /api/restaurant          (elimina el restaurante logeado, 200 OK)
+                 -- Autorizaciones: RESTAURANT 
               
 PRODUCT
 
   ---PUT---    
-            URL: /api/products     
-            
+            URL: /api/products          (actualiza los productos del restaurante, 200 OK)
+                -- Autorizaciones: RESTAURANT 
                 [{
                  "name": "pizza barbacoa",
                  "description": "mozarella con base de tomate, carne picada, bacon y barbacoa ",
@@ -85,47 +106,41 @@ PRODUCT
                 }]
                
   ---GET--- 
-            URL: /api/products/1   (devuelve productos del restaurante con ese id)
+            URL: /api/products/1   (devuelve productos del restaurante con ese id, 200 OK)
             
-            URL: /api/products    (devuelve los productos del restaurante logeado)
-  
+            URL: /api/products    (devuelve los productos del restaurante logeado, 200 OK)
+              -- Autorizaciones: RESTAURANT 
   
   
 REQUEST
 
   ---POST---
-            URL: /api/request
-               {			
-                    "namePerson": "Jorge",
-                    "nameRestaurant": "Telepizza",
-                    "surnames": "Ratón Lázaro",
-                    "address":  "Av Alemania Nº3 P8ºA",
-                    "phonePerson": "685746523",
-                    "phoneRestaurant": "918370511",
-                    "postal":  "28915",
-                    "price": 26.00,
-                    "products": [
-                      {
-                       "name": "pizza barbacoa",
-                       "description": "mozarella con base de tomate, carne picada, bacon y barbacoa ",
-                       "price": 8.00,
-                       "amount": 1
-                      },
-
-                      {
-                       "name": "pizza tejana", 
-                       "description": "característica cebolla con jamon",
-                       "price":  9.0,
-                       "amount": 2
-                      }
-                      ]
-                 }
+            URL: /api/request       (crea un pedido, 201 Created)
+              -- Autorizaciones: PERSON
+              {
+                  "namePerson" : "Jorge",
+                  "surnames" : "Ratón Lázaro",
+                  "address" : "Av Alemania Nº3 P8ºA",
+                  "phonePerson" : "685746523",
+                  "postal" : "28915",
+                  "price" : 47,
+                  "idRestaurant" : 27,
+                  "products" : [
+                    {"id" : 210,
+                    "amount" : 2},
+                    {"id" : 211,
+                    "amount" : 4}
+                    ]
+                }
   
   ---GET---
-           URL: /api/request/1            (devuelve el pedido con ese id)
+           URL: /api/request/76           (devuelve el pedido con ese id y si pertece al usuario logeado, 200 OK)
+              -- Autorizaciones: PERSON 
+              -- Autorizaciones: RESTAURANT 
            
-           URL: /api/request/all          (devuelve pedidos del user logeado)
-
+           URL: /api/request/all          (devuelve pedidos del user logeado, 200 OK)
+              -- Autorizaciones: PERSON 
+              -- Autorizaciones: RESTAURANT 
 
  
        
