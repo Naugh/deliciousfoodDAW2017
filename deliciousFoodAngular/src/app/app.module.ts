@@ -7,6 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index.component';
 import { FooterComponent } from './footer.component';
+import { HeaderComponent } from './header.component';
 
 import { routing } from './app.routing';
 
@@ -14,7 +15,8 @@ import { routing } from './app.routing';
   declarations: [
     AppComponent,
     IndexComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
