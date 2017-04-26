@@ -3,10 +3,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     moduleId: module.id,
-    selector: 'index',
-    templateUrl: 'index.template.html'
+    selector: 'footer-sel',
+    templateUrl: 'footer.template.html'
 })
 
-export class IndexComponent{
+export class FooterComponent{
     constructor() { }
 }
