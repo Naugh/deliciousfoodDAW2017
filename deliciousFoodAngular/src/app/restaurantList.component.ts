@@ -1,5 +1,7 @@
 import { Component} from '@angular/core';
+import { Restaurant} from './restaurant.model';
 import { Router, ActivatedRoute } from '@angular/router';
+import { RestaurantService } from './restaurant.service';
 
 @Component({
     moduleId: module.id,
@@ -8,5 +10,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class RestaurantListComponent{
-    constructor() { }
+
+    restaurants: Restaurant[];
+
+    constructor(private restaurantService: RestaurantService) { }
+
+    ngOnInit(){
+      this.restaurantService.getRestaurants().subscribe(
+        restaurants => this.restaurants = restaurants,
+        error => console.log(error)
+      );
+    }
 }

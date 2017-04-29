@@ -3,6 +3,7 @@ import {Request} from "./request.model";
 
 export interface Restaurant {
     id?: number;
+    name: string;
     password: string;
     email: string;
     address: string;

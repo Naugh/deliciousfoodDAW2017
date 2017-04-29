@@ -8,6 +8,9 @@ import { AppComponent } from './app.component';
 import { IndexComponent } from './index.component';
 import { FooterComponent } from './footer.component';
 import { HeaderComponent } from './header.component';
+import { RestaurantListComponent } from './restaurantList.component';
+
+import { RestaurantService } from './restaurant.service';
 
 import { routing } from './app.routing';
 
@@ -16,7 +19,8 @@ import { routing } from './app.routing';
     AppComponent,
     IndexComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    RestaurantListComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { routing } from './app.routing';
     routing,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    RestaurantService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
