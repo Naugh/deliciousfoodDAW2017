@@ -1,0 +1,59 @@
+<div class="container-fluid">
+	<hr>
+	<h2 class="intro-text text-center">
+		<strong>Elige tus productos</strong>
+	</h2>
+	<hr>
+	<div class="row">
+		<!-- tabla items -->
+		<div class="col-md-8">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th id="nombre_plato">Nombre del plato</th>
+						<th>Precio</th>
+						<th>Descripcion</th>
+					</tr>
+				</thead>
+				<tbody>
+                    <div *ngFor="let product of products>
+					
+					<tr>
+						<td class="txtNombre product{{-index}}">{{product.name}}</td>
+						<td><span class="product{{-index}}">{{product.price}}</span> <span class="glyphicon glyphicon-euro"></span></td>
+						<td>{{product.description}}</td>
+						<td>
+							<input type="hidden" value="{{id}}"/>
+							<button type="button" class="btn btn-success" onclick="addProduct({{-index}});">Añadir</button>
+                      
+						</td>
+					</tr>
+                    </div>
+					
+				</tbody>
+			</table>
+		</div>
+		<!-- listadelpedido -->
+		<div class="col-md-4">
+			<div id="order">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Detalles del pedido</div>
+					<div class="panel-body">
+					<form action='/request/{{restaurant}}' method='POST'>
+						<table class="table table-responsive table=striped">
+							<tr class="active" id="totalRow">
+								<td colspan="4"><span class="h4"> Total </span></td>
+								<td><span id="totalID" class="h4">0</span> 
+								<input type="hidden" name="total" value="0"/>
+								<span class="glyphicon glyphicon-euro"></span></td>
+							</tr>
+						</table>
+						<button type="submit" class="btn btn-success btn-lg btn-block">Finalizar</button>
+						
+					</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

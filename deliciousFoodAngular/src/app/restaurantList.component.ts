@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Restaurant} from './restaurant.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestaurantService } from './restaurant.service';
@@ -9,7 +9,7 @@ import { RestaurantService } from './restaurant.service';
     templateUrl: 'restaurantList.template.html'
 })
 
-export class RestaurantListComponent{
+export class RestaurantListComponent implements OnInit{
 
     restaurants: Restaurant[];
 
