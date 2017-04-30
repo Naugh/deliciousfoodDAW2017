@@ -9,6 +9,8 @@ import { IndexComponent } from './index.component';
 import { FooterComponent } from './footer.component';
 import { HeaderComponent } from './header.component';
 import { RestaurantListComponent } from './restaurantList.component';
+import { ProductsComponent } from './products.component';
+
 
 import { RestaurantService } from './restaurant.service';
 
@@ -20,7 +22,8 @@ import { routing } from './app.routing';
     IndexComponent,
     FooterComponent,
     HeaderComponent,
-    RestaurantListComponent
+    RestaurantListComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
