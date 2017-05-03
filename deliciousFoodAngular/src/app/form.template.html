@@ -1,0 +1,150 @@
+ <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-offset-2">
+                <hr>
+                <h2 class="intro-text text-center">
+                <strong>Registro</strong>
+            </h2>
+                <hr>
+                <form class="form-horizontal" data-toggle="validator" method="post" action="/user" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email"> </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">ContraseÃ±a</label>
+                        <div class="col-sm-10">
+                            <input name="password" type="password" class="form-control" id="inputPassword" placeholder="ContraseÃ±a"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseÃ±as no coinciden" placeholder="Confirmar contraseÃ±a" required> </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="tipoUsuario" class="col-sm-2 control-label">Tipo usuario</label>
+                        <div class="col-sm-10">
+                            <label class="radio-inline">
+                                <input type="radio" name="userType" id="inlineRadio1" value="person" checked="checked" onclick="changeForm();"> Cliente </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="userType" id="inlineRadio2" value="restaurant" onclick="changeForm();"> Restaurante </label>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"> </div>
+                    </div>
+                    <div class="form-group surname">
+                        <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTlf" class="col-sm-2 control-label">TelÃ©fono</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputTlf" placeholder="TelÃ©fono" name="phone"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDir" class="col-sm-2 control-label">DirecciÃ³n</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputDir" placeholder="DirecciÃ³n" name="address"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCP" class="col-sm-2 control-label">CÃ³digo Postal</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputCP" placeholder="CÃ³digo Postal" name="postalCode"> </div>
+                    </div>
+                    <div class="form-group categorias">
+                        <label for="inputCat" class="col-sm-2 control-label">CategorÃ­as</label>
+                        <div class="col-sm-10">
+                            <table class="table" id="inputCat">
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="pizza"> Pizza </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="hamburguesa"> Hamburguesa </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="japonesa"> Japonesa </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="espaÃ±ola"> EspaÃ±ola </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="vegetariana"> Vegetariana </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="china"> China </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="italiana"> Italiana </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories"  value="turca"> Turca </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="india"> India </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group image">
+                        <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
+                        <div class="col-sm-10">
+                            <input type="file" id="inputImg" name="image">
+                            <p class="help-block">Suba una imagen de su restaurante</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group text-center">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Registrarse</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(document).ready(changeForm);
+    </script>
+    <!-- /.container -->
