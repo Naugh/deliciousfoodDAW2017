@@ -11,21 +11,35 @@ import { RestaurantService } from './restaurant.service';
 
 export class RestaurantListComponent implements OnInit{
 
-    restaurants: Restaurant[];
+    private restaurants: Restaurant[];
+    private page: number;
+    private spinner: boolean;
+    private loadButton: boolean;
 
-    constructor(private restaurantService: RestaurantService, private page) {
-        page=1;
-     }
+    constructor(private restaurantService: RestaurantService) {}
 
     ngOnInit(){
+      this.spinner = false;
+      this.page=0;
+      this.restaurants = new Array;
       this.loadRestaurants();
-    }
+    }  
+      
 
     loadRestaurants(){
+      this.loadButton=false;
+      this.spinner=true;
       this.restaurantService.getRestaurants(this.page).subscribe(
-        restaurants => this.restaurants.concat(restaurants),
+        data => this.getData(data),
         error => console.log(error)
       );
       this.page++;
+      console.log(this.page);       
+    }
+
+    getData(data){
+      this.restaurants = this.restaurants.concat(data["content"]);
+      this.spinner = false;
+      this.loadButton = !data["last"];
     }
 }

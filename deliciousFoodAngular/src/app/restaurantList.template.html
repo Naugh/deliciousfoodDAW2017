@@ -86,23 +86,13 @@
                     </h5>
 				    <p class="direccion"> {{restaurant.address}}  <br> {{restaurant.phone}} ,  {{restaurant.email}}</p>
                 </li>
-
-				
 			</ul>
 			<div class="form-group text-center">
             	<div class="col-sm-offset-2 col-sm-6">
-            		<img alt="Cargando" src="../img/red_loader48.gif" id="spinner">
-                	<button type="button" class="btn btn-success" onclick="getTenRestaurants();" id="btnLoad">Cargar más</button>
+            		<img *ngIf="spinner" alt="Cargando" src="assets/img/red_loader48.gif" id="spinner">
+                	<button *ngIf="loadButton" type="button" class="btn btn-success" (click)="loadRestaurants();" id="btnLoad">Cargar más</button>
                  </div>
             </div>
 		</div>
 	</div>
 </div>
-
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-	getTenRestaurants();
-	$("#spinner").hide();
-});
-var page = 0;
-</script> -->

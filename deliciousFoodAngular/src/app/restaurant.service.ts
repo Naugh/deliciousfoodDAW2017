@@ -14,7 +14,7 @@ export class RestaurantService {
         let url = 'https://localhost:8443/api/restaurants/?page='+page+'&size=10';
 		//https://localhost:8443/api/restaurants/?page=1&size=10
 		return this.http.get(url)
-			.map(response => response.json()["content"])
+			.map(response => response.json())
 			.catch(error => this.handleError(error));
 	}
 
@@ -26,7 +26,6 @@ export class RestaurantService {
 	}
 
     private handleError(error: any) {
-		console.log("EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
 		console.error(error);
 		return Observable.throw("Server error (" + error.status + "): " + error.text())
 	}
