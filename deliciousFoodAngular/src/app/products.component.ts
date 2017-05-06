@@ -8,13 +8,14 @@ import { RestaurantService } from './restaurant.service';
     moduleId: module.id,
     selector: 'products',
     templateUrl: 'products.template.html'
+  
 })
 
 export class ProductsComponent{
 
     restaurant: Restaurant;
 
-    constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService) {
+/*    constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService) {
 
         let id = activatedRoute.snapshot.params['id'];
       
@@ -25,7 +26,7 @@ export class ProductsComponent{
           let products = this.restaurant.products;
 
 
-     }
+ } */
 
 
 
