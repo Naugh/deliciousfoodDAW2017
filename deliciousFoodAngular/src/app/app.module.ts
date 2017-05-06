@@ -9,7 +9,7 @@ import { IndexComponent } from './index.component';
 import { FooterComponent } from './footer.component';
 import { HeaderComponent } from './header.component';
 import { RestaurantListComponent } from './restaurantList.component';
-//import { ProductsComponent } from './products.component';
+import { ProductsComponent } from './products.component';
 import { FormComponent } from './form.component';
 
 
@@ -25,8 +25,8 @@ import { routing } from './app.routing';
     FooterComponent,
     HeaderComponent,
     RestaurantListComponent,
-    FormComponent
-    //ProductsComponent
+    FormComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
