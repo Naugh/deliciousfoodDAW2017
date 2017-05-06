@@ -6,22 +6,22 @@
             <strong>Registro</strong>
         </h2>
             <hr>
-            <form class="form-horizontal" data-toggle="validator" method="post" action="/user" enctype="multipart/form-data">
+            <div class="form-horizontal" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="inputEmail" class="col-sm-2 control-label">Email</label>
                     <div class="col-sm-10">
-                        <input name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email"> </div>
+                        <input [(ngModel)] = "email" name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email"> </div>
                 </div>
                 <br>
                 <div class="form-group">
                     <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
                     <div class="col-sm-10">
-                        <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"> </div>
+                        <input [(ngModel)] = "password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"> </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña" required> </div>
+                        <input [(ngModel)] = "passwordConfirm" type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña" required> </div>
                 </div>
                 <br>
                 <div class="form-group">
@@ -37,81 +37,80 @@
                 <div class="form-group">
                     <label for="inputName" class="col-sm-2 control-label">Nombre</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"> </div>
+                        <input [(ngModel)] = "name" type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"> </div>
                 </div>
                 <div *ngIf=client class="form-group surname">
                     <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"> </div>
+                        <input [(ngModel)] = "surnames" type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"> </div>
                 </div>
                 <div class="form-group">
                     <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"> </div>
+                        <input [(ngModel)] = "phone" type="number" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"> </div>
                 </div>
                 <div class="form-group">
                     <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"> </div>
+                        <input [(ngModel)] = "address" type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"> </div>
                 </div>
                 <div class="form-group">
                     <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"> </div>
+                        <input [(ngModel)] = "postalCode" type="number" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"> </div>
                 </div>
-                <div *ngIf=!client class="form-group categorias">
+                <div *ngIf=!client class="form-group categorias hidden">
                     <label for="inputCat" class="col-sm-2 control-label">Categorí­as</label>
                     <div class="col-sm-10">
                         <table class="table" id="inputCat">
-                            <ng-container *ngFor = "let option of categories"; let i = index>
-                           <!-- <tr *ngIf="i<3"> -->
                             <tr>
-                                <td>
-                                    <div *ng Forclass="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="categories" value="pizza"> Pizza </label>
-                                    </div>
-                                </td>                           
+                                <ng-container *ngFor = "let option of categories; let i = index">
+                                    <td *ngIf="i<3">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="option.name" checked="option.checked"> {{option.name}} </label>
+                                        </div>
+                                    </td>    
+                                </ng-container>                   
                             </tr>
-                            <tr *ngIf="i>=3&&i<6">
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="categories" value="española"> Española </label>
-                                    </div>
-                                </td>
+                            <tr>
+                                <ng-container *ngFor = "let option of categories; let i = index">
+                                    <td *ngIf="i>=3 && i<6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="option.name" checked="option.checked"> {{option.name}} </label>
+                                        </div>
+                                    </td>
+                                </ng-container>                       
                             </tr>
-                            <tr *ngIf="i>6">
-                                <td>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="categories" value="italiana"> Italiana </label>
-                                    </div>
-                                </td>
+                            <tr>
+                                <ng-container *ngFor = "let option of categories; let i = index">
+                                    <td *ngIf="i>=6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="option.name" checked="option.checked"> {{option.name}} </label>
+                                        </div>
+                                    </td>
+                                </ng-container>                       
                             </tr>
-                            </ng-container>
                         </table>
                     </div>
                 </div>
                 <div *ngIf=!client class="form-group image">
                     <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
                     <div class="col-sm-10">
-                        <input type="file" id="inputImg" name="image">
+                        <input (change)="handleFileSelect($event)" type="file" id="inputImg" name="image">
                         <p class="help-block">Suba una imagen de su restaurante</p>
                     </div>
                 </div>
                 <br>
                 <div class="form-group text-center">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" class="btn btn-success">Registrarse</button>
+                        <button type="button" class="btn btn-success" (click)="signUp()">Registrarse</button>
                     </div>
                 </div>
                 
-            </form>
+            </div>
         </div>
     </div>
 </div>
-<!-- <script>
-$(document).ready(changeForm);
-</script>
-    /.container -->

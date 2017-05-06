@@ -1,7 +1,5 @@
 import {Product} from "./product.model";
 import {Request} from "./request.model";
-import { SafeHtml } from '@angular/platform-browser';
-
 export interface Restaurant {
     id?: number;
     name: string;
@@ -13,5 +11,4 @@ export interface Restaurant {
     image?: string;
     products?: Array<Product>;
     requests?: Array<Request>;
-    imageSafe?: SafeHtml;
 }

@@ -14,6 +14,7 @@ import { FormComponent } from './form.component';
 
 
 import { RestaurantService } from './restaurant.service';
+import { PersonService } from './person.service';
 
 import { routing } from './app.routing';
 
@@ -36,7 +37,8 @@ import { routing } from './app.routing';
     NgbModule.forRoot()
   ],
   providers: [
-    RestaurantService
+    RestaurantService,
+    PersonService
   ],
   bootstrap: [AppComponent]
 })
