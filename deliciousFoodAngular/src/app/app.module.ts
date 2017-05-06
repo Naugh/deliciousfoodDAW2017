@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index.component';
@@ -15,6 +15,7 @@ import { FormComponent } from './form.component';
 
 import { RestaurantService } from './restaurant.service';
 import { PersonService } from './person.service';
+import { LoginService } from './login.service';
 
 import { routing } from './app.routing';
 
@@ -38,7 +39,8 @@ import { routing } from './app.routing';
   ],
   providers: [
     RestaurantService,
-    PersonService
+    PersonService,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
