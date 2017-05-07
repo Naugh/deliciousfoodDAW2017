@@ -17,11 +17,13 @@ export class ProductsComponent{
     private restaurant: Restaurant;
     private request: Request;
     private products: Product[];
+    private selects: Product[];
 
     constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService) {
 
         let id = activatedRoute.snapshot.params['id'];
         this.products= new Array;
+        this.selects= new Array;
         restaurantService.getProducts(id).subscribe(
             data => this.products = data,
             error => console.error(error)
@@ -29,8 +31,8 @@ export class ProductsComponent{
          // let products = this.restaurant.products;
 } 
 
- addProduct(){
-    
+ addProduct(p: Product){
+    this.selects.push(p);
  }
 
 /*newRequest(){

@@ -24,7 +24,7 @@
 						<td>{{product.description}}</td>
 						<td>
 							<input type="hidden" value="{{product.id}}"/>
-							<button type="button" class="btn btn-success" (click)="addProduct()">Añadir</button>
+							<button type="button" class="btn btn-success" (click)="addProduct(product)">Añadir</button>
                       
 						</td>
 					</tr>
@@ -41,6 +41,14 @@
 					<div class="panel-body">
 					<form>
 						<table class="table table-responsive table=striped">
+							<tr *ngFor="let select of selects">
+					<!--			<td><span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="removeProduct(this)"> </span></td>
+					-->			<td> {{select.amount}}</td>
+								<td> </td>
+								<td> {{select.name}}</td>
+								<td> {{select.price}}</td>
+								<td> <span class="glyphicon glyphicon-euro"></span></td> 
+							</tr>	
 							<tr class="active" id="totalRow">
 								<td colspan="4"><span class="h4"> Total </span></td>
 								<td><span id="totalID" class="h4">0</span> 
