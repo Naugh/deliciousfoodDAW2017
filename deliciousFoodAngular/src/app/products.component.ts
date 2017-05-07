@@ -14,15 +14,16 @@ import { RestaurantService } from './restaurant.service';
 
 export class ProductsComponent{
 
-    restaurant: Restaurant;
-    request: Request;
+    private restaurant: Restaurant;
+    private request: Request;
+    private products: Product[];
 
     constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService) {
 
         let id = activatedRoute.snapshot.params['id'];
-      
-        restaurantService.getRestaurant(id).subscribe(
-            restaurant => this.restaurant = restaurant,
+        this.products= new Array;
+        restaurantService.getProducts(id).subscribe(
+            data => this.products = data,
             error => console.error(error)
         ) 
          // let products = this.restaurant.products;

@@ -16,9 +16,9 @@
 					</tr>
 				</thead>
 				<tbody>
-			        <div *ngFor="let product of products">
+			       
 					
-					<tr>
+					<tr *ngFor="let product of products">
 						<td class="txtNombre product{{product.id}}">{{product.name}}</td>
 						<td><span class="product{{product.id}}">{{product.price}}</span> <span class="glyphicon glyphicon-euro"></span></td>
 						<td>{{product.description}}</td>
@@ -28,7 +28,7 @@
                       
 						</td>
 					</tr>
-					</div>
+					
 				
 				</tbody> 
 			</table>
@@ -39,7 +39,7 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Detalles del pedido</div>
 					<div class="panel-body">
-					<form action='/request/{{restaurant.id}}' method='POST'>
+					<form>
 						<table class="table table-responsive table=striped">
 							<tr class="active" id="totalRow">
 								<td colspan="4"><span class="h4"> Total </span></td>
@@ -50,7 +50,7 @@
 						</table>
 						<button type="submit" class="btn btn-success btn-lg btn-block" (click)="newRequest()">Finalizar</button>
 						
-					</form>
+					</form> 
 					</div>
 				</div>
 			</div>
