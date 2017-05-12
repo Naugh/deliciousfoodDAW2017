@@ -42,16 +42,16 @@
 					<form>
 						<table class="table table-responsive table=striped">
 							<tr *ngFor="let select of selects">
-					<!--			<td><span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="removeProduct(this)"> </span></td>
-					-->			<td> {{select.amount}}</td>
-								<td> </td>
-								<td> {{select.name}}</td>
-								<td> {{select.price}}</td>
-								<td> <span class="glyphicon glyphicon-euro"></span></td> 
+								<td><span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="removeProduct(select)"> </span></td>
+								<td> {{select.amount}}</td>
+								<td> x</td>
+								<td> <strong>{{select.name}}</strong></td>
+								<td> {{select.price}}
+								 <span class="glyphicon glyphicon-euro"></span> 
 							</tr>	
 							<tr class="active" id="totalRow">
 								<td colspan="4"><span class="h4"> Total </span></td>
-								<td><span id="totalID" class="h4">0</span> 
+								<td><span id="totalID" class="h4">{{total}}</span> 
 								<input type="hidden" name="total" value="0"/>
 								<span class="glyphicon glyphicon-euro"></span></td>
 							</tr>

@@ -18,12 +18,14 @@ export class ProductsComponent{
     private request: Request;
     private products: Product[];
     private selects: Product[];
+    private total: number;
 
     constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService) {
 
         let id = activatedRoute.snapshot.params['id'];
         this.products= new Array;
         this.selects= new Array;
+        
         restaurantService.getProducts(id).subscribe(
             data => this.products = data,
             error => console.error(error)
@@ -32,8 +34,33 @@ export class ProductsComponent{
 } 
 
  addProduct(p: Product){
-    this.selects.push(p);
- }
+     var exist: Boolean;
+     exist = false;
+     for (let product of this.selects){
+        if (p === product){
+            exist = true;
+            p.amount = p.amount + 1;
+           this.selects.push(p);
+     }
+    } 
+   if (exist === false){
+        p.amount = 1;
+       this.selects.push(p);
+        
+    }
+    this.calcularTotal();
+}
+
+calcularTotal(){
+    this.total = 0;
+    for (let product of this.selects){
+        this.total = this.total + (product.price * product.amount);
+    }
+}
+
+/*removeProduct(p: Product){
+    this.selects[p.id].remove();
+} */
 
 /*newRequest(){
     
