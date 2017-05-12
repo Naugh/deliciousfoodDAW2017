@@ -15,6 +15,7 @@ import { RequestComponent } from './request.component';
 
 
 import { RestaurantService } from './restaurant.service';
+import { RequestService } from './request.service';
 import { PersonService } from './person.service';
 import { LoginService } from './login.service';
 
@@ -40,6 +41,7 @@ import { routing } from './app.routing';
     NgbModule.forRoot()
   ],
   providers: [
+    RequestService,
     RestaurantService,
     PersonService,
     LoginService

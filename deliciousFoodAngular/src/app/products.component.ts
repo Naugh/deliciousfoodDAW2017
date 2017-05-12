@@ -4,6 +4,7 @@ import { Product} from './product.model';
 import { Request} from './request.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestaurantService } from './restaurant.service';
+import { RequestService } from './request.service';
 
 @Component({
     moduleId: module.id,
@@ -20,7 +21,8 @@ export class ProductsComponent{
     private selects: Product[];
     private total: number;
 
-    constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService) {
+    constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService, 
+                private requestService: RequestService) {
 
         let id = activatedRoute.snapshot.params['id'];
         this.products= new Array;
@@ -63,8 +65,10 @@ calcularTotal(){
 } */
 
 /*newRequest(){
-    
-    let id = 1;
+    let request: Request;
+    request.products = this.selects;
+    this.requestService.addRequest(request);
+    let id = request.id;
     this.router.navigate(['/request/:id']);
 } */
 

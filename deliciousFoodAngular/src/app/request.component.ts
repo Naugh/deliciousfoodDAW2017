@@ -16,5 +16,6 @@ export class RequestComponent{
     constructor () {}
 
 
-
+  //esto cuando se confirma que el pedido va a la base de datos no antes
+  //  requestList.push(request);
 }
