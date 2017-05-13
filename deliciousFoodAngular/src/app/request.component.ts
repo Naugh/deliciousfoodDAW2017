@@ -1,8 +1,9 @@
-import { Component} from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Restaurant} from './restaurant.model';
 import { Product} from './product.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestaurantService } from './restaurant.service';
+import { ProductsComponent } from './products.component';
 
 @Component({
     moduleId: module.id,
@@ -12,6 +13,9 @@ import { RestaurantService } from './restaurant.service';
 })
 
 export class RequestComponent{
+
+     @Input() 
+    private selects: Product[];
 
     constructor () {}
 

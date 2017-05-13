@@ -18,7 +18,7 @@ export class ProductsComponent{
     private restaurant: Restaurant;
     private request: Request;
     private products: Product[];
-    private selects: Product[];
+    public selects: Product[];
     private total: number;
 
     constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService, 
@@ -60,6 +60,10 @@ calcularTotal(){
     }
 }
 
+finalizar(){
+    this.router.navigate(['/request/:id']);
+}
+
 /*removeProduct(p: Product){
     this.selects[p.id].remove();
 } */
@@ -68,7 +72,7 @@ calcularTotal(){
    
     this.request.products = this.selects;
     this.requestService.addRequest(request);
-    let id = this.request.id;
+    let id = this.restaurant.id;
     this.router.navigate(['/request/:id']);
 } */
 
