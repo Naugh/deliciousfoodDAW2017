@@ -12,10 +12,13 @@ import { LoginService } from './login.service';
 export class HeaderComponent{
     private username: string;
     private password: string;
-    private restaurant: boolean = false;
-    private person: boolean = false;
+    private restaurant: boolean;
+    private person: boolean;
 
-    constructor(private loginService: LoginService) { }
+    constructor(private loginService: LoginService) {
+        this.restaurant = false;
+        this.person = false;
+     }
 
     login(event: any, username: string, password: string){
         event.preventDefault();
@@ -29,11 +32,8 @@ export class HeaderComponent{
     );
 }
     changeHeader(){
-        this.restaurant = this.loginService.restaurant==undefined;
-        this.person = this.loginService.person==undefined;
-
-        console.log(this.loginService.restaurant);
-        console.log(this.loginService.person);
+        this.restaurant = this.loginService.restaurant!=undefined;
+        this.person = this.loginService.person!=undefined;
     }
 
 }

@@ -7,8 +7,8 @@ import { Person} from './person.model';
 
 const URL = 'http://localhost:8080/api/login';
 
-const RESTAURANT = 'RESTAURANT';
-const PERSON = 'PERSON';
+const RESTAURANT = 'ROLE_RESTAURANT';
+const PERSON = 'ROLE_PERSON';
 
 @Injectable()
 export class LoginService {
@@ -36,7 +36,6 @@ export class LoginService {
 
     private processLogInResponse(response) {
         let role = response.json().roles[0];
-        console.log("ROL ===> "+ role);
         if(role === RESTAURANT){
             this.restaurant = response.json();
         }else if(role === PERSON){

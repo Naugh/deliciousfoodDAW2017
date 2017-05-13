@@ -44,7 +44,7 @@
 </div>
 
 <!-- Persona -->
-<div *ngIf="!restaurant && person" id="header">
+<div *ngIf="person" id="header">
 	<div class="brand">Delicious Food</div>
 	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
 	<!-- Navigation -->
@@ -80,7 +80,7 @@
 </div>
 
 <!-- Restaurante -->
-<div *ngIf="restaurant && !person" id="header">
+<div *ngIf="restaurant" id="header">
 	<div class="brand">Delicious Food</div>
 	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
 	<!-- Navigation -->
