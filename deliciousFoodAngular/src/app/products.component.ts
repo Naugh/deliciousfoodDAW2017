@@ -39,10 +39,10 @@ export class ProductsComponent{
      var exist: Boolean;
      exist = false;
      for (let product of this.selects){
-        if (p === product){
+        if (p === product && exist === false){
             exist = true;
             p.amount = p.amount + 1;
-           this.selects.push(p);
+           
      }
     } 
    if (exist === false){
@@ -65,10 +65,10 @@ calcularTotal(){
 } */
 
 /*newRequest(){
-    let request: Request;
-    request.products = this.selects;
+   
+    this.request.products = this.selects;
     this.requestService.addRequest(request);
-    let id = request.id;
+    let id = this.request.id;
     this.router.navigate(['/request/:id']);
 } */
 
