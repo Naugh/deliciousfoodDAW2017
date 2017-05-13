@@ -1,8 +1,10 @@
 import { Component} from '@angular/core';
 import { Restaurant} from './restaurant.model';
 import { Product} from './product.model';
+import { Request} from './request.model';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestaurantService } from './restaurant.service';
+import { RequestService } from './request.service';
 
 @Component({
     moduleId: module.id,
@@ -13,21 +15,62 @@ import { RestaurantService } from './restaurant.service';
 
 export class ProductsComponent{
 
-    restaurant: Restaurant;
+    private restaurant: Restaurant;
+    private request: Request;
+    private products: Product[];
+    private selects: Product[];
+    private total: number;
 
-/*    constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService) {
+    constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService, 
+                private requestService: RequestService) {
 
         let id = activatedRoute.snapshot.params['id'];
-      
-        restaurantService.getRestaurant(id).subscribe(
-            restaurant => this.restaurant = restaurant,
+        this.products= new Array;
+        this.selects= new Array;
+        
+        restaurantService.getProducts(id).subscribe(
+            data => this.products = data,
             error => console.error(error)
-        )
-          let products = this.restaurant.products;
+        ) 
+         // let products = this.restaurant.products;
+} 
 
+ addProduct(p: Product){
+     var exist: Boolean;
+     exist = false;
+     for (let product of this.selects){
+        if (p === product){
+            exist = true;
+            p.amount = p.amount + 1;
+           this.selects.push(p);
+     }
+    } 
+   if (exist === false){
+        p.amount = 1;
+       this.selects.push(p);
+        
+    }
+    this.calcularTotal();
+}
 
- } */
+calcularTotal(){
+    this.total = 0;
+    for (let product of this.selects){
+        this.total = this.total + (product.price * product.amount);
+    }
+}
 
+/*removeProduct(p: Product){
+    this.selects[p.id].remove();
+} */
+
+/*newRequest(){
+    let request: Request;
+    request.products = this.selects;
+    this.requestService.addRequest(request);
+    let id = request.id;
+    this.router.navigate(['/request/:id']);
+} */
 
 
    

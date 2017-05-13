@@ -16,26 +16,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td> a</td>
-						<td> a</td>
-						<td> a</td>
-						<td> a</td>
-					</tr>
-                  <!-- <div *ngFor="let product of products>
+			       
 					
-					<tr>
-						<td class="txtNombre product{{-index}}">{{product.name}}</td>
-						<td><span class="product{{-index}}">{{product.price}}</span> <span class="glyphicon glyphicon-euro"></span></td>
+					<tr *ngFor="let product of products">
+						<td class="txtNombre product{{product.id}}">{{product.name}}</td>
+						<td><span class="product{{product.id}}">{{product.price}}</span> <span class="glyphicon glyphicon-euro"></span></td>
 						<td>{{product.description}}</td>
 						<td>
-							<input type="hidden" value="{{id}}"/>
-							<button type="button" class="btn btn-success" onclick="addProduct();">Añadir</button>
+							<input type="hidden" value="{{product.id}}"/>
+							<button type="button" class="btn btn-success" (click)="addProduct(product)">Añadir</button>
                       
 						</td>
 					</tr>
-                    </div> -->
 					
+				
 				</tbody> 
 			</table>
 		</div> 
@@ -45,18 +39,26 @@
 				<div class="panel panel-primary">
 					<div class="panel-heading">Detalles del pedido</div>
 					<div class="panel-body">
-					<form action='/request/{{restaurant}}' method='POST'>
+					<form>
 						<table class="table table-responsive table=striped">
+							<tr *ngFor="let select of selects">
+								<td><span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="removeProduct(select)"> </span></td>
+								<td> {{select.amount}}</td>
+								<td> x</td>
+								<td> <strong>{{select.name}}</strong></td>
+								<td> {{select.price}}
+								 <span class="glyphicon glyphicon-euro"></span> 
+							</tr>	
 							<tr class="active" id="totalRow">
 								<td colspan="4"><span class="h4"> Total </span></td>
-								<td><span id="totalID" class="h4">0</span> 
+								<td><span id="totalID" class="h4">{{total}}</span> 
 								<input type="hidden" name="total" value="0"/>
 								<span class="glyphicon glyphicon-euro"></span></td>
 							</tr>
 						</table>
-						<button type="submit" class="btn btn-success btn-lg btn-block">Finalizar</button>
+						<button class="btn btn-success btn-lg btn-block" (click)="newRequest()">Finalizar</button>
 						
-					</form>
+					</form> 
 					</div>
 				</div>
 			</div>

@@ -11,9 +11,11 @@ import { HeaderComponent } from './header.component';
 import { RestaurantListComponent } from './restaurantList.component';
 import { ProductsComponent } from './products.component';
 import { FormComponent } from './form.component';
+import { RequestComponent } from './request.component';
 
 
 import { RestaurantService } from './restaurant.service';
+import { RequestService } from './request.service';
 import { PersonService } from './person.service';
 import { LoginService } from './login.service';
 
@@ -27,7 +29,8 @@ import { routing } from './app.routing';
     HeaderComponent,
     RestaurantListComponent,
     FormComponent,
-    ProductsComponent
+    ProductsComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { routing } from './app.routing';
     NgbModule.forRoot()
   ],
   providers: [
+    RequestService,
     RestaurantService,
     PersonService,
     LoginService
