@@ -23,18 +23,18 @@
 					<li><a href="restaurantList">Restaurantes</a></li>
 					<li><a href="signUp">Registro</a></li>
 				</ul>
-				<div class="navbar-form navbar-right form-inline">
+				<form class="navbar-form navbar-right form-inline" role="search">
 					<div class="form-group">
-						<input [(ngModel)]= "username" type="email" class="form-control" id="email" name="email"
+						<input #username type="email" class="form-control" id="email" name="email"
 							placeholder="tucorreo@dominio.com">
 					</div>
 					<div class="form-group">
-						<input [(ngModel)]="password" type="password" class="form-control" id="password" name="password"
+						<input #password type="password" class="form-control" id="password" name="password"
 							placeholder="Tu contraseña">
 					</div>
-					<button type="submit" class="btn btn-success" (click)="login()">Conectarse</button>
+					<button type="submit" class="btn btn-success" (click)="login($event, username.value, password.value)">Conectarse</button>
 					
-				</div>
+				</form>
 			</div>
 			<!-- /.navbar-collapse -->
 		</div>

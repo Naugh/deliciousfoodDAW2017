@@ -5,8 +5,11 @@ import { RestaurantListComponent } from './restaurantList.component';
 import { ProductsComponent } from './products.component';
 import { FormComponent } from './form.component';
 
+const ROOT = 'new/';
+
 const appRoutes = [
     { path: '', component: IndexComponent },
+    { path: '', redirectTo: '', pathMatch: 'full' },
     { path: 'restaurantList', component: RestaurantListComponent },
     { path: 'signUp', component: FormComponent },
     { path: 'products/:id', component: ProductsComponent }

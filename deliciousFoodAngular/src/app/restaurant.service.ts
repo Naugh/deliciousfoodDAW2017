@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 
 import { Restaurant} from './restaurant.model';
 
-const URL = 'https://localhost:8443/api/restaurant';
+const URL = 'http://localhost:8080/api/restaurant';
 
 @Injectable()
 export class RestaurantService {
@@ -13,7 +13,7 @@ export class RestaurantService {
     constructor(private http: Http) { }
     
     getRestaurants(page: number) {
-        let url = 'https://localhost:8443/api/restaurants/?page='+page+'&size=10';
+        let url = 'http://localhost:8080/api/restaurants/?page='+page+'&size=10';
 		return this.http.get(url)
 			.map(response => response.json())
 			.catch(error => this.handleError(error));

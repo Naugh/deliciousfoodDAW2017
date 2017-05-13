@@ -2,22 +2,24 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-const URL = 'https://localhost:8443/api/login';
+const URL = 'http://localhost:8080/api/login';
 
 @Injectable()
 export class LoginService {
+
+    user;
 
     constructor(private http: Http) { }
     
     login(email:string, password:string){
         const headers = new Headers({
             'Authorization': 'Basic ' + utf8_to_b64(email + ':' + password),
-            'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+            'X-Requested-With': 'XMLHttpRequest'
         });
 
-        const options = new RequestOptions({ headers: headers, withCredentials: true });
+        const options = new RequestOptions({ withCredentials: true, headers });
 
-        return this.http.get(URL, options)
+        /*return this.http.get(URL, options)
 			.map((response: Response) => {
                 response.json();
                 let user = response.json();
@@ -26,7 +28,18 @@ export class LoginService {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
             })
-			.catch(error => this.handleError(error));
+			.catch(error => this.handleError(error));*/
+
+        return this.http.get(URL, options).map(
+        response => {
+            this.processLogInResponse(response);
+            return this.user;
+            }
+        );
+    }
+
+    private processLogInResponse(response) {
+        this.user = response.json();
     }
 
     logout() {

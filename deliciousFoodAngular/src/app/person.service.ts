@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 
 import { Person } from './person.model';
 
-const URL = 'https://localhost:8443/api/person';
+const URL = 'http://localhost:8080/api/person';
 
 @Injectable()
 export class PersonService {
