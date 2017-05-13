@@ -10,7 +10,6 @@ import { RequestService } from './request.service';
     moduleId: module.id,
     selector: 'products',
     templateUrl: 'products.template.html'
-  
 })
 
 export class ProductsComponent{

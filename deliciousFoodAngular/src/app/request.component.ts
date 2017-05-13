@@ -14,8 +14,9 @@ import { ProductsComponent } from './products.component';
 
 export class RequestComponent{
 
-     @Input() 
+    @Input() 
     private selects: Product[];
+    private total: number;
 
     constructor () {}
 
