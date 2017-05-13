@@ -29,7 +29,6 @@ public class Person extends User{
 	private List<Request> requests = new ArrayList<>();
 	
 	@ElementCollection(fetch = FetchType.EAGER)
-	@JsonIgnore
 	private List<String> roles = new ArrayList<>(Arrays.asList("ROLE_PERSON"));;
 	
 	public Person() {

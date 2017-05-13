@@ -2,12 +2,19 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
+import { Restaurant} from './restaurant.model';
+import { Person} from './person.model';
+
 const URL = 'http://localhost:8080/api/login';
+
+const RESTAURANT = 'RESTAURANT';
+const PERSON = 'PERSON';
 
 @Injectable()
 export class LoginService {
 
-    user;
+    restaurant:Restaurant;
+    person:Person;
 
     constructor(private http: Http) { }
     
@@ -19,27 +26,22 @@ export class LoginService {
 
         const options = new RequestOptions({ withCredentials: true, headers });
 
-        /*return this.http.get(URL, options)
-			.map((response: Response) => {
-                response.json();
-                let user = response.json();
-                console.log(user);
-                if (user){
-                    localStorage.setItem('currentUser', JSON.stringify(user));
-                }
-            })
-			.catch(error => this.handleError(error));*/
-
         return this.http.get(URL, options).map(
         response => {
             this.processLogInResponse(response);
-            return this.user;
+            return response.json();
             }
         );
     }
 
     private processLogInResponse(response) {
-        this.user = response.json();
+        let role = response.json().roles[0];
+        console.log("ROL ===> "+ role);
+        if(role === RESTAURANT){
+            this.restaurant = response.json();
+        }else if(role === PERSON){
+            this.person = response.json();
+        }
     }
 
     logout() {

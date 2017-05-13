@@ -33,8 +33,7 @@ export class RestaurantListComponent implements OnInit{
         data => this.getData(data),
         error => console.log(error)
       );
-      this.page++;
-      console.log(this.page);       
+      this.page++;      
     }
 
     getData(data){
