@@ -19,15 +19,16 @@ export class ProductsComponent{
     private products: Product[];
     public selects: Product[];
     private total: number;
+    private id: number;
 
     constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService, 
                 private requestService: RequestService) {
 
-        let id = activatedRoute.snapshot.params['id'];
+        this.id = activatedRoute.snapshot.params['id'];
         this.products= new Array;
         this.selects= new Array;
         
-        restaurantService.getProducts(id).subscribe(
+        restaurantService.getProducts(this.id).subscribe(
             data => this.products = data,
             error => console.error(error)
         ) 
@@ -59,8 +60,8 @@ calcularTotal(){
     }
 }
 
-finalizar(){
-    this.router.navigate(['/request/:id']);
+finalizar(id){
+    this.router.navigate(['/request',id]);
 }
 
 /*removeProduct(p: Product){

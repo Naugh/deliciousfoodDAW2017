@@ -26,7 +26,7 @@ export class RestaurantService {
 	}
 
 	getProducts(id: number | string){
-		let url = 'https://localhost:8443/api/products/';
+		let url = 'http://localhost:8080/api/products/';
 		return this.http.get(url + id)
 			.map(response => response.json())
 			.catch(error => this.handleError(error));

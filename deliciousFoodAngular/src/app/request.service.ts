@@ -5,7 +5,7 @@ import 'rxjs/Rx';
 
 import { Request } from './request.model';
 
-const URL = 'https://localhost:8443/api/request';
+const URL = 'http://localhost:8080/api/request';
 
 @Injectable()
 export class RequestService {
