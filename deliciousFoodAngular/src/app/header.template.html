@@ -1,5 +1,5 @@
 <!-- Sin login -->
-<div *ngIf="!restaurant && !person" id="header">
+<div id="header">
 	<div class="brand">Delicious Food</div>
 	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
 	<!-- Navigation -->
@@ -21,10 +21,14 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-left">
 					<li><a href="/">Inicio</a></li>
-					<li><a href="restaurantList">Restaurantes</a></li>
-					<li><a href="signUp">Registro</a></li>
+					<li *ngIf="restaurant"><a href="/products"> Productos </a></li>
+					<li *ngIf="!restaurant"><a href="restaurantList">Restaurantes</a></li>
+					<li *ngIf="!restaurant && !person"><a href="signUp">Registro</a></li>
+					<li *ngIf="person || restaurant"><a href="/editProfile">Perfil</a></li>
+					<li *ngIf="person || restaurant"><a href="/requests"> Pedidos </a></li>
+					<li *ngIf="person || restaurant"><a href="#" onclick="$('#logout').submit();"> Cerrar sesión</a></li>
 				</ul>
-				<form class="navbar-form navbar-right form-inline" role="search">
+				<form *ngIf="!restaurant && !person" class="navbar-form navbar-right form-inline" role="search">
 					<div class="form-group">
 						<input #username type="email" class="form-control" id="email" name="email"
 							placeholder="tucorreo@dominio.com">
@@ -44,7 +48,7 @@
 </div>
 
 <!-- Persona -->
-<div *ngIf="person" id="header">
+<div *ngIf="false" id="header">
 	<div class="brand">Delicious Food</div>
 	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
 	<!-- Navigation -->
@@ -80,7 +84,7 @@
 </div>
 
 <!-- Restaurante -->
-<div *ngIf="restaurant" id="header">
+<div *ngIf="false" id="header">
 	<div class="brand">Delicious Food</div>
 	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
 	<!-- Navigation -->

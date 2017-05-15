@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Restaurant} from './restaurant.model';
-import { Person} from './person.model';
+import { Restaurant } from './restaurant.model';
+import { Person } from './person.model';
+
 
 const URL = 'http://localhost:8080/api/login';
 
@@ -37,9 +38,9 @@ export class LoginService {
     private processLogInResponse(response) {
         let role = response.json().roles[0];
         if(role === RESTAURANT){
-            this.restaurant = response.json();
+            sessionStorage.setItem("restaurant", response.json());
         }else if(role === PERSON){
-            this.person = response.json();
+            sessionStorage.setItem("person", response.json());
         }
     }
 
@@ -51,6 +52,11 @@ export class LoginService {
 		console.error(error);
 		return Observable.throw("Server error (" + error.status + "): " + error.text())
 	}
+
+    test(){
+        console.log("Persona --> " + sessionStorage.getItem("restaurant"));
+        console.log("Restaurante --> " + sessionStorage.getItem("person"));
+    }
     
 }
 
