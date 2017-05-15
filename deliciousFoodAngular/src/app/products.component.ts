@@ -66,9 +66,16 @@ finalizar(id){
     this.router.navigate(['/request',id]);
 }
 
-/*removeProduct(p: Product){
-    this.selects[p.id].remove();
-} */
+removeProduct(p: Product){
+    if (p.amount > 1){
+        p.amount = p.amount - 1;
+        this.calcularTotal();
+    }
+    else if (p.amount = 1){
+        this.selects.splice(p.id,1);
+        this.calcularTotal();
+    }
+} 
 
 /*newRequest(){
    
