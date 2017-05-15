@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Restaurant} from './restaurant.model';
 import { Product} from './product.model';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,7 +12,7 @@ import { ProductsComponent } from './products.component';
   
 })
 
-export class RequestComponent{
+export class RequestComponent implements OnInit{
 
     @Input() 
     private selects: Product[];
@@ -20,6 +20,13 @@ export class RequestComponent{
 
     constructor () {}
 
+    ngOnInit(){
+        this.total = JSON.parse(sessionStorage.getItem("total"));
+        this.selects = JSON.parse(sessionStorage.getItem("selects"));
+        
+
+    }
+    
 
   //esto cuando se confirma que el pedido va a la base de datos no antes
   //  requestList.push(request);

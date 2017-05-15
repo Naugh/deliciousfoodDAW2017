@@ -61,6 +61,8 @@ calcularTotal(){
 }
 
 finalizar(id){
+    sessionStorage.setItem("total", JSON.stringify(this.total));
+    sessionStorage.setItem("selects", JSON.stringify(this.selects));
     this.router.navigate(['/request',id]);
 }
 
