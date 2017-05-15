@@ -26,7 +26,7 @@
 					<li *ngIf="!restaurant && !person"><a href="signUp">Registro</a></li>
 					<li *ngIf="person || restaurant"><a href="/editProfile">Perfil</a></li>
 					<li *ngIf="person || restaurant"><a href="/requests"> Pedidos </a></li>
-					<li *ngIf="person || restaurant"><a href="#" onclick="$('#logout').submit();"> Cerrar sesión</a></li>
+					<li *ngIf="person || restaurant"><a href="#" (click)="logout()"> Cerrar sesión</a></li>
 				</ul>
 				<form *ngIf="!restaurant && !person" class="navbar-form navbar-right form-inline" role="search">
 					<div class="form-group">

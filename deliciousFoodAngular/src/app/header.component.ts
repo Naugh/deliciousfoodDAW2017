@@ -41,4 +41,13 @@ export class HeaderComponent{
     restaurantList(){
         this.router.navigate['/restaurantList'];
     }
+
+    logout(){
+        this.loginService.logout().subscribe(
+            u => {
+                console.log(u);
+                this.changeHeader();
+            }
+        );
+    }
 }

@@ -6,16 +6,13 @@ import { Restaurant } from './restaurant.model';
 import { Person } from './person.model';
 
 
-const URL = 'http://localhost:8080/api/login';
+const URL = 'http://localhost:8080/api/';
 
 const RESTAURANT = 'ROLE_RESTAURANT';
 const PERSON = 'ROLE_PERSON';
 
 @Injectable()
 export class LoginService {
-
-    restaurant:Restaurant;
-    person:Person;
 
     constructor(private http: Http) { }
     
@@ -27,7 +24,7 @@ export class LoginService {
 
         const options = new RequestOptions({ withCredentials: true, headers });
 
-        return this.http.get(URL, options).map(
+        return this.http.get(URL + "login", options).map(
         response => {
             this.processLogInResponse(response);
             return response.json();
@@ -45,13 +42,37 @@ export class LoginService {
     }
 
     logout() {
-        localStorage.removeItem('currentItem');
+       return this.http.get(URL + "logout", { withCredentials: true}).map(
+        response => {
+            if(response){
+                sessionStorage.removeItem('restaurant');
+                sessionStorage.removeItem('person');
+            }
+            return response;
+            }
+        );
     }
 
     private handleError(error: any) {
 		console.error(error);
 		return Observable.throw("Server error (" + error.status + "): " + error.text())
-	}
+    }
+
+    getRestaurantLogged(){
+        return sessionStorage.getItem("restaurant");
+    }
+
+    getPersonLogged(){
+        return sessionStorage.getItem("person");
+    }
+
+    isPersonLogged(){
+        return this.getPersonLogged!=undefined;
+    }
+
+    isRestaurantLogged(){
+        return this.getRestaurantLogged!=undefined;
+    }
 
     test(){
         console.log("Persona --> " + sessionStorage.getItem("restaurant"));
