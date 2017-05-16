@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Product {
 
+	@JsonView(Show.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;

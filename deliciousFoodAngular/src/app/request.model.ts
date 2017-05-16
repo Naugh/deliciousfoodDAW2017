@@ -6,7 +6,7 @@ export interface Request{
     surnames: string;
     address: string;
     phonePerson: string;
-    phoneRestaurant: string;
+    phoneRestaurant?: string;
     postal: string;
     price: number;
     idRestaurant: number;

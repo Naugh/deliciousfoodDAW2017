@@ -46,7 +46,6 @@ export class RequestComponent implements OnInit{
         if(this.loginService.isPersonLogged()){
            this.person = this.loginService.getPersonLogged();
         }
-        console.log(this.person);
     }
 
 
@@ -57,10 +56,8 @@ export class RequestComponent implements OnInit{
             surnames: this.person.surnames,
             address: this.person.address,
             phonePerson: this.person.phone,
-            phoneRestaurant: this.person.phone,
             postal: this.person.postalCode,
             price: this.total,
-            delivered: false,
             idRestaurant: this.id,
             products: this.selects
         };
