@@ -16,11 +16,13 @@ import { ProfileComponent } from './profile.component';
 import { ListRequestPersonComponent } from './listRequestPerson.component';
 import { EditProductsComponent } from './editProducts.component';
 import { RequestEndComponent} from './requestEnd.component';
+import { ProfileRestComponent} from './profileRest.component';
 
 import { RestaurantService } from './restaurant.service';
 import { RequestService } from './request.service';
 import { PersonService } from './person.service';
 import { LoginService } from './login.service';
+
 
 import { routing } from './app.routing';
 
@@ -35,6 +37,7 @@ import { routing } from './app.routing';
     ProductsComponent,
     RequestComponent,
     ProfileComponent,
+    ProfileRestComponent,
     ListRequestPersonComponent,
     EditProductsComponent,
     RequestEndComponent
