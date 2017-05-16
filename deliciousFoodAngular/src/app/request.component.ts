@@ -26,16 +26,12 @@ export class RequestComponent implements OnInit{
     private person: Person;
     private req: Request;
     private restaurant: Restaurant;
+    private id : number;
 
     constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService, 
                 private requestService: RequestService) {
 
-        let id = activatedRoute.snapshot.params['id'];
-        
-        restaurantService.getRestaurant(id).subscribe(
-            data => this.restaurant = data,
-            error => console.error(error)
-        ) 
+        this.id = activatedRoute.snapshot.params['id'];
         
     }
     ngOnInit(){
@@ -47,30 +43,19 @@ export class RequestComponent implements OnInit{
         
        } */ 
     }
-    id?: number;
-    namePerson: string;
-    surnames: string;
-    address: string;
-    phonePerson: string;
-    phoneRestaurant: string;
-    postal: string;
-    price: number;
-    idRestaurant: number;
-    delivered: boolean;
-    products: Array<Product>;
 
 
-
-  addRequest(){
+  newRequest(){
         
-        this.req.namePerson = this.person.name;
+   /*     this.req.namePerson = this.person.name;
         this.req.surnames = this.person.surnames;
+        this.req.address = this.person.address;
         this.req.phonePerson = this.person.phone;
         this.req.phoneRestaurant = this.restaurant.phone;
         this.req.postal = this.person.postalCode;
         this.req.price = this.total;
-        this.req.idRestaurant = this.restaurant.id;
-        this.req.address = this.person.address;
+        this.req.idRestaurant = this.id; 
+       
 
         let i: 0;
         for(let product of this.selects){
@@ -79,13 +64,14 @@ export class RequestComponent implements OnInit{
             i++;
 		}
 
-        this.person.requests.push(this.req);
+        this.person.requests.push(this.req); */
 
         this.requestService.newRequest(this.req).subscribe(
-            request => this.router.navigate(['/request']),
+            request => console.log("Request" + request) ,
             error => console.error('Error creating new book: ' + error)
         );
 
+        this.router.navigate(['/request']);
 
         
   
