@@ -19,16 +19,8 @@
                     </thead>
                     <tbody>
                     
-                        <tr  *ngFor="let product of products">
-                            <td>
-                    <!--            <div>
-                                        <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]" onclick="deleteProdRest(this);">
-                                            <span class="glyphicon glyphicon-remove"></span> </button>
-                                        <button type="button" class="btn btn-warning btn-number btn-sm hidden" data-type="plus" data-field="quant[2]" onclick="editProdRest(this);">
-                                            <span class="glyphicon glyphicon-pencil"></span> </button>
-                                   
-                                </div> -->
-                            </td>
+                        <tr  *ngFor="let product of products; let i = index">
+                            <td><span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="removeProduct(i)"> </span></td>
                             <td><span class="product"><strong> {{product.name}} </strong></span>
                           	  <input name="nomProd" type="hidden" value="{{product.name}}"/>
                             </td>
@@ -43,7 +35,7 @@
                     </tbody>
                 </table>
                 <br>
-                <button class="btn btn-success center-block">Guardar</button>	
+                <button class="btn btn-success center-block" (click)="save()">Guardar</button>	
             </div>
             <!-- AÃ±adir nuevo producto -->
             <div class="col-md-4">
@@ -53,16 +45,15 @@
                         <div class="panel-body">
                             
                             <div>
-                                <input type="Nombre" class="form-control" id="nombreItem" placeholder="Nombre del producto">
+                                <input [(ngModel)] = "name" type="Nombre" class="form-control" id="nombreItem" placeholder="Nombre del producto">
                                 <br>
-                                <input type="Precio" class="form-control" id="precioItem" placeholder="Precio">
+                                <input [(ngModel)] = "price" type="Precio" class="form-control" id="precioItem" placeholder="Precio">
                                 <br>
-                                <input type="Descripcion" class="form-control" id="descripcionItem" placeholder="Descripción">
+                                <input [(ngModel)] = "description" type="Descripcion" class="form-control" id="descripcionItem" placeholder="Descripción">
                                 <br>
                             </div>
                             
-                <!--            <a class="btn btn-success btn-lg btn-block" onclick="addProdRest();">Añadir</a> -->
-                            <!-- <input class="btn btn-success btn-lg btn-block" type="submit" value="Finalizar">-->
+                            <button class="btn btn-success btn-lg btn-block" (click)="addProduct()">Añadir</button> 
                             <table class="table"> </table>
                         </div>
                     </div>
