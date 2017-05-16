@@ -21,9 +21,9 @@ export class RequestService {
         .catch(error => this.handleError(error));
     }
 
-    getRequests(){
-        let url: 'http://localhost:8080/api/request/all';
-        return this.http.get(url)
+    getRequestsPerson(){
+        
+        return this.http.get(URL + "/all",{ withCredentials: true })
             .map(response => response.json())
             .catch(error => this.handleError(error));
     }

@@ -25,20 +25,24 @@ export class ListRequestPersonComponent implements OnInit{
     constructor (private requestService: RequestService) {
 
         this.requests = new Array;
-
-        requestService.getRequests().subscribe(
+        
+        requestService.getRequestsPerson().subscribe(
             data => this.requests = data,
             error => console.error(error)
         ) 
 
-        console.log("lengt= " + this.requests.length);
+       
 
     }
 
     ngOnInit(){
-   //     this.person = JSON.parse(sessionStorage.getItem("person"));
+        this.person = JSON.parse(sessionStorage.getItem("person"));
+        
     }
 
+    examineProduct(r: Request){
+
+    }
 
 
 }
