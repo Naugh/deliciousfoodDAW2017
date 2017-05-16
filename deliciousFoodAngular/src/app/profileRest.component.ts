@@ -49,7 +49,7 @@ export class ProfileRestComponent implements OnInit{
         this.restaurant.postalCode= this.postalCode;
         this.restaurant.image= this.image;
         
-        sessionStorage.setItem("person", JSON.stringify(this.restaurant));
+        sessionStorage.setItem("restaurant", JSON.stringify(this.restaurant));
         this.router.navigate(['/']);
 
     }

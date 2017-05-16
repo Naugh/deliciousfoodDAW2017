@@ -10,6 +10,7 @@ import { ListRequestPersonComponent} from './listRequestPerson.component';
 import { EditProductsComponent} from './editProducts.component';
 import { RequestEndComponent} from './requestEnd.component';
 import { ProfileRestComponent} from './profileRest.component';
+import { ListRequestRestComponent} from './listRequestRest.component';
 
 
 const appRoutes = [
@@ -23,6 +24,7 @@ const appRoutes = [
     { path: 'productsEdit', component: EditProductsComponent},
     { path: 'request', component: RequestEndComponent},
     { path: 'profile', component: ProfileRestComponent},
+    { path: 'requestsList', component: ListRequestRestComponent},
 ]
 
 export const routing = RouterModule.forRoot(appRoutes);

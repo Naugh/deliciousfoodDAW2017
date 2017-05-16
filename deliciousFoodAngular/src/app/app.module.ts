@@ -17,6 +17,7 @@ import { ListRequestPersonComponent } from './listRequestPerson.component';
 import { EditProductsComponent } from './editProducts.component';
 import { RequestEndComponent} from './requestEnd.component';
 import { ProfileRestComponent} from './profileRest.component';
+import { ListRequestRestComponent} from './listRequestRest.component';
 
 import { RestaurantService } from './restaurant.service';
 import { RequestService } from './request.service';
@@ -39,6 +40,7 @@ import { routing } from './app.routing';
     ProfileComponent,
     ProfileRestComponent,
     ListRequestPersonComponent,
+    ListRequestRestComponent,
     EditProductsComponent,
     RequestEndComponent
   ],
