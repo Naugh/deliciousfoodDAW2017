@@ -32,11 +32,17 @@ export class RequestComponent implements OnInit{
 
         this.id = activatedRoute.snapshot.params['id'];
         
+  /*      restaurantService.getRestaurant(this.id).subscribe(
+            data => this.restaurant = data,
+            error => console.error(error)
+
+        ) */
+        
     }
     ngOnInit(){
         this.total = JSON.parse(sessionStorage.getItem("total"));
         this.selects = JSON.parse(sessionStorage.getItem("selects")); 
-        this.person = JSON.parse(sessionStorage.getItem("person"));
+  //      this.person = JSON.parse(sessionStorage.getItem("person"));
         if(this.loginService.isPersonLogged()){
            this.person = this.loginService.getPersonLogged();
         }
@@ -46,27 +52,22 @@ export class RequestComponent implements OnInit{
 
   newRequest(){
         
-   /*     this.req.namePerson = this.person.name;
-        this.req.surnames = this.person.surnames;
-        this.req.address = this.person.address;
-        this.req.phonePerson = this.person.phone;
-        this.req.phoneRestaurant = this.restaurant.phone;
-        this.req.postal = this.person.postalCode;
-        this.req.price = this.total;
-        this.req.idRestaurant = this.id; 
-       
+        let request: Request={
+            namePerson: this.person.name,
+            surnames: this.person.surnames,
+            address: this.person.address,
+            phonePerson: this.person.phone,
+            phoneRestaurant: this.person.phone,
+            postal: this.person.postalCode,
+            price: this.total,
+            delivered: false,
+            idRestaurant: this.id,
+            products: this.selects
+        };
+    
 
-        let i: 0;
-        for(let product of this.selects){
-            
-            this.req.products[i] = product;
-            i++;
-		}
-
-        this.person.requests.push(this.req); */
-
-        this.requestService.newRequest(this.req).subscribe(
-            request => console.log("Request" + request) ,
+        this.requestService.newRequest(request).subscribe(
+            data => console.log(data),
             error => console.error('Error creating new request: ' + error)
         );
 

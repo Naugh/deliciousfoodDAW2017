@@ -10,6 +10,6 @@ export interface Request{
     postal: string;
     price: number;
     idRestaurant: number;
-    delivered: boolean;
+    delivered?: boolean;
     products: Array<Product>;
 }

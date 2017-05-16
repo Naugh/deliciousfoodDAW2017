@@ -15,8 +15,8 @@ export class RequestService {
     constructor(private http: Http) { }
 
     newRequest(request: Request){
-        let url = 'http://localhost:8443/api/request';
-        return this.http.post(url, request)
+        let url = 'http://localhost:8080/api/request';
+        return this.http.post(url, request, { withCredentials: true})
         .map(response => response.json())
         .catch(error => this.handleError(error));
     }
