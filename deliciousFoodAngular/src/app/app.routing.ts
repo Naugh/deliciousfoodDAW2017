@@ -20,9 +20,9 @@ const appRoutes = [
     { path: 'request/:id', component: RequestComponent},
     { path: 'editProfile', component: ProfileComponent},
     { path: 'requests', component: ListRequestPersonComponent},
-    { path: 'products', component: EditProductsComponent},
+    { path: 'productsEdit', component: EditProductsComponent},
     { path: 'request', component: RequestEndComponent},
-    { path: 'profile', component: ProfileRestComponent}
+    { path: 'profile', component: ProfileRestComponent},
 ]
 
 export const routing = RouterModule.forRoot(appRoutes);

@@ -21,7 +21,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-left">
 					<li><a [routerLink]="['/']">Inicio</a></li>
-					<li *ngIf="restaurant"><a [routerLink]="['/products']"> Productos </a></li>
+					<li *ngIf="restaurant"><a [routerLink]="['/productsEdit']"> Productos </a></li>
 					<li *ngIf="!restaurant"><a [routerLink]="['restaurantList']">Restaurantes</a></li>
 					<li *ngIf="!restaurant && !person"><a [routerLink]="['signUp']">Registro</a></li>
 					<li *ngIf="person"><a [routerLink]="['/editProfile']">Perfil</a></li>
