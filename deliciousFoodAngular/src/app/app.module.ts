@@ -15,7 +15,7 @@ import { RequestComponent } from './request.component';
 import { ProfileComponent } from './profile.component';
 import { ListRequestPersonComponent } from './listRequestPerson.component';
 import { EditProductsComponent } from './editProducts.component';
-
+import { RequestEndComponent} from './requestEnd.component';
 
 import { RestaurantService } from './restaurant.service';
 import { RequestService } from './request.service';
@@ -36,7 +36,8 @@ import { routing } from './app.routing';
     RequestComponent,
     ProfileComponent,
     ListRequestPersonComponent,
-    EditProductsComponent
+    EditProductsComponent,
+    RequestEndComponent
   ],
   imports: [
     BrowserModule,

@@ -32,6 +32,13 @@ export class RestaurantService {
 			.catch(error => this.handleError(error));
 	}
 
+	getRestaurant(id: number | string){
+		let url = 'http://localhost:8080/api/request/';
+		return this.http.get(url + id)
+			.map(response => response.json())
+			.catch(error => this.handleError(error));
+	}
+
     private handleError(error: any) {
 		console.error(error);
 		return Observable.throw("Server error (" + error.status + "): " + error.text())

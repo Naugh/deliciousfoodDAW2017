@@ -14,7 +14,7 @@ export class RequestService {
 
     constructor(private http: Http) { }
 
-    addRequest(request: Request){
+    newRequest(request: Request){
         return this.http.post(URL, request)
         .map(response => response.json())
         .catch(error => this.handleError(error));
@@ -26,6 +26,8 @@ export class RequestService {
             .map(response => response.json())
             .catch(error => this.handleError(error));
     }
+
+   
 
     private handleError(error : any){
         console.error(error);

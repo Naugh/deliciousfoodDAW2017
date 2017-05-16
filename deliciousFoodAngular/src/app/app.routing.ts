@@ -8,6 +8,7 @@ import { RequestComponent } from './request.component';
 import { ProfileComponent} from './profile.component';
 import { ListRequestPersonComponent} from './listRequestPerson.component';
 import { EditProductsComponent} from './editProducts.component';
+import { RequestEndComponent} from './requestEnd.component';
 
 
 const appRoutes = [
@@ -18,7 +19,8 @@ const appRoutes = [
     { path: 'request/:id', component: RequestComponent},
     { path: 'editProfile', component: ProfileComponent},
     { path: 'requests', component: ListRequestPersonComponent},
-    { path: 'products', component: EditProductsComponent}
+    { path: 'products', component: EditProductsComponent},
+    { path: 'request', component: RequestEndComponent}
 ]
 
 export const routing = RouterModule.forRoot(appRoutes);
