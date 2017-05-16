@@ -1,8 +1,8 @@
-	<form method="post" action="/products">
+
     <div class="container-fluid">
          <hr>
             <h2 class="intro-text text-center">
-                <strong>EdiciÃ³n de productos</strong>
+                <strong>Edición de productos</strong>
             </h2>
         <hr>
         <div class="row">
@@ -14,20 +14,20 @@
                             <th> Modificar </th>
                             <th id="nombre_plato"> Nombre del plato </th>
                             <th> Precio </th>
-                            <th> Descripcion </th>
+                            <th> Descripción </th>
                         </tr>
                     </thead>
                     <tbody>
                     
                         <tr  *ngFor="let product of products">
                             <td>
-                                <div>
+                    <!--            <div>
                                         <button type="button" class="btn btn-danger btn-number btn-sm"  data-type="minus" data-field="quant[2]" onclick="deleteProdRest(this);">
                                             <span class="glyphicon glyphicon-remove"></span> </button>
                                         <button type="button" class="btn btn-warning btn-number btn-sm hidden" data-type="plus" data-field="quant[2]" onclick="editProdRest(this);">
                                             <span class="glyphicon glyphicon-pencil"></span> </button>
                                    
-                                </div>
+                                </div> -->
                             </td>
                             <td><span class="product"><strong> {{product.name}} </strong></span>
                           	  <input name="nomProd" type="hidden" value="{{product.name}}"/>
@@ -42,14 +42,14 @@
         
                     </tbody>
                 </table>
-                </br>
-                <button type="submit" class="btn btn-success center-block">Guardar</button>	
+                <br>
+                <button class="btn btn-success center-block">Guardar</button>	
             </div>
             <!-- AÃ±adir nuevo producto -->
             <div class="col-md-4">
                 <div id="order">
                     <div class="panel panel-primary">
-                        <div class="panel-heading">AÃ±adir nuevo producto</div>
+                        <div class="panel-heading">Añadir nuevo producto</div>
                         <div class="panel-body">
                             
                             <div>
@@ -57,11 +57,11 @@
                                 <br>
                                 <input type="Precio" class="form-control" id="precioItem" placeholder="Precio">
                                 <br>
-                                <input type="Descripcion" class="form-control" id="descripcionItem" placeholder="DescripciÃ³n">
+                                <input type="Descripcion" class="form-control" id="descripcionItem" placeholder="Descripción">
                                 <br>
                             </div>
                             
-                            <a class="btn btn-success btn-lg btn-block" onclick="addProdRest();">AÃ±adir</a>
+                <!--            <a class="btn btn-success btn-lg btn-block" onclick="addProdRest();">Añadir</a> -->
                             <!-- <input class="btn btn-success btn-lg btn-block" type="submit" value="Finalizar">-->
                             <table class="table"> </table>
                         </div>
@@ -72,4 +72,3 @@
         </div>
     </div>
     
-   </form>

@@ -14,6 +14,7 @@ import { FormComponent } from './form.component';
 import { RequestComponent } from './request.component';
 import { ProfileComponent } from './profile.component';
 import { ListRequestPersonComponent } from './listRequestPerson.component';
+import { EditProductsComponent } from './editProducts.component';
 
 
 import { RestaurantService } from './restaurant.service';
@@ -34,7 +35,8 @@ import { routing } from './app.routing';
     ProductsComponent,
     RequestComponent,
     ProfileComponent,
-    ListRequestPersonComponent
+    ListRequestPersonComponent,
+    EditProductsComponent
   ],
   imports: [
     BrowserModule,
