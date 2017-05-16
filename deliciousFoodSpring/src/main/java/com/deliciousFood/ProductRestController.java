@@ -41,7 +41,7 @@ public class ProductRestController {
 	}
 	
 	// Añade los productos al restaurante logeado
-	@RequestMapping(value = "", method = RequestMethod.PUT)
+	@RequestMapping(value = "", method = RequestMethod.POST)
 	public ResponseEntity<List<Product>> addProducts(@RequestBody List<Product> products) {
 		if (userService.isLoggedUser()) {
 			Restaurant r = restaurantRepository.findById((userService.getRestaurant().getId()));		
@@ -64,6 +64,7 @@ public class ProductRestController {
 				Product pRestaurant = r.getProductById(pReceived.getId());	
 				//Actualiza productos existentes
 				if(pRestaurant!=null && !pReceived.equals(pRestaurant)){
+					pReceived.setAmount(0);
 					r.setProductById(pReceived.getId(), pReceived);
 				//Añade productos nuevos
 				}else if(pRestaurant==null){

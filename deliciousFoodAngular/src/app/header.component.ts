@@ -37,20 +37,12 @@ export class HeaderComponent{
         this.person = this.loginService.isPersonLogged();
     }
 
-    restaurantList(){
-        this.router.navigate['/restaurantList'];
-    }
-
-    editProfile(){
-        this.router.navigate['/editProfile'];
-    }
     logout(){
         this.loginService.logout().subscribe(
             u => {
                 console.log(u);
-                this.changeHeader();   
+                this.changeHeader();
             }
         );
-        this.router.navigate['/restaurantList'];
     }
 }

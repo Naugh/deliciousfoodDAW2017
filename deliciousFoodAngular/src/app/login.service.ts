@@ -46,7 +46,6 @@ export class LoginService {
     logout() {
        return this.http.get(URL + "logout", { withCredentials: true}).map(
         response => {
-            console.log(response);
             sessionStorage.removeItem("restaurant");
             sessionStorage.removeItem("person");
             return response;

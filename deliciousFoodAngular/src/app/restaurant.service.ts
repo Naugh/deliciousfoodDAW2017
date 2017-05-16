@@ -41,7 +41,7 @@ export class RestaurantService {
 	}
 
 	saveProducts(products: Product[]) {
-		return this.http.put("http://localhost:8080/api/products", products, { withCredentials: true })
+		return this.http.post("http://localhost:8080/api/products", products, { withCredentials: true })
 			.map(response => response.json())
 			.catch(error => this.handleError(error));
 	}

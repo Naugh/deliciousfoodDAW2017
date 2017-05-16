@@ -24,7 +24,12 @@ const appRoutes = [
     { path: 'productsEdit', component: EditProductsComponent},
     { path: 'request', component: RequestEndComponent},
     { path: 'profile', component: ProfileRestComponent},
+<<<<<<< HEAD
     { path: 'requestsList', component: ListRequestRestComponent},
+=======
+    { path: 'logout', redirectTo: '' },
+    { path: '**', redirectTo: '' }
+>>>>>>> origin/master
 ]
 
 export const routing = RouterModule.forRoot(appRoutes);
