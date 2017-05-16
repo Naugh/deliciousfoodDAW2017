@@ -35,19 +35,20 @@ export class LoginService {
     private processLogInResponse(response) {
         let role = response.json().roles[0];
         if(role === RESTAURANT){
-            sessionStorage.setItem("restaurant", response.json());
+            let restaurant: Restaurant = response.json();
+            sessionStorage.setItem("restaurant", JSON.stringify(restaurant));
         }else if(role === PERSON){
-            sessionStorage.setItem("person", response.json());
+            let person: Person = response.json();
+            sessionStorage.setItem("person", JSON.stringify(person));
         }
     }
 
     logout() {
        return this.http.get(URL + "logout", { withCredentials: true}).map(
         response => {
-            if(response){
-                sessionStorage.removeItem('restaurant');
-                sessionStorage.removeItem('person');
-            }
+            console.log(response);
+            sessionStorage.removeItem("restaurant");
+            sessionStorage.removeItem("person");
             return response;
             }
         );
@@ -55,28 +56,35 @@ export class LoginService {
 
     private handleError(error: any) {
 		console.error(error);
-		return Observable.throw("Server error (" + error.status + "): " + error.text())
+		return Observable.throw("Server error (" + error.status + "): " + error.text());
     }
 
     getRestaurantLogged(){
-        return sessionStorage.getItem("restaurant");
+        let restaurant:Restaurant = JSON.parse(sessionStorage.getItem("restaurant"));
+        return restaurant;
     }
 
     getPersonLogged(){
-        return sessionStorage.getItem("person");
+        let person:Person = JSON.parse(sessionStorage.getItem("person"));
+        return person;
     }
 
     isPersonLogged(){
-        return this.getPersonLogged!=undefined;
+        return this.getPersonLogged()!=undefined;
     }
 
     isRestaurantLogged(){
-        return this.getRestaurantLogged!=undefined;
+        return this.getRestaurantLogged()!=undefined;
     }
 
     test(){
-        console.log("Persona --> " + sessionStorage.getItem("restaurant"));
-        console.log("Restaurante --> " + sessionStorage.getItem("person"));
+        console.log("Persona --> " + sessionStorage.getItem("person"));
+        console.log("Restaurante --> " + sessionStorage.getItem("restaurant"));
+
+        console.log("Persona --> ");
+        console.log(this.getPersonLogged());
+        console.log("Restaurante --> ")
+        console.log(this.getRestaurantLogged());
     }
     
 }

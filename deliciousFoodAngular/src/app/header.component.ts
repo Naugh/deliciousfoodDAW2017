@@ -34,8 +34,8 @@ export class HeaderComponent{
         );
     }
     changeHeader(){
-        this.restaurant = sessionStorage.getItem("restaurant")!=undefined;
-        this.person = sessionStorage.getItem("person")!=undefined;
+        this.restaurant = this.loginService.isRestaurantLogged();
+        this.person = this.loginService.isPersonLogged();
     }
 
     restaurantList(){
