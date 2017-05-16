@@ -22,14 +22,13 @@ export class RequestComponent implements OnInit{
     
     private selects: Product[];
     private total: number;
-    private loginService: LoginService;
     private person: Person;
     private req: Request;
     private restaurant: Restaurant;
     private id : number;
 
     constructor(private router: Router, activatedRoute: ActivatedRoute, private restaurantService: RestaurantService, 
-                private requestService: RequestService) {
+                private requestService: RequestService, private loginService: LoginService) {
 
         this.id = activatedRoute.snapshot.params['id'];
         
@@ -38,10 +37,10 @@ export class RequestComponent implements OnInit{
         this.total = JSON.parse(sessionStorage.getItem("total"));
         this.selects = JSON.parse(sessionStorage.getItem("selects")); 
         this.person = JSON.parse(sessionStorage.getItem("person"));
-  /*      if(this.loginService.isPersonLogged()){
+        if(this.loginService.isPersonLogged()){
            this.person = this.loginService.getPersonLogged();
-        
-       } */ 
+        }
+        console.log(this.person);
     }
 
 
@@ -68,7 +67,7 @@ export class RequestComponent implements OnInit{
 
         this.requestService.newRequest(this.req).subscribe(
             request => console.log("Request" + request) ,
-            error => console.error('Error creating new book: ' + error)
+            error => console.error('Error creating new request: ' + error)
         );
 
         this.router.navigate(['/request']);

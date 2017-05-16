@@ -24,7 +24,8 @@
 					<li *ngIf="restaurant"><a [routerLink]="['/products']"> Productos </a></li>
 					<li *ngIf="!restaurant"><a [routerLink]="['restaurantList']">Restaurantes</a></li>
 					<li *ngIf="!restaurant && !person"><a [routerLink]="['signUp']">Registro</a></li>
-					<li *ngIf="person || restaurant"><a [routerLink]="['/editProfile']">Perfil</a></li>
+					<li *ngIf="person"><a [routerLink]="['/editProfile']">Perfil</a></li>
+					<li *ngIf="restaurant"><a [routerLink]="['/profile']">Perfil</a></li>
 					<li *ngIf="person || restaurant"><a [routerLink]="['/requests']"> Pedidos </a></li>
 					<li *ngIf="person || restaurant"><a [routerLink]="['#']" (click)="logout()"> Cerrar sesión</a></li>
 				</ul>

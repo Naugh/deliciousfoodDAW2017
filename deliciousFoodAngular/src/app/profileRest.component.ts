@@ -11,7 +11,7 @@ import { Restaurant } from './restaurant.model';
 @Component({
     moduleId: module.id,
     selector: 'profileRest',
-    templateUrl: 'editProfileRest.template.html'
+    templateUrl: 'profileRest.template.html'
   
 })
 

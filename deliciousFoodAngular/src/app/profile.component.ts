@@ -11,7 +11,7 @@ import { Person } from './person.model';
 @Component({
     moduleId: module.id,
     selector: 'profile',
-    templateUrl: 'editProfile.template.html'
+    templateUrl: 'profile.template.html'
   
 })
 
