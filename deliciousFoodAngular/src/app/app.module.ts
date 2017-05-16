@@ -12,6 +12,8 @@ import { RestaurantListComponent } from './restaurantList.component';
 import { ProductsComponent } from './products.component';
 import { FormComponent } from './form.component';
 import { RequestComponent } from './request.component';
+import { ProfileComponent } from './profile.component';
+import { ListRequestPersonComponent } from './listRequestPerson.component';
 
 
 import { RestaurantService } from './restaurant.service';
@@ -30,7 +32,9 @@ import { routing } from './app.routing';
     RestaurantListComponent,
     FormComponent,
     ProductsComponent,
-    RequestComponent
+    RequestComponent,
+    ProfileComponent,
+    ListRequestPersonComponent
   ],
   imports: [
     BrowserModule,

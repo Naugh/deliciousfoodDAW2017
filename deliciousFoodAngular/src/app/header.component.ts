@@ -42,6 +42,9 @@ export class HeaderComponent{
         this.router.navigate['/restaurantList'];
     }
 
+    editProfile(){
+        this.router.navigate['/editProfile'];
+    }
     logout(){
         this.loginService.logout().subscribe(
             u => {

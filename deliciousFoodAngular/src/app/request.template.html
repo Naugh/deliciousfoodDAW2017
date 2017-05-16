@@ -5,7 +5,7 @@
 		<div class="form-group">
 				<label for="inputName" class="col-sm-2 control-label">Nombre</label>
 				<div class="col-sm-10">
-<!-- value="{{person.name}}" -->
+
 				<input type="text" class="form-control" name="name" id="inputName"   placeholder="Nombre">
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 								<span class="glyphicon glyphicon-euro"></span></td>
 							</tr>
 						</table>
-						<button class="btn btn-success btn-lg btn-block" (click)="finalizar()">Finalizar</button>
+						<button class="btn btn-success btn-lg btn-block" (click)="addRequest(req)">Finalizar</button>
 						<input type="hidden" name="restaurant" value="{{restaurant}}" />
 						
 					</div>

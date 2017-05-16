@@ -11,9 +11,9 @@
                <table class="table table-striped">
                     <thead>
                         <tr>
-                        	<th id="detallesU" class="text-center"> Detalles del pedido </span></th>
+                        	<th id="detallesU" class="text-center"> Detalles del pedido </th>
                             <th class="text-center"> Restaurante </th>
-                            <th> TelÃ©fono </th>
+                            <th> Teléfono </th>
                             <th> Precio </th>
                                                    
                         </tr>
@@ -21,8 +21,8 @@
                     <tbody>
             	    
                         <tr *ngFor="let request of requests">
-                        	
-							<td> <button type="button" class="btn btn-primary center-block btn-warning" onclick="examineProducts({{id}});"> Mostrar </button></td>
+                        	<!-- click="examineProducts({{id}});" -->
+							<td> <button type="button" class="btn btn-primary center-block btn-warning" > Mostrar </button></td>
 							 <td class="text-center"> <strong> {{request.nameRestaurant}} </strong></td>
             	            <td> {{request.phoneRestaurant}} </td>
                             <td> {{request.price}}  <span class="glyphicon glyphicon-euro"> </span> </td>  
@@ -34,10 +34,10 @@
                 
                
             </div>
-            <form action='requests/products' method='POST' id='products'>	
+    <!--        <form action='requests/products' method='POST' id='products'>	
 				<input type="hidden" name="selectedRequest" value="">
 				
-			</form>
+			</form> -->
         	
         </div>
        
