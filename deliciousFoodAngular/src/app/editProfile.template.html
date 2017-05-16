@@ -8,23 +8,23 @@
           		 </h2>
           		
                 <hr>
-                
-                <form class="form-horizontal" data-toggle="validator" method="post" action="/editUser" enctype="multipart/form-data">
+                <br>
+                <div class="form-horizontal" data-toggle="validator" method="post" action="/editUser" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="inputEmail" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                            <input name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{email}}"> </div>
+                            <input [(ngModel)] = "email" name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{person.email}}"> </div>
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
                         <div class="col-sm-10">
-                            <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"  value="{{password}}"> </div>
+                            <input [(ngModel)] = "password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"  value="{{person.password}}"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña"  value="{{password}}" required> </div>
+                            <input [(ngModel)] = "password" type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña"  value="{{person.password}}" required> </div>
                     </div>
                     <br>
                    
@@ -32,29 +32,29 @@
                     <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Nombre</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"  value="{{name}}"> </div>
+                            <input [(ngModel)] = "name" type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"  value="{{person.name}}"> </div>
                     </div>
    <!--                  {{#isPerson}} -->
                     <div class="form-group surname">
                         <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"  value="{{surname}}"> </div>
+                            <input [(ngModel)] = "surnames" type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"  value="{{person.surnames}}"> </div>
                     </div>
                  <!--   {{/isPerson}}  -->
                     <div class="form-group">
                         <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"  value="{{phone}}"> </div>
+                            <input [(ngModel)] = "phone" type="text" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"  value="{{person.phone}}"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"  value="{{address}}"> </div>
+                            <input [(ngModel)] = "address" type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"  value="{{person.address}}"> </div>
                     </div>
                     <div class="form-group">
                         <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"  value="{{postalCode}}"> </div>
+                            <input [(ngModel)] = "postalCode" type="text" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"  value="{{person.postalCode}}"> </div>
                     </div>
                    <!-- {{#isRestaurant}} 
                     <div class="form-group categorias">
@@ -140,12 +140,12 @@
                     <div class="form-group text-center">
                         <div class="col-sm-8 col-md-offset-2">
                         <div class="center">
-                            <button class="btn btn-success">Modificar</button>
+                            <button class="btn btn-success" (click)="saveData()">Modificar</button>
                         </div>
                         </div>
                     </div>
                    
-                </form>
+                </div>
             </div>
         </div>
     </div>
