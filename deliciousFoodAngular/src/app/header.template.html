@@ -14,19 +14,19 @@
 						class="icon-bar"></span>
 				</button>
 				<!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-				<a class="navbar-brand" href="index.html">Business Casual</a>
+				<a class="navbar-brand" [routerLink]="['index.html']">Business Casual</a>
 			</div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-left">
-					<li><a href="/">Inicio</a></li>
-					<li *ngIf="restaurant"><a href="/products"> Productos </a></li>
-					<li *ngIf="!restaurant"><a href="restaurantList">Restaurantes</a></li>
-					<li *ngIf="!restaurant && !person"><a href="signUp">Registro</a></li>
-					<li *ngIf="person || restaurant"><a href="/editProfile">Perfil</a></li>
-					<li *ngIf="person || restaurant"><a href="/requests"> Pedidos </a></li>
-					<li *ngIf="person || restaurant"><a href="#" (click)="logout()"> Cerrar sesión</a></li>
+					<li><a [routerLink]="['/']">Inicio</a></li>
+					<li *ngIf="restaurant"><a [routerLink]="['/products']"> Productos </a></li>
+					<li *ngIf="!restaurant"><a [routerLink]="['restaurantList']">Restaurantes</a></li>
+					<li *ngIf="!restaurant && !person"><a [routerLink]="['signUp']">Registro</a></li>
+					<li *ngIf="person || restaurant"><a [routerLink]="['/editProfile']">Perfil</a></li>
+					<li *ngIf="person || restaurant"><a [routerLink]="['/requests']"> Pedidos </a></li>
+					<li *ngIf="person || restaurant"><a [routerLink]="['#']" (click)="logout()"> Cerrar sesión</a></li>
 				</ul>
 				<form *ngIf="!restaurant && !person" class="navbar-form navbar-right form-inline" role="search">
 					<div class="form-group">
@@ -44,76 +44,5 @@
 			<!-- /.navbar-collapse -->
 		</div>
 		<!-- /.container -->
-	</nav>
-</div>
-
-<!-- Persona -->
-<div *ngIf="false" id="header">
-	<div class="brand">Delicious Food</div>
-	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
-	<!-- Navigation -->
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-				<a class="navbar-brand" href="index.html">Business Casual</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<form method="post" action="/logout" id="logout">
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-center">
-					<li><a href="/">Inicio</a></li>
-					<li><a href="/restaurant">Restaurantes</a></li>
-					<li><a href="/editProfile">Perfil</a></li>
-					<li><a href="/requests"> Pedidos </a></li>
-					<li><a href="#" onclick="$('#logout').submit();"> Cerrar sesión</a></li>
-				</ul>
-				
-			</div>
-			</form>
-		</div>
-	</nav>
-</div>
-
-<!-- Restaurante -->
-<div *ngIf="false" id="header">
-	<div class="brand">Delicious Food</div>
-	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
-	<!-- Navigation -->
-	<nav class="navbar navbar-default" role="navigation">
-		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-				<a class="navbar-brand" href="index.html">Business Casual</a>
-			</div>
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<form method="post" action="/logout" id="logout">
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-center">
-					<li><a href="/products"> Productos </a></li>
-					<li><a href="/requests"> Pedidos </a></li>
-					<li><a href="/editProfile">Perfil</a></li>
-					<li><a href="#" onclick="$('#logout').submit();"> Cerrar sesión</a></li>
-				</ul>
-				
-			</div>
-			</form>
-		</div>
 	</nav>
 </div>
