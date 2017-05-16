@@ -22,7 +22,7 @@
             	    
                         <tr *ngFor="let request of requests">
                         	<!-- click="examineProducts({{id}});" -->
-							<td> <button type="button" class="btn btn-primary center-block btn-warning" > Mostrar </button></td>
+							<td> <button type="button" class="btn btn-primary center-block btn-warning" (click)="examineProducts(request);"> Mostrar </button></td>
 							 <td class="text-center"> <strong> {{request.nameRestaurant}} </strong></td>
             	            <td> {{request.phoneRestaurant}} </td>
                             <td> {{request.price}}  <span class="glyphicon glyphicon-euro"> </span> </td>  
