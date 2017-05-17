@@ -37,9 +37,9 @@ export class ProfileRestComponent implements OnInit{
         this.phone= this.restaurant.phone;
         this.postalCode= this.restaurant.postalCode;
         
-    }
+    } 
 
-    saveData(){
+     saveData(){
         
         this.restaurant.name = this.name;
         this.restaurant.password= this.password;
@@ -52,6 +52,6 @@ export class ProfileRestComponent implements OnInit{
         sessionStorage.setItem("restaurant", JSON.stringify(this.restaurant));
         this.router.navigate(['/']);
 
-    }
+    } 
 
 }

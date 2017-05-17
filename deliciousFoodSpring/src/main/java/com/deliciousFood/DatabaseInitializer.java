@@ -87,6 +87,7 @@ public class DatabaseInitializer {
 	
 
 		Person p1 = new Person("Jorge", "Ratón Lázaro", "asd", "jorge_raton@gmail.com", "Av Alemania Nº3 P8ºA", "685746523", "28915");
+		req1.setDelivered(true);
 		p1.getRequests().add(req1);
 		p1.getRequests().add(req2);
 		Person p2 = new Person("Pablo", "Gutierrez Anton", "asd", "pablito@gmail.com", "Av Polonia Nº8 P8º2","615946523", "28815");

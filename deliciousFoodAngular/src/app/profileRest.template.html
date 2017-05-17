@@ -1,13 +1,13 @@
 <div class="container">
         <div class="row">
             <div class="col-sm-8 col-md-offset-2">
-                <hr>
+               <hr>
                 
            	     <h2 class="intro-text text-center">
            	    	 <strong>Editar perfil</strong>
           		 </h2>
           		
-                <hr>
+                <hr> 
                 <br>
                 <div class="form-horizontal" data-toggle="validator" method="post" action="/editUser" enctype="multipart/form-data">
                     <div class="form-group">
@@ -16,7 +16,7 @@
                             <input [(ngModel)] = "email" name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{person.email}}"> </div>
                     </div>
                     <br>
-                    <div class="form-group">
+                   <div class="form-group">
                         <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
                         <div class="col-sm-10">
                             <input [(ngModel)] = "password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"  value="{{person.password}}"> </div>
@@ -25,10 +25,10 @@
                         <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
                         <div class="col-sm-10">
                             <input [(ngModel)] = "password" type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña"  value="{{person.password}}" required> </div>
-                    </div>
+                    </div> 
                     <br>
                    
-                    <br>
+                    <br> 
                     <div class="form-group">
                         <label for="inputName" class="col-sm-2 control-label">Nombre</label>
                         <div class="col-sm-10">
@@ -49,7 +49,7 @@
                         <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
                         <div class="col-sm-10">
                             <input [(ngModel)] = "postalCode" type="text" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"  value="{{person.postalCode}}"> </div>
-                    </div>
+                    </div> 
                    <!-- {{#isRestaurant}} 
                     <div class="form-group categorias">
                         <label for="inputCat" class="col-sm-2 control-label">CategorÃ­as</label>
@@ -120,13 +120,13 @@
                         </div>
                     </div> -->
                   
-                    <div class="form-group image">
+                   <div class="form-group image">
                         <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
                         <div class="col-sm-10">
                             <input [(ngModel)] = "image" type="file" id="inputImg" name="image">
                             <p class="help-block">Suba una imagen de su restaurante para cambiarla</p>
                         </div>
-                    </div>
+                    </div> 
             <!--   {{/isRestaurant}} -->
                    
                     <br>

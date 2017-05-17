@@ -1,0 +1,56 @@
+ <div class="container-fluid">
+         <hr>
+            <h2 class="intro-text text-center">
+                <strong>Pedidos</strong>
+            </h2>
+        <hr>
+        <div class="row">
+            <!-- tabla pedidos -->
+            <div class="col-sm-8 col-md-offset-2">
+              
+               <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        	<th id="detallesU" class="text-center"> Detalles del pedido </th>
+                            <th class="text-center"> Dirección </th>
+                            <th> Teléfono </th>
+                            <th> Precio </th>
+                            <th> Estado </th>
+                                                   
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <ng-container *ngFor = "let request of requests">      
+                        <tr>
+                        
+							<td> <button type="button" class="btn btn-primary center-block btn-warning" (click)="examineProducts(request);"> Mostrar </button></td>
+							 <td class="text-center"> {{request.address}} </td>
+            	            <td> {{request.phoneRestaurant}} </td>
+                            <td> {{request.price}}<span class="glyphicon glyphicon-euro"> </span> </td>  
+                            <td *ngIf = "request.delivered == false"> <span class="text-warning delivered"> <strong>
+										Pendiente </strong> </span></td> 
+                            <td *ngIf="request.delivered == true"> <span class="text-primary delivered">
+									<strong> Entregado </strong> </span> </td> 
+                            
+                            <td *ngIf="request.delivered == false"> 
+                                <button type="button" class="btn btn-primary delivered" (click)="deliver(request);">Entregado</button> </td>
+
+                            
+                        </tr>  
+                        </ng-container> 
+                       		 
+                    </tbody>
+                </table>
+                
+               
+            </div>
+    <!--        <form action='requests/products' method='POST' id='products'>	
+				<input type="hidden" name="selectedRequest" value="">
+				
+			</form> -->
+        	
+        </div>
+       
+    </div>
+    <!-- /.container -->

@@ -26,7 +26,8 @@ export class ListRequestRestComponent implements OnInit{
 
         this.requests = new Array;
         
-        requestService.getRequestsPerson().subscribe(
+      
+        requestService.getRequests().subscribe(
             data => this.requests = data,
             error => console.error(error)
         ) 
@@ -38,8 +39,14 @@ export class ListRequestRestComponent implements OnInit{
     ngOnInit(){
         this.restaurant = JSON.parse(sessionStorage.getItem("restaurant"));
         
+        
     }
 
+     examineProduct(r: Request){
 
+    }
 
+    deliver(r: Request){
+        r.delivered = true;
+    }
 }

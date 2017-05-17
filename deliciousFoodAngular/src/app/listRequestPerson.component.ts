@@ -26,7 +26,7 @@ export class ListRequestPersonComponent implements OnInit{
 
         this.requests = new Array;
         
-        requestService.getRequestsPerson().subscribe(
+        requestService.getRequests().subscribe(
             data => this.requests = data,
             error => console.error(error)
         ) 

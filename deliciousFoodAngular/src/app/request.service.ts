@@ -21,7 +21,7 @@ export class RequestService {
         .catch(error => this.handleError(error));
     }
 
-    getRequestsPerson(){
+    getRequests(){
         
         return this.http.get(URL + "/all",{ withCredentials: true })
             .map(response => response.json())
