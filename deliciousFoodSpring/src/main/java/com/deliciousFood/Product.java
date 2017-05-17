@@ -10,20 +10,12 @@ import com.fasterxml.jackson.annotation.JsonView;
 @Entity
 public class Product {
 
-	@JsonView(Show.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	interface Show{};
-	
-	@JsonView(Show.class)
+		
 	private String name;
-	
-	@JsonView(Show.class)
 	private String description;
-	
-	@JsonView(Show.class)
 	private Double price;
 	private Integer amount;
 	

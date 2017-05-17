@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.deliciousFood.Product.Show;
 import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
@@ -30,7 +29,6 @@ public class ProductRestController {
 	UserService userService;
 	
 	//Devuelve los productos del restaurante con ese id
-	@JsonView(Show.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<List<Product>> getProducts(@PathVariable long id){
 		Restaurant r = restaurantRepository.findById(id);
@@ -64,12 +62,11 @@ public class ProductRestController {
 				Product pRestaurant = r.getProductById(pReceived.getId());	
 				//Actualiza productos existentes
 				if(pRestaurant!=null && !pReceived.equals(pRestaurant)){
-					pReceived.setAmount(0);
 					r.setProductById(pReceived.getId(), pReceived);
 				//Añade productos nuevos
 				}else if(pRestaurant==null){
 					r.getProducts().add(pReceived);
-					productRepository.save(pReceived);
+					//productRepository.save(pReceived);
 				}
 			}			
 			restaurantRepository.save(r);
@@ -79,7 +76,6 @@ public class ProductRestController {
 	}
 	
 	//Devuelve los productos del restaurante logeado
-	@JsonView(Show.class)
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public ResponseEntity<List<Product>> getMyProducts(){		
 		if (userService.isLoggedUser()){	
