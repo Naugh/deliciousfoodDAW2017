@@ -1,0 +1,145 @@
+<div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-offset-2">
+               <hr>
+                
+           	     <h2 class="intro-text text-center">
+           	    	 <strong>Editar perfil</strong>
+          		 </h2>
+          		
+                <hr> 
+                <br>
+                <div class="form-horizontal" data-toggle="validator" method="post" action="/editUser" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "email" name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email" value="{{person.email}}"> </div>
+                    </div>
+                    <br>
+                   <div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"  value="{{person.password}}"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "password" type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña"  value="{{person.password}}" required> </div>
+                    </div> 
+                    <br>
+                   
+                    <br> 
+                    <div class="form-group">
+                        <label for="inputName" class="col-sm-2 control-label">Nombre</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "name" type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"  value="{{person.name}}"> </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "phone" type="text" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"  value="{{person.phone}}"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "address" type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"  value="{{person.address}}"> </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "postalCode" type="text" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"  value="{{person.postalCode}}"> </div>
+                    </div> 
+                   <!-- {{#isRestaurant}} 
+                    <div class="form-group categorias">
+                        <label for="inputCat" class="col-sm-2 control-label">CategorÃ­as</label>
+                        <div class="col-sm-10">
+                            <table class="table" id="inputCat">
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                           
+                                                <input type="checkbox" name="categories" value="pizza" {{#categories0}} checked {{/categories0}}> Pizza </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="hamburguesa" {{#categories1}} checked {{/categories1}} > Hamburguesa </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="japonesa" {{#categories2}} checked {{/categories2}}> Japonesa </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="espaÃ±ola" {{#categories3}} checked {{/categories3}}> EspaÃ±ola </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="vegetariana" {{#categories4}} checked {{/categories4}}> Vegetariana </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="china" {{#categories5}} checked {{/categories5}}> China </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="italiana" {{#categories6}} checked {{/categories6}}> Italiana </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories"  value="turca" {{#categories7}} checked {{/categories7}}> Turca </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="india" {{#categories8}} checked {{/categories8}}> India </label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div> -->
+                  
+                   <div class="form-group image">
+                        <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
+                        <div class="col-sm-10">
+                            <input [(ngModel)] = "image" type="file" id="inputImg" name="image">
+                            <p class="help-block">Suba una imagen de su restaurante para cambiarla</p>
+                        </div>
+                    </div> 
+            <!--   {{/isRestaurant}} -->
+                   
+                    <br>
+                    
+                    <div class="form-group text-center">
+                        <div class="col-sm-8 col-md-offset-2">
+                        <div class="center">
+                            <button class="btn btn-success" (click)="saveData()">Modificar</button>
+                        </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>

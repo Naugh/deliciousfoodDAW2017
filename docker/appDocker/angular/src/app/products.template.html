@@ -1,0 +1,67 @@
+<div class="container-fluid">
+	<hr>
+	<h2 class="intro-text text-center">
+		<strong>Elige tus productos</strong>
+	</h2>
+	<hr>
+	<div class="row">
+		<!-- tabla items -->
+		<div class="col-md-8">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th id="nombre_plato">Nombre del plato</th>
+						<th>Precio</th>
+						<th>Descripcion</th>
+					</tr>
+				</thead>
+				<tbody>
+			       
+					
+					<tr *ngFor="let product of products">
+						<td class="txtNombre product{{product.id}}">{{product.name}}</td>
+						<td><span class="product{{product.id}}">{{product.price}}</span> <span class="glyphicon glyphicon-euro"></span></td>
+						<td>{{product.description}}</td>
+						<td>
+							<input type="hidden" value="{{product.id}}"/>
+							<button type="button" class="btn btn-success" (click)="addProduct(product)">Añadir</button>
+                      
+						</td>
+					</tr>
+					
+				
+				</tbody> 
+			</table>
+		</div> 
+		<!-- listadelpedido -->
+		<div class="col-md-4">
+			<div id="order">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Detalles del pedido</div>
+					<div class="panel-body">
+				
+						<table class="table table-responsive table=striped">
+							<tr *ngFor="let select of selects">
+								<td><span class="glyphicon glyphicon-remove" aria-hidden="true" (click)="removeProduct(select)"> </span></td>
+								<td> {{select.amount}}</td>
+								<td> x</td>
+								<td> <strong>{{select.name}}</strong></td>
+								<td> {{select.price * select.amount}}
+								 <span class="glyphicon glyphicon-euro"></span> 
+							</tr>	
+							<tr class="active" id="totalRow">
+								<td colspan="4"><span class="h4"> Total </span></td>
+								<td><span id="totalID" class="h4">{{total}}</span> 
+								<input type="hidden" name="total" value="0"/>
+								<span class="glyphicon glyphicon-euro"></span></td>
+							</tr>
+						</table>
+						<button class="btn btn-success btn-lg btn-block" (click)="finalizar(id)">Finalizar</button>
+						
+				 
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+</div>

@@ -1,0 +1,116 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-md-offset-2">
+            <hr>
+            <h2 class="intro-text text-center">
+            <strong>Registro</strong>
+        </h2>
+            <hr>
+            <div class="form-horizontal" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "email" name="userEmail" type="email" class="form-control" id="inputEmail" placeholder="Email"> </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-2 control-label">Contraseña</label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "password" name="password" type="password" class="form-control" id="inputPassword" placeholder="Contraseña"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPasswordConfirm" class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "passwordConfirm" type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Las contraseñas no coinciden" placeholder="Confirmar contraseña" required> </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="tipoUsuario" class="col-sm-2 control-label">Tipo usuario</label>
+                    <div class="col-sm-10">
+                        <label class="radio-inline">
+                            <input type="radio" name="type" id="inlineRadio1" [(ngModel)]="client" [value]=true> Cliente </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="type" id="inlineRadio2" [(ngModel)]="client" [value]=false> Restaurante </label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="inputName" class="col-sm-2 control-label">Nombre</label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "name" type="text" class="form-control" id="inputName" name="userName" placeholder="Nombre"> </div>
+                </div>
+                <div *ngIf=client class="form-group surname">
+                    <label for="inputSurname" class="col-sm-2 control-label">Apellidos</label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "surnames" type="text" class="form-control" id="inputSurname" name="userSurname" placeholder="Apellidos"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTlf" class="col-sm-2 control-label">Teléfono</label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "phone" type="number" class="form-control" id="inputTlf" placeholder="Teléfono" name="phone"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputDir" class="col-sm-2 control-label">Dirección</label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "address" type="text" class="form-control" id="inputDir" placeholder="Dirección" name="address"> </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputCP" class="col-sm-2 control-label">Código Postal</label>
+                    <div class="col-sm-10">
+                        <input [(ngModel)] = "postalCode" type="number" class="form-control" id="inputCP" placeholder="Código Postal" name="postalCode"> </div>
+                </div>
+                <div *ngIf=!client class="form-group categorias hidden">
+                    <label for="inputCat" class="col-sm-2 control-label">Categorí­as</label>
+                    <div class="col-sm-10">
+                        <table class="table" id="inputCat">
+                            <tr>
+                                <ng-container *ngFor = "let option of categories; let i = index">
+                                    <td *ngIf="i<3">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="option.name" checked="option.checked"> {{option.name}} </label>
+                                        </div>
+                                    </td>    
+                                </ng-container>                   
+                            </tr>
+                            <tr>
+                                <ng-container *ngFor = "let option of categories; let i = index">
+                                    <td *ngIf="i>=3 && i<6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="option.name" checked="option.checked"> {{option.name}} </label>
+                                        </div>
+                                    </td>
+                                </ng-container>                       
+                            </tr>
+                            <tr>
+                                <ng-container *ngFor = "let option of categories; let i = index">
+                                    <td *ngIf="i>=6">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="categories" value="option.name" checked="option.checked"> {{option.name}} </label>
+                                        </div>
+                                    </td>
+                                </ng-container>                       
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div *ngIf=!client class="form-group image">
+                    <label for="inputImg" class="col-sm-2 control-label">Imagen</label>
+                    <div class="col-sm-10">
+                        <input (change)="handleFileSelect($event)" type="file" id="inputImg" name="image">
+                        <p class="help-block">Suba una imagen de su restaurante</p>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group text-center">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-success" (click)="signUp()">Registrarse</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

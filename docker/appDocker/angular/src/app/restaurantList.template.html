@@ -1,0 +1,98 @@
+<div class="container-fluid">
+	<div class="row">
+		<!-- Filtros de categorias -->
+		<div class="col-md-4 hidden">
+				<ul class="list-group filtros">
+					<li>
+						<hr>
+						<h2 class="intro-text text-center">
+							<strong>Categorías</strong>
+						</h2>
+						<hr>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="pizza"> <span class="category">PIZZA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="hamburguesa"> <span class="category">HAMBURGUESA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="japonesa"> <span class="category">JAPONESA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="española"> <span class="category">ESPAÑOLA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="vegetariana"> <span class="category">VEGETARIANA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="china"> <span class="category">CHINA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="italiana"> <span class="category">ITALIANA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="turca"> <span class="category">TURCA</span></label>
+						</div>
+					</li>
+					<li class="list-group-item fondoFiltro">
+						<div class="checkbox">
+							<label> <input type="checkbox" name="categories"
+								value="india"> <span class="category">INDIA</span></label>
+						</div>
+					</li>
+				</ul>
+		</div>
+		<!-- Lista de restaurantes relacionados -->
+		<div class="col-md-8 col-md-offset-2">
+			<ul class="list-group lista-restaurantes" id="restaurantList">
+				<li>
+					<hr>
+					<h2 class="intro-text text-center">
+						<strong>Lista de Restaurantes</strong>
+					</h2>
+					<hr>
+				</li> 
+                <li class="list-group-item itemListaRest" *ngFor="let restaurant of restaurants">
+                    <a [routerLink]="['/products', restaurant.id]">
+                        <img src="data:image/png;base64,{{restaurant.image}}" width="150 px" height="150 px">
+                    </a>
+					 
+				    <h5 class="nombre-rest">
+                         <a [routerLink]="['/products', restaurant.id]">{{restaurant.name}}</a>
+                    </h5>
+				    <p class="direccion"> {{restaurant.address}}  <br> {{restaurant.phone}} ,  {{restaurant.email}}</p>
+                </li>
+			</ul>
+			<div class="form-group text-center">
+            	<div class="col-sm-offset-2 col-sm-6">
+            		<img *ngIf="spinner" alt="Cargando" src="assets/img/red_loader48.gif" id="spinner">
+                	<button *ngIf="loadButton" type="button" class="btn btn-success" (click)="loadRestaurants();" id="btnLoad">Cargar más</button>
+                 </div>
+            </div>
+		</div>
+	</div>
+</div>

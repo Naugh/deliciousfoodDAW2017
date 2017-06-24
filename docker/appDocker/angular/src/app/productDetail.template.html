@@ -1,0 +1,35 @@
+<div class="container-fluid">
+		<div class="col-sm-8 col-md-offset-2">
+			
+				<div class="panel panel-primary">
+					<div class="panel-heading text-center"><strong>Productos del pedido</strong></div>
+					<div class="panel-body">
+						<table class="table">
+						
+							<tr *ngFor="let product of products">
+								<td>{{product.amount}}</td>
+								<td><input name=products type="hidden" value="{{id}}" /><span>x</span></td>
+								<td><span class="product"><strong class="orderName">{{product.name}}</strong></span></td>
+								<td><span class="price">{{product.price}}</span> <span
+									class="glyphicon glyphicon-euro"></span></td>
+							</tr>
+							
+							<tr class="active">
+								<td colspan="3"><span class="h4"> Total </span></td>
+								<td><span id="total" class="h4">{{request.total}}</span> <input
+									type="hidden" name="total" value="{{total}}" /> <span
+									class="glyphicon glyphicon-euro"></span></td>
+							</tr>
+						</table>					
+					</div>
+				</div>
+				
+				<div>
+            		 <br>
+           			 <center>
+           				 <a class="btn btn-success " [routerLink]="['/requests']" >Volver</a>
+           			 </center>
+            	</div>
+            	<br>
+			</div>
+</div>

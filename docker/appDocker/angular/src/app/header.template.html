@@ -1,0 +1,50 @@
+<!-- Sin login -->
+<div id="header">
+	<div class="brand">Delicious Food</div>
+	<div class="address-bar">Restaurantes de distintos tipos que sirven a domicilio</div>
+	<!-- Navigation -->
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+				<a class="navbar-brand" [routerLink]="['index.html']">Business Casual</a>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a [routerLink]="['/']">Inicio</a></li>
+					<li *ngIf="restaurant"><a [routerLink]="['/productsEdit']"> Productos </a></li>
+					<li *ngIf="!restaurant"><a [routerLink]="['restaurantList']">Restaurantes</a></li>
+					<li *ngIf="!restaurant && !person"><a [routerLink]="['signUp']">Registro</a></li>
+					<li *ngIf="person"><a [routerLink]="['/editProfile']">Perfil</a></li>
+					<li *ngIf="restaurant"><a [routerLink]="['/profile']">Perfil</a></li>
+					<li *ngIf="person"><a [routerLink]="['/requests']">Pedidos</a></li>
+					<li *ngIf="restaurant"><a [routerLink]="['/requestsList']">Pedidos</a></li>
+					<li *ngIf="person || restaurant"><a [routerLink]="['#']" (click)="logout()"> Cerrar sesión</a></li>
+				</ul>
+				<form *ngIf="!restaurant && !person" class="navbar-form navbar-right form-inline" role="search">
+					<div class="form-group">
+						<input #username type="email" class="form-control" id="email" name="email"
+							placeholder="tucorreo@dominio.com">
+					</div>
+					<div class="form-group">
+						<input #password type="password" class="form-control" id="password" name="password"
+							placeholder="Tu contraseña">
+					</div>
+					<button type="submit" class="btn btn-success" (click)="login($event, username.value, password.value)">Conectarse</button>
+					
+				</form>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container -->
+	</nav>
+</div>

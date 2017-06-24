@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  mysql:
+    build: ./mysqlDocker
+    container_name: mysql_server
+    networks:
+      - backend
+
+  web:
+    build: ./springDocker
+    container_name: web_server
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+      - frontend
+
+networks:
+  backend:
+  frontend:
