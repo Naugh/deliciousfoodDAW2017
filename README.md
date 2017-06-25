@@ -27,3 +27,6 @@ https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/SQL.
 
 Link para el diagrama de clases con las clases REST:
 https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/Diagrama%20clases%20Rest.jpg
+
+Link para el diagrama SPA:
+https://github.com/Naugh/deliciousfoodDAW2017/blob/master/readme%20Diagrama/SPA%20Diagram.jpg
